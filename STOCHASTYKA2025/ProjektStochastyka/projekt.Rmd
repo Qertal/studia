@@ -1,0 +1,78 @@
+---
+title: "ProjektStochastykaLaby"
+author: "Pawel Drzyzga"
+date: "2025-05-26"
+output: html_document
+---
+
+```{r}
+library(sde)
+library(tidyverse)
+simulate_gbm <- function(S0, mu, sigma, T, N) {
+  dt <- T / N
+  t <- seq(0, T, length.out = N)
+  W <- cumsum(rnorm(N, mean = 0, sd = sqrt(dt)))
+  S <- S0 * exp((mu - 0.5 * sigma^2) * t + sigma * W)
+  return(data.frame(time = t, price = S))
+}
+
+```
+
+```{r}
+simulate_many_paths <- function(S0 = 100, mu = 0.07, sigma = 0.2,
+                                 T = 1, N = 250, M = 100) {
+  results <- data.frame()
+  for (i in 1:M) {
+    path <- simulate_gbm(S0, mu, sigma, T, N)
+    path$sim <- i
+    results <- rbind(results, path)
+  }
+  return(results)
+}
+
+set.seed(42)
+paths <- simulate_many_paths(M = 200)
+
+```
+
+```{r}
+ggplot(paths, aes(x = time, y = price, group = sim)) +
+  geom_line(alpha = 0.4) +
+  labs(title = "Symulacje cen aktywów (GBM)", y = "Cena", x = "Czas") +
+  theme_minimal()
+```
+
+```{r}
+last_prices <- subset(paths, time == max(time))$price
+
+# Histogram
+ggplot(data.frame(price = last_prices), aes(x = price)) +
+  geom_histogram(bins = 30, fill = "steelblue", color = "white") +
+  geom_vline(xintercept = 100, color = "red", linetype = "dashed") +
+  labs(title = "Histogram końcowych wartości aktywów", x = "Cena", y = "Liczność") +
+  theme_minimal()
+
+S0 <- 100
+loss_prob <- mean(last_prices < S0)
+cat("Prawdopodobieństwo straty: ", round(100 * loss_prob, 2), "%\n")
+```
+
+```{r}
+mean_price <- mean(last_prices)
+sd_price <- sd(last_prices)
+```
+```{r}
+quantiles <- paths %>%
+  group_by(time) %>%
+  summarise(
+    q05 = quantile(price, 0.05),
+    q50 = quantile(price, 0.50),
+    q95 = quantile(price, 0.95)
+  )
+
+ggplot(quantiles, aes(x = time)) +
+  geom_line(aes(y = q05), linetype = "dashed", color = "red") +
+  geom_line(aes(y = q50), color = "blue") +
+  geom_line(aes(y = q95), linetype = "dashed", color = "darkgreen") +
+  labs(title = "Kwantyle cen aktywów w czasie", y = "Cena", x = "Czas")
+```

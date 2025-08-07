@@ -1,0 +1,99 @@
+---
+title: "Projekt2Stochastyka"
+author: "Pawel Drzyzga"
+date: "2025-05-26"
+output: html_document
+---
+
+```{r}
+library(sde)
+library(tidyverse)
+
+simulate_jump_diffusion <- function(S0 = 100, mu = 0.07, sigma = 0.2,
+                                     lambda = 1, mu_jump = -0.2, sigma_jump = 0.1,
+                                     T = 1, N = 250) {
+  dt <- T / N
+  t <- seq(0, T, length.out = N)
+  W <- cumsum(rnorm(N, mean = 0, sd = sqrt(dt)))
+  
+  # proces Poissona: liczba skoków w czasie dt
+  jumps <- rpois(N, lambda * dt)
+  
+  # wielkości skoków: log-normalne
+  jump_sizes <- exp(rnorm(N, mean = mu_jump, sd = sigma_jump))^jumps
+  
+  # obliczenie procesu
+  drift <- (mu - 0.5 * sigma^2) * t
+  diffusion <- sigma * W
+  jump_component <- cumprod(jump_sizes)
+  
+  S <- S0 * exp(drift + diffusion) * jump_component
+  return(data.frame(time = t, price = S))
+}
+
+```
+
+```{r}
+simulate_jump_diffusion <- function(S0 = 100, mu = 0.07, sigma = 0.2,
+                                     lambda = 1, mu_jump = -0.2, sigma_jump = 0.1,
+                                     T = 1, N = 250) {
+  dt <- T / N
+  t <- seq(0, T, length.out = N)
+  W <- cumsum(rnorm(N, mean = 0, sd = sqrt(dt)))
+  
+  # proces Poissona: liczba skoków w czasie dt
+  jumps <- rpois(N, lambda * dt)
+  
+  # wielkości skoków: log-normalne
+  jump_sizes <- exp(rnorm(N, mean = mu_jump, sd = sigma_jump))^jumps
+  
+  # obliczenie procesu
+  drift <- (mu - 0.5 * sigma^2) * t
+  diffusion <- sigma * W
+  jump_component <- cumprod(jump_sizes)
+  
+  S <- S0 * exp(drift + diffusion) * jump_component
+  return(data.frame(time = t, price = S))
+}
+
+```
+```{r}
+library(ggplot2)
+
+simulate_many_paths <- function(M = 100) {
+  results <- data.frame()
+  for (i in 1:M) {
+    path <- simulate_jump_diffusion()
+    path$sim <- factor(i)
+    results <- rbind(results, path)
+  }
+  return(results)
+}
+
+set.seed(123)
+paths <- simulate_many_paths(500)
+```
+
+```{r}
+ggplot(paths, aes(x = time, y = price, group = sim)) +
+  geom_line(alpha = 0.6) +
+  labs(title = "Model Mertona z przeskokami", x = "Czas (lata)", y = "Cena aktywu") +
+  theme_minimal()
+```
+
+```{r}
+# Wyciągnij końcowe ceny
+end_prices <- subset(paths, time == max(time))$price
+S0 <- 100
+loss_prob <- mean(end_prices < S0)
+
+ggplot(data.frame(price = end_prices), aes(x = price)) +
+  geom_histogram(bins = 30, fill = "steelblue", color = "white") +
+  geom_vline(xintercept = S0, color = "red", linetype = "dashed") +
+  labs(title = paste0("Histogram końcowych cen\nPrawdopodobieństwo straty: ", round(100 * loss_prob, 1), "%"),
+       x = "Cena końcowa", y = "Liczność") +
+  theme_minimal()
+```
+
+
+

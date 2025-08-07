@@ -1,0 +1,127 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+library(tidyverse)
+library(patchwork)
+```
+
+```{r}
+df <- readr::read_csv('owad/china_air.csv')
+```
+```{r}
+unique(df$year)
+```
+```{r}
+df
+```
+
+
+```{r}
+df %>% filter(year==2017 | year == 2013) %>% select(year,month) %>% unique()
+```
+
+```{r}
+# filter(station=='Aotizhongxin') %>%
+#df <- df %>% mutate(date = as_date(dmy(paste(day,"-",month,"-",year,sep=""))))
+df <- df %>% mutate(date = make_datetime(year,month,day,hour))
+
+starting_date = df$date[1]
+```
+
+```{r}
+plot(df$date, df$PM2.5)
+```
+
+```{r}
+current_station <- "Aotizhongxin"
+ggplot(data = df, aes(x = date, y = PM2.5)) +
+  geom_line() +
+  ggtitle(str_glue("Scatter plot of daily mean PM2.5 on station {current_station}")) +
+  xlab("Date") +
+  ylab(expression(PM[2.5]))
+```
+
+
+
+```{r}
+df_2015 <- df %>% filter(year==2015) %>% group_by(month)
+
+ggplot(data = df_2015, aes(x = date, y = PM2.5)) +
+  geom_point() +
+  ggtitle(str_glue("Scatter plot of daily mean PM2.5 on station {current_station}")) +
+  xlab("Date") +
+  ylab(expression(PM[2.5]))
+```
+```{r}
+df_2015Q2 <- df_2015 %>% filter(month %in% c(4,5,6))
+
+ggplot(data = df_2015Q2, aes(x = date, y = PM2.5)) +
+  geom_point() +
+  ggtitle(str_glue("Scatter plot of daily mean PM2.5 on station {current_station}")) +
+  xlab("Date") +
+  ylab(expression(PM[2.5]))
+```
+
+
+```{r}
+df_201505 <- df_2015 %>% filter(month == 5)
+ggplot(data = df_201505, aes(x = date, y = PM2.5)) +
+  geom_point() +
+  ggtitle(str_glue("Scatter plot of daily mean PM2.5 on station {current_station}")) +
+  xlab("Date") +
+  ylab(expression(PM[2.5]))
+```
+
+```{r}
+df_20150512 <- df_201505 %>% filter(day == 12)
+ggplot(data = df_20150512, aes(x = date, y = PM2.5)) +
+  geom_point() +
+  ggtitle(str_glue("Scatter plot of daily mean PM2.5 on station {current_station}")) +
+  xlab("Date") +
+  ylab(expression(PM[2.5]))
+```
+
+```{r}
+
+p1 <- ggplot(df_2015, aes(x = date, y = `PM2.5`)) +
+  geom_point() +
+  ggtitle("2015") +
+  xlab("Date") + ylab(expression(PM[2.5])) 
+
+p2 <- ggplot(df_2015Q2, aes(x = date, y = `PM2.5`)) +
+  geom_point() +
+  ggtitle("2015 Q2") +
+  xlab("Date") + ylab(expression(PM[2.5]))
+
+p3 <- ggplot(df_201505, aes(x = date, y = `PM2.5`)) +
+  geom_point() +
+  ggtitle("Maj 2015") +
+  xlab("Date") + ylab(expression(PM[2.5])) 
+
+p4 <- ggplot(df_20150512, aes(x = date, y = `PM2.5`)) +
+  geom_point() +
+  ggtitle("12 Maj 2015") +
+  xlab("Date") + ylab(expression(PM[2.5]))
+
+# Układ 2x2
+(p1 | p2) /
+(p3 | p4)
+
+```
+
+```{r}
+df_1 <- df %>% filter(month %in% c(3,4,5 & year == 2013)) %>% group_by(year,month,day) %>% summarise(mean = mean(PM2.5)) %>% mutate(data = mean)
+```
+
+```{r}
+df_1 <- df %>%
+  filter((month %in% c(3, 4, 5)) & (year == 2013)) %>%
+  group_by(year,month,day) %>%
+  summarise(mean = mean(PM2.5)) %>%
+  mutate(date = make_datetime(year,month,day,hour))
+  
+ggplot(df_1, aes(x=date, y = mean))
+```

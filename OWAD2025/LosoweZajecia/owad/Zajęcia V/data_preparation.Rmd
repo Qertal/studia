@@ -1,0 +1,19 @@
+```{r}
+
+china_air <- read.table("../Zajęcia II/china_air.csv", sep = ",", header = TRUE) %>%
+  mutate(date = as.Date(paste0(year, "-", month, "-", day)))
+
+china_air %>%
+  mutate(date = as.Date(paste0(year, "-", month, "-", day)))
+
+(china_air %>%
+  distinct(station) %>%
+  arrange(station) %>%
+  pull())[1]
+
+china_air %>%
+  names()
+
+china_air %>%
+  rename(parameter = !!sym("SO2"))
+```

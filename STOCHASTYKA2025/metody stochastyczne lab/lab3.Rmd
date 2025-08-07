@@ -1,0 +1,178 @@
+---
+title: "Lab3 stoch"
+author: "Pawel Drzyzga"
+date: "2025-04-07"
+output: html_document
+---
+```{r}
+library(tidyverse)
+```
+
+
+```{r}
+# Funkcja symulująca trajektorię procesu Poissona
+  sim_pp1 <- function(t, rate) { 
+    path <- matrix(0, nrow = 1, ncol = 2)
+    jumps_time <- rexp(1, rate)
+    while(jumps_time[length(jumps_time)] < t) {
+      jump <- matrix(c(jumps_time[length(jumps_time)], path[nrow(path), 2],
+                       jumps_time[length(jumps_time)], path[nrow(path), 2] + 1),
+                     nrow = 2, ncol = 2, byrow = TRUE)
+      path <- rbind(path, jump)
+      jumps_time <- c(jumps_time,
+                      jumps_time[length(jumps_time)] + rexp(1, rate))
+    }
+    path <- rbind(path,
+                  c(t, path[nrow(path), 2]))
+    list(path = path, jumps_time = jumps_time)
+  }
+  
+  # Parametry symulacji
+  t <- 50
+  rate <- 1
+  
+  # Symulacja
+  wynik <- sim_pp1(t = t, rate = rate)
+  sciezka <- wynik$path
+  czasy_skoku <- wynik$jumps_time[wynik$jumps_time <= t]  # tylko te w przedziale [0, t]
+  
+  # Rysowanie wykresu
+  plot(sciezka[,1], sciezka[,2], type = "l", lwd = 2,
+       xlab = "Czas", ylab = "Liczba skoków", main = "Trajektoria procesu Poissona")
+  
+  # Dodanie pionowych przerywanych linii w miejscach skoków
+  abline(v = czasy_skoku, col = "red", lty = 2)
+```
+
+```{r}
+  sim_pp2 <- function(t, rate) {
+    path <- matrix(0, nrow = 1, ncol = 2)
+    jumps_number <- rpois(1, lambda = rate * t)
+    jumps_time <- runif(n = jumps_number, min = 0, max = t) %>% sort() #sort(jumps_time)
+    for(j in seq_along(jumps_time)) {
+      jump <- matrix(c(jumps_time[j], path[nrow(path), 2],
+                       jumps_time[j], path[nrow(path), 2] + 1),
+                     nrow = 2, ncol = 2, byrow = TRUE)
+      path <- rbind(path, jump)
+    }
+    path <- rbind(path,
+                  c(t, path[nrow(path), 2]))
+    list(path, jumps_time)
+  }
+```
+
+```{r}
+t <- 10
+n <- 2000
+rate = 1
+paths1 <- replicate(n = n, expr = sim_pp1(t, rate), simplify = FALSE)
+means1 <- sapply(1:n,
+                 function(x) {
+                   pathes <- paths1[1:x]
+                   mean(sapply(pathes, function(y) y[[1]][nrow(y[[1]]), 2]))
+                 })
+paths2 <- replicate(n = n, expr = sim_pp2(t, rate), simplify = FALSE)
+means2 <- sapply(1:n,
+                 function(x) {
+                   pathes <- paths2[1:x]
+                   mean(sapply(pathes, function(y) y[[1]][nrow(y[[1]]), 2]))
+                 })
+rbind(data.frame(n = 1:n, mean = means1, method = "1"),
+      data.frame(n = 1:n, mean = means2, method = "2")) %>%
+  ggplot() +
+  geom_line(aes(x = n, y = mean, color = method)) + 
+  geom_hline(yintercept = rate * t) +
+  theme_bw() + 
+  theme(text = element_text(size = 24))
+```
+
+```{r}
+WP<-function(TT,dt,RR) # TT= end value, dt= step sizes, RR= replicates
+  {
+    tt<-seq(from=0,to=TT,by=dt) #Time sequence
+    result<-NULL 
+    for(rr in 1:RR) # Simulating a path for each replicate
+    {
+      zz<-cumsum(c(0,sqrt(dt)*rnorm(n=length(tt)-1))) # The Wiener process function
+      temp<-data.frame(time=tt,value=zz,rep=paste(rr)) 
+      result<-rbind(result,temp) 
+    } 
+    return(result)
+  }
+  output <- WP(TT=1.5,dt=0.001,RR=100) # output is a dataframe with 150100 rows and 3 columns
+  gg<-ggplot(data=output,aes(x=time,y=value,col=rep))+geom_line()
+  gg<-gg+theme(legend.position='none')
+  print(gg)
+  
+  y <- rgeom(10000, prob=0.2)
+  x <- rpois(10000, lambda = 1)
+  z <- runif(1)
+```
+
+```{r}
+  set.seed(123) 
+  y = (1/sqrt(3))*rt(250, df=3) 
+  ts.plot(y, main="Niezależny biały szum", xlab="time", ylab="y(t)",         
+          col="blue", lwd=2) 
+  abline(h=0)
+```
+
+```{r}
+  set.seed(123)
+  e = rnorm(250)
+  y.dt = 0.1*seq(1,250) + e
+  ts.plot(y.dt, lwd=2, col="red", main="Trend + Szum")
+  abline(a=0, b=0.1)
+```
+
+```{r}
+set.seed(321)
+  e = rnorm(250)
+  y.rw = cumsum(e)
+  ts.plot(y.rw, lwd=2, col="green", main="Błądzenie losowe")
+  abline(h=0)
+```
+
+```{r}
+Wiener(n = 1, pts = seq(0, 1, length = 50), sparsify = NULL, K = 50)
+```
+
+```{r}
+  N=50
+  W.mat=matrix(0, ncol=N, nrow=10000)
+  for(n in 1:N){W.mat[, n]=cumsum(rnorm(10000))/100}
+  plot(W.mat, ylab="", xlab="",col="gray",lty=1)
+```
+
+```{r}
+poi.process <- function(lambda,n){
+    # initialize vector of total wait time for the arrival of each event:
+  s<-numeric(n+1)
+  # set S_0 = 0
+  s[1] <-0
+  # generate vector of iid Exp random variables:
+  x <-replicate(n,rexp(1,lambda))
+  # assign wait time to vector s in for loop:
+  for (k in 1:n){
+        s[k+1] <-sum(x[1:k])
+      }
+  # return vector of wait time
+  return(s)
+  }
+```
+
+```{r}
+n<-20
+lambda <-3
+# simulate list of wait time:
+s_list <-poi.process(lambda,n)
+# plot:
+plot(stepfun(0:(n-1), s_list), 
+     do.points = TRUE,
+     pch = 16,
+     col.points = "red",
+     verticals = FALSE,
+     main = 'Realizacja procesu Poissona z lambda = 3',
+     xlab = 'Time of arrival',
+     ylab = 'Number of arrivals')
+```

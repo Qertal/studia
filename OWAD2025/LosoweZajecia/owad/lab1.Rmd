@@ -1,0 +1,78 @@
+---
+title: "lab1"
+output: html_document
+date: "2025-02-24"
+---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+```
+
+## R Markdown
+
+
+```{r cars}
+df <- readr::read_csv('ggplot_set1.csv')
+df
+```
+
+## Wykres liniowy
+
+```{r}
+dataset_plot1 <- ggplot(data = df, aes(x = Date, y = Open))
+dataset_plot1
+```
+```{r}
+dataset_plot2 <- dataset_plot1 + geom_line()
+dataset_plot2
+```
+
+```{r}
+dataset_plot2_labeled <- dataset_plot2 + labs(title = 'Cena otwarcia za akcje firmy Microsoft na rok do tyłu.',
+                                              x = 'Data',
+                                              y = 'Cena (w dolarach)')
+dataset_plot2_labeled
+```
+
+## Formatowanie etykiet
+
+```{r}
+dataset_plot2_labeled2 <- dataset_plot2_labeled + theme(
+  plot.title = element_text(hjust = 0.45, face='bold'),
+  axis.title.x = element_text(size = 8, hjust = 0.55),
+  axis.title.y = element_text(size = 8),
+  panel.grid = element_blank(),
+  panel.background = element_blank()
+  
+)
+dataset_plot2_labeled2
+```
+```{r}
+dataset1_dates_ticks <- df$Date[seq(1, length(df$Date), 60)]
+dataset1_dates_ticks_1 <- seq(min(df$Date), max(df$Date), by = "60 days")  
+
+dataset_plot2_labeled3 <- dataset_plot2_labeled2 + scale_x_date(breaks = dataset1_dates_ticks_1, 
+                                                                date_labels = ("%d-%m-%y"))
+
+dataset_plot2_labeled3  
+```
+
+```{r}
+df_max_open <- round(max(df$Open))
+df_min_open <- round(min(df$Open))
+
+dataset_plot2_labeled4 <- dataset_plot2_labeled3 + geom_hline(yintercept = df_min_open-5, linetype='dashed',
+                                                              color = 'red', alpha = 0.3)+
+                          geom_hline(yintercept = df_max_open+5, linetype = 'dashed', color = 'red', alpha = 0.3)
+dataset_plot2_labeled4
+
+```
+
+```{r}
+dataset_plot2_labeled5 <- dataset_plot2_labeled4 + annotate("text", x = max(df$Date), y = df_max_open,
+                                                            label = str_glue("{df_max_open}")) +
+                                                  annotate("text", x = max(df$Date), y = df_min_open,
+                                                           label = str_glue("{df_min_open}"))
+                                                           
+dataset_plot2_labeled5                                                           
+```

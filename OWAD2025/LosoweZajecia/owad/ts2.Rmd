@@ -1,0 +1,200 @@
+---
+title: "Oprogramowanie wspierające analizę danych"
+author:
+  name: Adrian Kowalski
+  affiliation: Politechnika Krakowska
+subtitle: Wizualizacja Szeregów Czasowych
+---
+
+W tym kawałku notatnika zajmiemy się zagadnieniem przedziałów na osi czasu dla wizualizacji trajektorii szeregów czasowych.
+
+
+Zajmiemy się zbiorem danych China Air zawierającym obserwacje na temat warunków pogodowych i jakości powietrza w Pekinie. Dane pobierane są z kilku stacji, zlokalizowanych w różnych regionach Pekinu z częstotliwością godzinową.
+
+```{R, include=FALSE}
+library(tidyverse)
+library(plotly)
+library(ggpubr)
+```
+```{R, include=FALSE}
+china_air <- read_csv("china_air.csv")
+```
+
+```{r, echo=FALSE}
+head(china_air) 
+```
+
+W tym kawałku kodu sprawdzimy jaki jest zakres czasu w zbiorze danych - poniższy sposób jest dość prymitywny, ale działa.
+
+```{r}
+temp <- china_air %>% select(year,month,day) %>% unique() %>% arrange(year)
+temp[c(1,nrow(temp)),]
+```
+
+Powyższa ramka zawiera pierwszy i ostatni dzień zawarty w zbiorze danych.
+
+Mniej prymitywnym sposobem byłoby stworzenie kolumny z datą - wówczas nie musimy się powoływać na sortowanie.
+```{r}
+china_air <- china_air %>% mutate(date=as_date(dmy(paste(day,month,year, sep="-")))) %>% print()
+```
+Równoważnie można to zrobić tak:
+```{r}
+china_air %>% mutate(date=make_date(year,month,day))
+```
+
+Powyższe sposoby nie biorą pod uwagę czasu, jeżeli zależy nam na czasie to należałoby to zrobić choćby tak:
+
+```{r}
+china_air %>% mutate(date=make_datetime(year,month,day,hour)) 
+```
+
+Poniższym kodem sprawdzimy natomiast czy każdy z dni od początku do końca naszego zbioru danych jest w nim zawarty. Jeśli kod zwróci wartość $0$, to znaczy, że tak :)
+
+```{R}
+sum(china_air$date[seq(1,nrow(china_air), by=24)] != seq(min(china_air$date), max(china_air$date), by="1 day"))
+```
+
+
+Znaczna część teorii i dobrych praktyk dotyczących wizualizacji szeregów czasowych przenosi się mutandis mutatis na dowolne wizualizacje funkcji jednej zmiennej niezależnej.
+
+### Co wyróżnia szereg czasowy od pozostałych typów danych?
+
+Najważniejszą cechą wyróżniającą szereg czasowy jest to, że zmienna niezależna ma bezwzględny wewnętrzny porządek. W związku z tym każda wizualizacja trajektori takiego szeregu musi zachowywać ten porządek oraz nie sprawiać, że on jest niezauważalny.
+
+Każdy punkt szeregu czasowego (wyłączając startowy i końcowy) ma dobrze określonego poprzednika i następnika. 
+
+### Przykład: jakość powietrza w Pekinie.
+
+Zerknijmy na podstawowy rodzaj wizualizacji - wykres punktowy. Względnie jest to najprostsza forma prezentacji danych - po prostu wyświetlamy na płaszczyźnie punkty o odpowiadających współrzędnych $(x,y)$. Nie znaczy to jednak, że ta forma jest bezużyteczna - wręcz przeciwnie!
+
+Na sam początek skupmy się wyłącznie na jednej stacji metra.
+
+```{R, include=FALSE}
+stations <- unique(china_air$station)
+current_station <- stations[1]
+```
+
+Stacją, którą wybierzemy jest `r stations[1]`. Wyliczymy teraz średnie dzienne zanieczyszczenie PM2.5.
+
+```{r, include=FALSE}
+china_air_stationA <- china_air %>% filter(station==current_station) %>% group_by(date) %>% summarise(mean_PM25 = mean(PM2.5))
+```
+
+```{R}
+china_air_stationA
+```
+
+### Sekcja technikaliów - ggplot.
+
+Do wizualizacji użyjemy typowego dla naszego środowiska narzędzia - pakietu *ggplot*.
+
+```{r, warning=FALSE, echo=FALSE}
+ggplot(data=china_air_stationA, aes(x=date, y=mean_PM25)) + geom_point() + ggtitle(str_glue("Scatter plot of daily mean PM2.5 on station {current_station}.")) + xlab("Date") + ylab(expression("Level of PM2.5"~"["~mu*g/m^3~"]"))
+```
+W tym kawałku zajmiemy się zagaadnieniem porównania między sobą obrazków trajektorii szeregu w zależności od tego
+na jak "drobne" kawałki dzielimy oś czasu. Zaproponujemy $4$ rozwiązania: dzienne, tygdoniowe, miesięczne i kwartalne wartości.
+Porównamy również między sobą wykresy punktowe z liniowymi. Poniższy chunk przygotowuje ramki danych z uśrednionymi wartościami.
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+china_air <- china_air %>% filter(station==current_station)
+china_air_mean_daily <- china_air %>% drop_na() %>% group_by(date=make_date(year,month,day)) %>% summarise(mean_PM25 = mean(PM2.5))
+china_air_mean_weekly <- china_air %>% drop_na() %>% group_by(date = as_factor(paste(year(date),week(date),sep="-"))) %>% summarise(mean_PM25 = mean(PM2.5))
+china_air_mean_monthly <- china_air %>% drop_na() %>% group_by(date = as_factor(paste(year(date),month(date),sep="-"))) %>% summarise(mean_PM25 = mean(PM2.5))
+china_air_mean_quarterly <- china_air %>% drop_na() %>% group_by(date = as_factor(paste(year(date), quarter(date), sep="-"))) %>% summarise(mean_PM25 = mean(PM2.5)) 
+```
+
+Do umieszczenia kilku wykresów na jednym obrazku można użyć funkcji *ggarrange* z biblioteki *ggpubr* lub funkcji *grid.arrange* z biblioteki *gridExtra*. Uwaga: W poniższych wykresach musimy dodać estetykę **group=1** ze względu na domyślne zachowanie *ggplot*, gdy zmienna na osi x jest typu factor, bez tego wykres liniowy nie powstanie (jest to domyślne zachowanie mające na celu ułatwić rysowanie np. wykresów słupkowych).
+
+```{r}
+set.seed(11211)
+factor_example <- tibble(x = as.factor(c(rep(1,2), rep(2,2), rep(3,2), rep(4,2))), y = rnorm(8))
+example_nogr <- ggplot(factor_example, aes(x=x,y=y)) + geom_line() + ggtitle("Zachowanie bez pominięcia grupowania")
+example_gr <- ggplot(factor_example, aes(x=x,y=y, group=1)) + geom_line() + ggtitle("Zachowanie z pominiętym grupowaniem")
+ggarrange(example_nogr, example_gr)
+```
+
+```{R}
+grad_plot1 <- ggplot(data = china_air_mean_daily, aes(x=date, y=mean_PM25, group=1)) + geom_line() + labs(title = "Daily averaging", x = "Date", y = "Mean PM2.5") +
+  theme(plot.title = element_text(hjust=0.5), legend.position = "none")
+grad_plot2 <- ggplot(data = china_air_mean_weekly, aes(x=date, y=mean_PM25, group=1)) + geom_line() + scale_x_discrete(breaks = china_air_mean_weekly$date[seq(25,nrow(china_air_mean_weekly),by=36)]) + labs(title ="Weekly averaging", x = "Date", y = "Mean PM2.5") + theme(plot.title = element_text(hjust=0.5))
+grad_plot3 <- ggplot(data = china_air_mean_monthly, aes(x=date, y=mean_PM25, group=1)) + geom_line() + scale_x_discrete(breaks = china_air_mean_monthly$date[seq(1, nrow(china_air_mean_monthly),by=11)]) + labs(title ="Monthly averaging", x = "Date", y = "Mean PM2.5") + theme(plot.title = element_text(hjust=0.5))
+grad_plot4 <- ggplot(data = china_air_mean_quarterly, aes(x=date, y=mean_PM25, group=1)) + geom_line() + scale_x_discrete(breaks = china_air_mean_quarterly$date[seq(1,nrow(china_air_mean_quarterly),by=3)]) + labs(title ="Quarterly averaging", x = "Date", y = "Mean PM2.5") + theme(plot.title = element_text(hjust=0.5))
+plots <- ggarrange(grad_plot1,grad_plot2, grad_plot3, grad_plot4)
+annotate_figure(plots, top = text_grob(str_glue("Levels of PM2.5 at station {current_station}"), 
+                face = "bold"))
+```
+
+Drobna uwaga: W powyższym kodzie musieliśmy dużo rzeczy "przepisać z palca ponownie" i aż się prosi o napisanie funkcji do rysowania tych obrazków. Niemniej jednak pisanie takich funkcji jest zadaniem nietrywialnym wymagającym użycia ewaluacji symbolicznej (którym zajmiemy się w przyszłości!).
+
+Poniżej jeszcze dokonajmy porównania między wykresami punktowymi a liniowymi dla dwóch wybranych sposobów uśredniania. Zauważmy, że dla wykresu punktowego znika "problem" z dodatkową estetyką.
+
+```{r}
+max_date = max(china_air$date)
+max_pm25_3months = max(china_air_mean_daily$mean_PM25)
+no_crit <- 36
+
+grad_plot2_point <- ggplot(
+  data = china_air_mean_weekly, aes(
+    x=date, 
+    y=mean_PM25, 
+    color = mean_PM25 <= 110, 
+    shape = mean_PM25 <= 110
+    )
+  ) +
+  geom_point() +
+  scale_x_discrete(breaks = china_air_mean_weekly$date[seq(25,length(china_air_mean_weekly$date),by=36)]) +
+  labs(title ="Weekly averaging (scatterplot)", x = "Date", y = "Mean PM2.5") +
+  theme(plot.title = element_text(hjust=0.5), legend.position = "none") +
+  scale_color_manual(values = c("red","green")) +
+  scale_shape_manual(values = c("cross","plus")) +
+  annotate("rect", xmin = (max_date - days(30)), xmax = max_date, ymin = max_pm25_3months-25, ymax = max_pm25_3months+15,
+           alpha = 0.5, color="grey", fill="lightblue") +
+  annotate("text", x = max_date, y = max_pm25_3months, label = str_glue("Critical values: \n {no_crit}"), hjust=0.5, vjust = 0.5, size= 4)
+
+grad_plot3_point <- ggplot(
+  data = china_air_mean_monthly, aes(
+    x=date, 
+    y=mean_PM25, 
+    color = mean_PM25 <= 110, 
+    shape = mean_PM25 <= 110
+    )
+  ) +
+  geom_point() +
+  scale_x_discrete(breaks = china_air_mean_monthly$date[seq(1,length(china_air_mean_monthly$date),by=11)]) +
+  labs(title ="Monthly averaging (scatterplot)", x = "Date", y = "Mean PM2.5") +
+  theme(plot.title = element_text(hjust=0.5), legend.position = "none") +
+  scale_color_manual(values = c("red","green")) +
+  scale_shape_manual(values = c("cross","plus"))
+
+plots <- ggarrange(grad_plot2_point,grad_plot2, grad_plot3_point, grad_plot3)
+annotate_figure(plots, top = text_grob(str_glue("Levels of PM2.5 at station {current_station}"), 
+                face = "bold"))
+
+#color = ifelse(mean_PM25 <= 80, "Red", "Blue")
+```
+
+```{r}
+ggplot(
+  data = china_air_mean_weekly, aes(
+    x=make_date(date), 
+    y=mean_PM25, 
+    color = mean_PM25 <= 110, 
+    shape = mean_PM25 <= 110
+    )
+  ) +
+  geom_point() +
+  scale_x_discrete(breaks = china_air_mean_weekly$date[seq(25,length(china_air_mean_weekly$date),by=36)]) +
+  labs(title ="Weekly averaging (scatterplot)", x = "Date", y = "Mean PM2.5") +
+  theme(plot.title = element_text(hjust=0.5), legend.position = "none") +
+  scale_color_manual(values = c("red","green")) +
+  scale_shape_manual(values = c("cross","plus")) +
+  annotate("rect", xmin = (max_date - days(30)), xmax = max_date, ymin = max_pm25_3months-25, ymax = max_pm25_3months+15,
+           alpha = 0.5, color="grey", fill="lightblue") #+
+  #annotate("text", x = max_date, y = max_pm25_3months, label = str_glue("Critical values: \n {no_crit}"), hjust=0.5, vjust = 0.5, size= 4)
+```
+
+```{r}
+china_air_mean_weekly
+```
+
+

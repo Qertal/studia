@@ -1,0 +1,136 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+# zadanie 1
+```{r}
+
+  gambling <- function(sp, sk, p) {
+    sa <- sp
+    while (sa > 0 & sa < sk) {
+      zaklad <- sample(c(-1,1), 1, prob=c(1-p, p) )
+      sa = sa + zaklad
+    }
+    if (sa == 0) {
+      return(1)
+    } else {
+      return(0)
+    }
+  }
+  
+  simlist <- replicate(10000, gambling(20,60,.5))
+  mean(simlist)
+  
+```
+
+```{r}
+gambling_trajectory <- function(sp, sk, p) {
+  sa <- sp
+  history <- c(sa)
+  
+  while (sa > 0 & sa < sk) {
+    zaklad <- sample(c(-1,1), 1, prob=c(1-p, p))
+    sa <- sa + zaklad
+    history <- c(history, sa)
+  }
+  
+  return(history)
+}
+
+num_traj <- 20
+trajektorie <- lapply(1:num_traj, function(x) gambling_trajectory(20, 100, 0.5))
+
+plot(0, 0, type="n", xlim=c(0, max(sapply(trajektorie, length))), ylim=c(0,120), 
+     xlab="Liczba kroków", ylab="Kapitał", main="Przebieg kapitału w grze losowej")
+
+for (i in 1:num_traj) {
+  lines(1:length(trajektorie[[i]]), trajektorie[[i]], col=rainbow(num_traj)[i])
+}
+
+```
+# zadanie 4,5
+```{r}
+t<-0:100
+
+sig<-0.01
+
+x<-rnorm(n=length(t)-1,sd=sqrt(sig))
+
+x<-c(0,cumsum(x))
+
+plot(t,x,type="l",ylim=c(-2,2))
+
+N=1000
+
+dis = rnorm(N, 0, 1);
+
+dis = cumsum(dis);
+
+plot(dis, type= "l" ,main= "Ruch browna" , xlab="czas" , ylab="przemieszczenie" )
+
+
+#100 ruchów Browna
+
+nsim<-100
+
+X<-matrix(rnorm(n=nsim*(length(t)-1),sd=sqrt(sig)),nsim,length(t)-1)
+
+X<-cbind(rep(0,nsim),t(apply(X,1,cumsum)))
+
+plot(t,X[1,],xlab="time",ylab="phenotype",ylim=c(-2,2),type="l")
+
+apply(X[2:nsim,],1,function(x,t) lines(t,x),t=t)
+
+
+#ruch browna w dwóch wymiarach
+
+N=1000
+
+xdis = rnorm(N, 0 ,1);
+
+ydis = rnorm(N, 0 ,1);
+
+xdis = cumsum(xdis);
+
+ydis = cumsum(ydis);
+
+plot(xdis, ydis, type = "l" , main = "Ruch Browna w dwóch wymiarach" ,
+
+xlab="x przemieszczenie" , ylab = "y przemieszczenie" )
+```
+
+# zadanie 2
+```{r}
+dodatki <- c("papryka","pepperoni","ananas","krewetka","prosciutto")
+trials <- 10000
+simlist <- numeric(trials)
+for (i in 1:trials){
+  ananas <- 0 
+  pepperoni <- 0
+  while (ananas == 0){
+    skladnik <- sample(dodatki, 1)
+    #print(skladnik)
+    if (skladnik == "pepperoni" ) {
+      pepperoni <- pepperoni + 1
+    }
+    if (skladnik == "ananas") {
+      ananas <- ananas + 1
+      simlist[i] <- pepperoni
+    }}}
+    
+print(mean(simlist)) #proces bernouliego
+```
+# zadanie 3
+```{r}
+trials <- 100000
+simlist <- numeric(trials)
+
+for (i in 1:trials){
+  expense <- rexp(1,1/500)
+  payout <- max(0,expense-100)
+
+simlist[i] <- payout
+}
+mean(simlist)
+sd(simlist)
+```

@@ -1,0 +1,213 @@
+---
+title: "Untitled"
+output: html_document
+date: "2025-02-24"
+---
+
+```{r}
+library(tidyverse)
+```
+
+1. Wylosować dziesięć liczb z rozkładów normalnych o średniej dowolnej i odchyleniu standardowym dowolnym.
+
+```{r}
+
+xyz = rnorm(10)
+print(xyz)
+```
+
+
+2. Sprawdzić co oznaczają funkcje:
+
+dnorm(x, mean=0, sd=1, log = FALSE)
+
+pnorm(q, mean=0, sd=1, lower.tail = TRUE, log.p = FALSE)
+
+qnorm(p, mean=0, sd=1, lower.tail = TRUE, log.p = FALSE)
+
+rnorm(n, mean=0, sd=1)
+
+Znaleźć podobne komendy dla innych rozkładów.
+
+- Litera r (jak random) rozpoczyna nazwę funkcji - generatora liczb losowych. Taka funkcja generuje próbę prostą o liczebności n (pierwszy argument funkcji) z określonego rozkładu.
+
+- Litera p (jak probability) rozpoczyna nazwę funkcji wyznaczającej wartości dystrybuanty danego rozkładu w punktach określonych przez wektor x (pierwszy argument tych funkcji).
+
+- Litera d (jak density) rozpoczyna nazwę funkcji wyznaczającej wartości gęstości (dla rozkładów ciągłych) lub prawdopodobieństwa (dla rozkładów dyskretnych) danego rozkładu w punktach określonych przez wektor x (pierwszy argument tych funkcji).
+
+- Litera q (jak quantile) rozpoczyna nazwę funkcji wyznaczającej wartości kwantyli danego rozkładu w punktach q (pierwszy argument tych funkcji).
+
+```{r}
+dnorm(xyz, mean=0, sd=1, log = FALSE)
+pnorm(xyz, mean=0, sd=1, lower.tail = TRUE, log.p = FALSE)
+qnorm(.2, mean=0, sd=1, lower.tail = TRUE, log.p = FALSE)
+rnorm(10, mean=0, sd=1)
+
+```
+
+3. Wysymulować:
+
+a) 100 zmiennych losowych o rozkładzie dwumianowym z n=10 ip=0,45.
+
+```{r}
+dwum <- rbinom(100,10,0.45)
+```
+
+
+b) Symuluj 1000 zmiennych losowych o rozkładzie jednostajnym z a=7 i b=10.
+```{r}
+jedno <- runif(1000, 7, 10)
+```
+
+
+c) Symuluj 100 zmiennych losowych o rozkładzie Poissona z λ=3.
+
+```{r}
+pois <- rpois(100, 3)
+```
+
+d) Symuluj 1000 zmiennych losowych o rozkładzie normalnym z μ=544 i σ=103.
+
+```{r}
+norm <- rnorm(1000, 544, 103)
+norm
+```
+
+e) Symuluj 1000 zmiennych losowych o rozkładzie logarytmiczno-normalnym z μ=1,2 i σ=0,5.
+
+```{r}
+
+lognorm <- rlnorm(1000,1.2,0.5)
+```
+
+f) Sporządź wykres CDF dla powyższych rozkładów.
+
+
+```{r}
+ggplot(norm, aes(x = x )) + geom_density(kernel = "gaussian")
+```
+
+4. Narysować gęstość rozkładu normalnego (0,1), w przedziale [-4,4]
+
+Na tym samym wykresie narysować dystrybuantę.
+
+```{r}
+set.seed(1)
+
+df <- data.frame(PF = 10*rnorm(1000))
+ggplot(df, aes(x = PF)) + 
+    geom_histogram(aes(y =..density..),
+                   breaks = seq(-50, 50, by = 10), 
+                   colour = "black", 
+                   fill = "white") +
+stat_function(fun = dnorm, args = list(mean = mean(df$PF), sd = sd(df$PF)))
+```
+
+```{r}
+x <- seq(-4, 4, by = 0.01)
+plot(x, dnorm(x, 0, 1), lwd=3)
+```
+```{r}
+x <- seq(-4, 4, by = 0.01)
+plot(x, pnorm(x, 0, 1), lwd=3)
+```
+```{r}
+ggplot()
+```
+
+5. a) wylosować (z i bez powtórzeń) 10 wartości ze zbioru {1,2,…,20}
+
+
+
+b) Stworzyć dowolny wektor i wylosować z niego kilka liczb (z powtórzeniem, bez powtórzeń)
+
+
+
+c) Stworzyć macierz (5x2) z losowo wybranych (z dowolnego rozkładu jednostajnego) wartości, nazwać kolumny macierzy A, B, z takiej macierzy wylosować (z i bez powtórzeń) 3 wiersze.
+
+d) Wylosuj 20 razy wartości ze zbioru: {„O”, „R”}, ze zwracaniem.
+
+e) Wygeneruj 10 wartości pomiędzy 1 a 100; dodatkowo pokaż je posortowane.
+
+f) Wygenerować ciąg 0 i 1, tak żeby po pojawieniu się jedynki, kolejna jedynka miała 70% szans na pojawienie się, a gdy pojawi się 0, to jedyna ma mieć 30% szans na pojawienie się.
+
+
+6. a) sprawdź gęstość rozkładu normalnego w zerze,
+
+b) sprawdź dystrybuantę w zerze
+
+c) ile masy standardowego rozkładu normalnego N(0,1) mieści się między -3 a 3?
+
+d) wygeneruj 100 obserwacji z rozkładu N(2,1)
+
+e) znajdź pierwszy kwanty
+
+f) narysuj histogram 1000 liczb pseudolosowych ze standardowego rozkładu normalnego
+
+g) wylosuj 1000 elementową próbę z rozkładu jednostajnego i narysuj jej histogram
+
+
+7. a) Wygeneruj 50 wartości z przedziału 1 do 99 zgodnie z rozkładem jednostajnym.
+
+b) Wygeneruj 5 losowych wartości z rozkładu jednostajnego.
+
+c) Wygeneruj 5 losowych wartości z rozkładu jednostajnego z przedziału [5, 99].
+
+d) Wygeneruj 5 losowych, całkowitych wartości z rozkładu jednostajnego z przedziału [0, 100].
+
+e) Wygeneruj 5 losowych, całkowitych wartości z rozkładu jednostajnego z przedziału [0, 100], losowanie bez powtórzeń.
+
+
+8. Rozkład wykładniczy jest używany np. do opisu żywotności komponentów elektronicznych. Niech średnia żywotność lampy elektrycznej będzie równa 1500 godzin. Wylosuj sto wartości z rozkładu exp (z parametrem \lambda = 1/1500). Narysuj histogram oraz gęstość rozkładu wylosowanych wartości.
+
+
+9. Dzienna ilość kawy w litrach dozowana przez maszynę znajdującą się w holu lotniska jest zmienną losową X o ciągłym równomiernym rozkładzie przy a=7 i b=10.
+
+(a) Znajdź wartość funkcji gęstości przy x=7,6.
+
+(b) Sporządź wykres prawdopodobieństwa jednostajnego rozkładu.
+
+(c) Znajdź prawdopodobieństwo, że w danym dniu ilość kawy dozowana przez maszynę wyniesie co najwyżej 8,8 litra.
+
+(d) Znajdź prawdopodobieństwo, że w danym dniu ilość kawy dozowana przez automat wyniesie co najmniej 8,5 litra.
+
+(e) Znajdź prawdopodobieństwo, że w danym dniu ilość kawy dozowana przez urządzenie będzie większa niż 7,4 litra, ale mniejsza niż 9,5 litra.
+
+(f) Sporządź wykres CDF.
+
+(g) Jaka jest wartość c, jeśli P(X≤c)≥0,60?
+
+(h) Symuluj 1000 zmiennych losowych o rozkładzie jednostajnym z a=7 i b=10
+
+
+10. Stary autobus psuje się średnio 3 razy w miesiącu. (W zadaniu użyj rozkładu prawdopodobieństwa Poissona.
+
+(a) Znajdź prawdopodobieństwo, że nastąpią dokładnie 2 awarie w następnym miesiącu.
+
+(b) Sporządź wykres rozkładu prawdopodobieństwa Poissona.
+
+(c) Jakie jest prawdopodobieństwo, że co najwyżej jedna awaria wystapi w następnym miesiącu?
+
+(d) Jakie jest prawdopodobieństwo co najmniej 3 awarii w następnym miesiącu?
+
+(e) Jakie jest prawdopodobieństwo wystąpienia od 2 do 4 (włącznie) awarii w ciągu następnego miesiąca?
+
+(f) Sporządź wykres CDF rozkładu Poissona.
+
+(g) Jaka jest wartość c, jeśli P(X≤c)≥0,60?
+
+(h) Symuluj 100 zmiennych losowych o rozkładzie Poissona z λ=3.
+
+```{r}
+set.seed(10)
+```
+
+```{r}
+rnorm(10)
+sample(10)
+```
+
+```{r}
+rnorm(10)
+sample(10)
+```

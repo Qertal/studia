@@ -1,0 +1,257 @@
+---
+title: "Oprogramowanie wspierające analizę danych"
+author:
+  name: Adrian Kowalski
+  affiliation: Politechnika Krakowska
+subtitle: Podstawy pracy w środowisku RStudio
+output:
+  html_document:
+    theme: readable
+    df_print: paged
+    toc: true
+    toc_float: true
+---
+
+Patrzysz obecnie na notatnik w formacie RMarkdown. Będą one jednym z naszych podstawowych narzędzi pracy.
+Zapoznamy się zatem z podstawową anatomią takiego notatnika, aby tworzyć je i ułatwić sobie pracę. 
+Przydatnym źródłem w celu tworzenia notatników RMd jest podręcznik [RMarkdown cookbook](https://bookdown.org/yihui/rmarkdown-cookbook/).
+
+Nad powyższym akapitem znajduje się tak zwany nagłówek YAML notatnika RMd. Umieszczamy w nim
+podstawowe *metadane* notatnika RMd. Co do zasady najważniejsze informacje znajdują się
+po znaczniku **output:**. To właśnie tam definiujemy podsatwowe własności notatnika,
+takie jak jego ogólny wygląd (parametr **theme:**, dostępne warianty znajdziemy pod [linkiem](https://rpubs.com/ranydc/rmarkdown_themes)), czy wygląd ramek danych oraz
+spisu treści.
+
+# Podstawy redagowania notatnika
+
+Notatniki RMd zazwyczaj redagujemy w wielopoziomowych sekcjach, oddzielonych nagłówkami.
+Nagłówki zaczynają się od znaku \# (zauważmy, że w celu poprawnego wydrukowania znaku \# 
+umieszczamy przed nim \\ - tak samo jak i przed samym \\).
+
+## Odwołania {#sec-references}
+
+W celach nadawania sekcjom sczególnych własności oraz odwołania możemy im nadawać 
+unikatowe identyfikatory w postaci nazw "jednosłowowych". Można o tym przeczytać
+w sekcji [odwołania](#sec-references)
+
+## Chunki 
+
+Głównym celem notatnika RMd jest połączenie kawałka tekstu oraz kodu. Kod piszemy
+w *chunkach*. Każdy chunk wykonywany jest niejako osobno - podobnie jak w skryptach.
+Przykładowy chunk zawierający kod podający przybliżenie do 4 miejsc po przecinku
+odwrotności liczby $\pi$ znajduje się poniżej.
+
+```{r}
+round(1/pi, 4)
+```
+
+Zauważmy, że domyślne ustawienia chunków sprawiają, że wyświetla się zarówno
+kod zawarty w chunku jak i każdy pojedynczy output tego kodu. Można to zaobserwować
+chociażby na poniższym przykładzie.
+
+```{r}
+round(1/pi, 4)
+round(1/pi, 3)
+```
+
+Jak widać powyżej, każda z operacji, która zwraca coś na wyjście w R, zwróci również
+to samo "pod chunkiem". 
+
+Warto może w tym momencie zaznaczyć, że wszystkie metadane podane w preambule dokumentu
+są dostępne jako zmienne. Możemy się do nich "dostać" korzystająć z listy **metadata**.
+
+```{r}
+print(rmarkdown::metadata$title)
+```
+
+Niestety, jak widać powyżej, są one widoczne jedynie po "uszyciu" notatnika.
+
+
+### Opcje chunków
+
+Zachowanie chunków możemy dość dowolnie modyfikować przy pomocy opcji chunków.
+Wszystkie z domyślnych opcji podajemy po przecinkach w nawiasach wąsatych 
+definiujących chunk.
+
+#### echo
+
+Parametr **echo** kontroluje czy sam chunk z kodem pokaże się w finalnym notatniku
+(nie kontroluje nic związanego z wynikami tegoż chunka). Porównajmy to na przykładzie
+dwóch chunków.
+
+```{r, echo=TRUE}
+round(1/pi, 4)
+```
+
+Powyższy chunk z opcją **echo=TRUE** w finalnym notatniku widnieje wraz z wynikiem.
+
+```{r, echo=FALSE}
+round(1/pi, 4)
+```
+
+Natomiast powyższy chunk z opcją **echo=FALSE** w finalnym notatniku nie jest widoczny,
+a widzimy jedynie jego wynik.
+
+#### eval
+
+Parametr **eval** pozwala nam kontrolować, czy przy kompilacji (czy raczej szyciu)
+ostatecznego notatnika RMd chunk zostanie wywołany. Ta opcja może się przydać, 
+aby zawrzeć w notatniku chunk, którego po prostu się nie da wywołać w jakimś celu
+(najczęściej dydaktycznym).
+
+```{r, eval=FALSE}
+1 + x
+```
+
+Powyższy chunk zostanie zawarty w ostatecznym notatniku bez żadnego outputu. 
+
+#### include
+
+Opcja **include** sprawia, że kod chunka jest wykonywany, ale ani chunk,
+ani jego output nie jest zawarty w ostatecznym notatniku.
+
+```{r, include = FALSE}
+include_example_var <- 196883
+```
+
+```{r}
+print(include_example_var)
+```
+
+#### cache
+
+Opcja **cache** jest przydatna, szczególnie w fazie przygotowywania notatnika
+i szczególnie przy pracy z ogromnymi zbiorami danych. Sprawia, że wynik chunka
+jest zachowywany w pamięci i dopóki nie zmieni się zawarty w nim kod, dopóty 
+ten wynik będzie przechowywany.
+
+```{r, cache=TRUE}
+df_example_cache <- rbind(cars,cars,cars,cars,cars,cars,cars,cars,cars,cars)
+```
+
+```{r}
+df_example_cache[22,]
+```
+
+
+#### warning i message
+
+Parametr **warning** nomen omen wyłącza ostrzeżenia o błędach.
+
+```{r}
+log(-1)
+```
+```{r, warning=FALSE}
+log(-1)
+```
+
+Podobne działanie ma parametr **message**, który wyłącza powiadomienia, choćby
+o niekompatybilności wczytywanych pakietów.
+
+```{r}
+library(tidyverse)
+```
+
+```{r, include=FALSE}
+unloadNamespace("tidyverse")
+```
+```{r, warning=FALSE}
+library(tidyverse)
+```
+```{r, include=FALSE}
+unloadNamespace("tidyverse")
+```
+```{r, warning=FALSE, message=FALSE}
+library(tidyverse)
+```
+## Globalne ustawienia knitr
+
+W celu ustawienia niektórych własności chunków globalnie dla każdego, 
+a nie pojedynczo możemy użyć ustawień **knitr** czyli silnika, 
+który konwertuje nasz notatnik z .Rmd do .html. Przykładowo,
+ustawimy, aby w tym notatniku nie wyświeltały się ostrzeżenia i powiadomienia.
+
+```{R}
+knitr::opts_chunk$set(
+  warning = FALSE,
+  message = FALSE
+)
+```
+
+
+## Kod "inline"
+
+Do prowadzenia narracji w notatniku bardzo często przydaje się również kod inline.
+Można chociażby wykorzystać go do powiedzenia, że liczba $e$ w przybliżeniu 
+wynosi `r round(exp(1),5)`. Kod inline piszemy przy pomocy składni \` r **tutaj kod** \`.
+
+## Tabele
+
+Co prawda, jak się później dowiemy, tabela jest jednym z najmniej przydatnych
+narzędzi wizualizacji danych. Niemniej jednak z jakiegoś powodu ludzie 
+lubią je umieszczać w notatniku, więc popracujmy, aby ta zakazana sztuka
+była chociaż trochę bardziej schludna.
+
+Przeglądnijmy kilka dostępnych opcji drukowania tabel. Posłuży nam do tego funkcja
+**kable** z pakietu **knitr**.
+
+```{R}
+knitr::kable(mtcars[1:10,], "pipe")
+```
+
+```{R}
+knitr::kable(mtcars[1:10,], "simple")
+```
+
+Oczywiście, to jak drukowane są tabele można również ustawić globalnie.
+```{r}
+options(knitr.table.format = "pipe")
+```
+
+Pierwszym karygodnym grzechem, którego nauczymy się unikać to zastępywanie
+wygodnych w kodowaniu nazw kolumn "czytelnymi". Funkcjonalność **kable**
+pozwala nam zmienić jedynie te wyświetlane nazwy. Można je dość wygodnie formatować.
+
+```{R}
+knitr::kable(mtcars[1:10,], col.names = c("Spalanie", "Liczba cylindrów", "Pojemność silnika", 
+                                  "Moc silnika", names(mtcars)[5:11]),
+                            align = "c",
+                            digits = 0)
+```
+
+Formatowanie można wykonywać również osobno dla każdej z kolumn.
+
+```{R}
+knitr::kable(mtcars[1:10,], col.names = c("Spalanie", "Liczba cylindrów", "Pojemność silnika", 
+                                  "Moc silnika", names(mtcars)[5:11]),
+                            align = c("c",rep("l",9)),
+                            digits = c(1,2,0,1,rep(0,6)))
+```
+
+To co w formatowaniu tabel za pomocą **kable** jest relatywnie fajne, 
+to fakt, że można wyświelić kilka tabel obok siebie.
+
+```{r}
+knitr::kable(
+  list(mtcars[1:10,1:4],cars[1:3,]),
+  valign="t", booktabs = TRUE
+)
+```
+Na dużo więcej szaleństwa pozwala nam pakiet **kableExtra**, za pomocą którego
+możemy już robić rzeczy bardzo mocno przypominające funkcjonalności dostępne 
+choćby w MSExcel.
+
+
+```{r}
+library(kableExtra)
+```
+
+Za pomocą poleceń **row_spec** i **col_spec** możemy dostosowywać formatowanie
+poszczególnych kolumn i wierszy tabeli.
+
+```{r}
+knitr::kable(mtcars[1:10,], booktabs = TRUE) %>%
+  row_spec(7, bold = TRUE, background="red")
+```
+
+

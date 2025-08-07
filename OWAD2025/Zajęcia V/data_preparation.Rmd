@@ -1,0 +1,112 @@
+```{r}
+library(tidyverse)
+```
+
+```{r}
+
+china_air <- read.table("../Zajęcia V/china_air.csv", sep = ",", header = TRUE) %>%
+  mutate(date = as.Date(paste0(year, "-", month, "-", day)))
+
+china_air %>%
+  mutate(date = as.Date(paste0(year, "-", month, "-", day)))
+
+(china_air %>%
+  distinct(station) %>%
+  arrange(station) %>%
+  pull())[1]
+
+china_air %>%
+  names()
+
+china_air %>%
+  rename(parameter = !!sym("SO2"))
+```
+
+```{r}
+china_air_daily_pm25 <- china_air %>%
+  group_by(year, month, day) %>%
+  summarise(mean_PM25 = mean(`PM2.5`, .groups = 'drop')) %>%
+  na.omit(china_air$`PM2.5`)
+```
+
+```{r}
+china_air_daily_pm25
+```
+
+```{r}
+ggplot(china_air_daily_pm25, aes(x=mean_PM25)) + geom_density(adjust = 0.5)
+```
+
+```{r}
+gaussian_kernel <- function(u) {
+  (1 / sqrt(2 * pi)) * exp(-0.5 * u^2)
+}
+
+
+
+estimator <- function(sample, h){
+  n <- length(sample)
+  test <- c()
+  for (i in length(sample)){
+    wart <- gaussian_kernel((x-sample[i])/h)
+    test <- c(test,wart)
+  }
+  return(test)
+}
+
+estimator(china_air_daily_pm25$mean_PM25,0.5)
+```
+
+```{r}
+gaussian_kernel <- function(u) {
+  (1 / sqrt(2 * pi)) * exp(-0.5 * u^2)
+}
+
+estimator <- function(sample, h, x_eval) {
+  n <- length(sample)
+  density <- numeric(length(x_eval))
+  
+  for (j in seq_along(x_eval)) {
+    u <- (x_eval[j] - sample) / h
+    density[j] <- sum(gaussian_kernel(u)) / (n * h)
+  }
+  
+  return(density)
+}
+estimator(china_air_daily_pm25$mean_PM25,0.5)
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+```{r}
+# Funkcja jądra Gaussa
+gaussian_kernel <- function(u) {
+  (1 / sqrt(2 * pi)) * exp(-0.5 * u^2)
+}
+
+# Własny estymator gęstości jądrowej
+kernel_density_estimate <- function(x_eval, sample, h) {
+  n <- length(sample)
+  est <- numeric(length(x_eval))
+  
+  for (j in seq_along(x_eval)) {
+    u <- (x_eval[j] - sample) / h
+    est[j] <- sum(gaussian_kernel(u)) / (n * h)
+  }
+  
+  return(est)
+}
+
+```

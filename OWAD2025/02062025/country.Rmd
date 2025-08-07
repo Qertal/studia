@@ -1,0 +1,169 @@
+---
+title: "zjaecia"
+author: "Pawel Drzyzga"
+date: "2025-06-02"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(tidyverse)
+library(ggiraph)
+library(sf)
+
+```
+
+```{r}
+poland <- map_data("world", region="Poland")
+```
+
+```{r}
+ggplot(poland, aes(x=long, y=lat)) +
+  geom_polygon(fill='red', color='black')
+```
+
+```{r}
+stolice <- read.csv("voivodeships.csv")
+stolice
+```
+
+
+```{r}
+ggplot(poland, aes(x=long, y=lat)) +
+  geom_polygon(fill='red', color='black') +
+  geom_point(data = stolice, aes(x = Longitude, y=Latitude)) +
+  theme(panel.background = element_blank(),
+        axis.ticks = element_blank(),
+        axis.text = element_blank(),
+        axis.title = element_blank()) +
+  geom_text(data = stolice, aes(x = Longitude, y = Latitude, label = Voivodeship_PL),
+            vjust = -0.5, size = 3)
+  
+
+```
+```{r}
+
+gg <- ggplot(poland, aes(x = long, y = lat)) +
+  geom_polygon(fill = 'red', color = 'black') +
+  geom_point_interactive(
+    data = stolice,
+    aes(x = Longitude, y = Latitude,
+        tooltip = paste0("Populacja: ", Population, "\nWojewództwo: ", Voivodeship_PL)),
+    size = 2,
+    color = "black"
+  ) +
+  geom_text(data = stolice, aes(x = Longitude, y = Latitude, label = City),
+            vjust = -0.5, size = 3) +
+  theme(panel.background = element_blank(),
+        axis.ticks = element_blank(),
+        axis.text = element_blank(),
+        axis.title = element_blank(),
+        plot.margin = unit(c(0,0,3,0),'cm'))
+
+girafe(ggobj = gg)
+
+```
+
+```{r}
+wojewodztwa_granice <- st_read("voivodeships.geojson")
+wojewodztwa_granice
+```
+
+
+
+```{r}
+ggplot(data = wojewodztwa_granice) +
+  geom_sf(fill='red') +
+  theme(panel.background = element_blank(),
+        axis.ticks = element_blank(),
+        axis.text = element_blank(),
+        axis.title = element_blank())
+```
+```{r}
+granice_tibble <- wojewodztwa_granice %>%
+  st_cast("POLYGON") %>%
+  st_cast("POINT") %>%
+  mutate(lon = st_coordinates(.)[,1],
+         lat = st_coordinates(.)[,2]) %>%
+  st_set_geometry(NULL)
+
+granice_tibble
+```
+
+```{r}
+ggplot(granice_tibble, aes(x = lon, y = lat)) +
+  geom_polygon(fill = 'red', color = 'black', aes(group = name)) +
+  geom_point_interactive(
+    data = stolice,
+    aes(x = Longitude, y = Latitude,
+        tooltip = paste0("Populacja: ", Population, "\nWojewództwo: ", Voivodeship_PL)),
+    size = 2,
+    color = "black"
+  ) +
+  geom_text(data = stolice, aes(x = Longitude, y = Latitude, label = City),
+            vjust = -0.5, size = 3) +
+  theme(panel.background = element_blank(),
+        axis.ticks = element_blank(),
+        axis.text = element_blank(),
+        axis.title = element_blank(),
+        plot.margin = unit(c(0,0,3,0),'cm'))
+
+```
+
+
+```{r}
+gg <- ggplot(granice_tibble, aes(x = lon, y = lat)) +
+  geom_polygon_interactive(fill = 'red', color = 'black', aes(group = name, tooltip = paste0("Województwo: ", name))) +
+  
+  geom_text(data = stolice, aes(x = Longitude, y = Latitude, label = City),
+            vjust = -0.5, size = 3) +
+  theme(panel.background = element_blank(),
+        axis.ticks = element_blank(),
+        axis.text = element_blank(),
+        axis.title = element_blank(),
+        plot.margin = unit(c(0,0,3,0),'cm'))
+
+girafe(ggobj = gg)
+```
+```{r}
+library(leaflet)
+```
+```{r}
+leaflet(data = stolice) %>% addTiles() %>%
+  addMarkers(lng = ~Longitude,
+             lat = ~Latitude,
+             label = ~paste(City),
+             popup = ~paste("Województwo: ", Voivodeship_PL,
+                            '<br>', "Populacja: ",Population ))
+```
+
+```{r}
+leaflet(data = stolice) %>% addTiles() %>%
+  addCircleMarkers(lng = ~Longitude,
+             lat = ~Latitude,
+             label = ~paste(City),
+             popup = ~paste("Województwo: ", Voivodeship_PL,
+                            '<br>', "Populacja: ",Population ),
+             radius = 2,
+             color = 'red',
+             fillOpacity = ~Population/max(stolice$Population)) %>%
+  addPolygons(data = poland,
+              color ="black",
+              lat = ~lat,
+              lng = ~long,
+              fillOpacity = 0) %>%
+  addPolygons(data = wojewodztwa_granice,
+              color ="black",
+              fillOpacity = 0,
+              label = ~paste(name))
+
+
+
+```
+
+
+
+

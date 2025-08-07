@@ -1,0 +1,23 @@
+
+```{r}
+library(tidyverse)
+path <- "datasets/"
+csv_into_xlsx <- function(datasets_path, file_name = "zaladowane_datasety") {
+  file_name <- paste0(file_name, ".xlsx")
+  library(openxlsx)
+  temp <- list.files(path = datasets_path, pattern = "*.csv")
+  wb <- createWorkbook()
+  for (i in seq_along(temp)) {
+    dataset <- read.csv2(file.path(datasets_path, temp[i]), sep = ",", dec = ".")
+    addWorksheet(wb, sheetName = gsub(".csv", "", temp[i]))
+    writeData(wb, sheet = gsub(".csv", "", temp[i]), x = dataset, rowNames = FALSE)
+  }
+  saveWorkbook(wb, file_name, overwrite = TRUE)
+}
+#rm(list = ls())
+#setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+#getwd()
+#csv_into_xlsx(datasets_path = "../../datasets_combined/")
+
+csv_into_xlsx(path)
+```

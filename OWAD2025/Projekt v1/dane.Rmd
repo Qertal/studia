@@ -1,0 +1,529 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
+
+# Biblioteki
+
+```{r}
+rm(list = ls())
+library(tidyverse)
+library(gridExtra)
+```
+# Wczytanie danych
+
+```{r}
+df <- read.table("StudentsPerformance_with_headers.csv", sep = ",", header = TRUE) %>%
+  mutate(
+    Student.Age = case_when(
+      Student.Age == 1 ~ "18-21",
+      Student.Age == 2 ~ "22-25",
+      Student.Age == 3 ~ "above 26"
+    ),
+    Sex = case_when(
+      Sex == 1 ~ "Female",
+      Sex == 2 ~ "Male"
+    ),
+    Graduated.high.school.type = case_when(
+      Graduated.high.school.type == 1 ~ "Private",
+      Graduated.high.school.type == 2 ~ "State",
+      Graduated.high.school.type == 3 ~ "Other"
+    ),
+    Scholarship.type = case_when(
+      Scholarship.type == 1 ~ "None",
+      Scholarship.type == 2 ~ "25%",
+      Scholarship.type == 3 ~ "50%",
+      Scholarship.type == 4 ~ "75%",
+      Scholarship.type == 5 ~ "Full"
+    ),
+    Additional.work = case_when(
+      Additional.work == 1 ~ "Yes",
+      Additional.work == 2 ~ "No"
+    ),
+    Regular.artistic.or.sports.activity = case_when(
+      Regular.artistic.or.sports.activity == 1 ~ "Yes",
+      Regular.artistic.or.sports.activity == 2 ~ "No"
+    ),
+    Do.you.have.a.partner = case_when(
+      Do.you.have.a.partner == 1 ~ "Yes",
+      Do.you.have.a.partner == 2 ~ "No"
+    ),
+    Total.salary.if.available = case_when(
+      Total.salary.if.available == 1 ~ "USD 135-200",
+      Total.salary.if.available == 2 ~ "USD 201-270",
+      Total.salary.if.available == 3 ~ "USD 271-340",
+      Total.salary.if.available == 4 ~ "USD 341-410",
+      Total.salary.if.available == 5 ~ "Above 410"
+    ),
+    Transportation.to.the.university = case_when(
+      Transportation.to.the.university == 1 ~ "Bus",
+      Transportation.to.the.university == 2 ~ "Private car/taxi",
+      Transportation.to.the.university == 3 ~ "Bicycle",
+      Transportation.to.the.university == 4 ~ "Other"
+    ),
+    Accommodation.type.in.Cyprus = case_when(
+      Accommodation.type.in.Cyprus == 1 ~ "Rental",
+      Accommodation.type.in.Cyprus == 2 ~ "Dormitory",
+      Accommodation.type.in.Cyprus == 3 ~ "With family",
+      Accommodation.type.in.Cyprus == 4 ~ "Other"
+    ),
+    Mother.s.education = case_when(
+      Mother.s.education == 1 ~ "Primary school",
+      Mother.s.education == 2 ~ "Secondary school",
+      Mother.s.education == 3 ~ "High school",
+      Mother.s.education == 4 ~ "University",
+      Mother.s.education == 5 ~ "MSc.",
+      Mother.s.education == 6 ~ "Ph.D."
+    ),
+    Father.s.education = case_when(
+      Father.s.education == 1 ~ "Primary school",
+      Father.s.education == 2 ~ "Secondary school",
+      Father.s.education == 3 ~ "High school",
+      Father.s.education == 4 ~ "University",
+      Father.s.education == 5 ~ "MSc.",
+      Father.s.education == 6 ~ "Ph.D."
+    ),
+    Number.of.sisters.brothers = case_when(
+      Number.of.sisters.brothers == 1 ~ "1",
+      Number.of.sisters.brothers == 2 ~ "2",
+      Number.of.sisters.brothers == 3 ~ "3",
+      Number.of.sisters.brothers == 4 ~ "4",
+      Number.of.sisters.brothers == 5 ~ "5 or above"
+    ),
+    Parental.status = case_when(
+      Parental.status == 1 ~ "Married",
+      Parental.status == 2 ~ "Divorced",
+      Parental.status == 3 ~ "Died (one of them or both)"
+    ),
+    Mother.s.occupation = case_when(
+      Mother.s.occupation == 1 ~ "Retired",
+      Mother.s.occupation == 2 ~ "Housewife",
+      Mother.s.occupation == 3 ~ "Government officer",
+      Mother.s.occupation == 4 ~ "Private sector employee",
+      Mother.s.occupation == 5 ~ "Self-employment",
+      Mother.s.occupation == 6 ~ "Other"
+    ),
+    Father.s.occupation = case_when(
+      Father.s.occupation == 1 ~ "Retired",
+      Father.s.occupation == 2 ~ "Government officer",
+      Father.s.occupation == 3 ~ "Private sector employee",
+      Father.s.occupation == 4 ~ "Self-employment",
+      Father.s.occupation == 5 ~ "Other"
+    ),
+    Weekly.study.hours = case_when(
+      Weekly.study.hours == 1 ~ "None",
+      Weekly.study.hours == 2 ~ "<5 hours",
+      Weekly.study.hours == 3 ~ "6-10 hours",
+      Weekly.study.hours == 4 ~ "11-20 hours",
+      Weekly.study.hours == 5 ~ "More than 20 hours"
+    ),
+    Reading.frequency = case_when(
+      Reading.frequency == 1 ~ "None",
+      Reading.frequency == 2 ~ "Sometimes",
+      Reading.frequency == 3 ~ "Often"
+    ),
+    Reading.frequency.1 = case_when(
+      Reading.frequency.1 == 1 ~ "None",
+      Reading.frequency.1 == 2 ~ "Sometimes",
+      Reading.frequency.1 == 3 ~ "Often"
+    ),
+    Attendance.to.the.seminars.conferences.related.to.the.department = case_when(
+      Attendance.to.the.seminars.conferences.related.to.the.department == 1 ~ "Yes",
+      Attendance.to.the.seminars.conferences.related.to.the.department == 2 ~ "No"
+    ),
+    Impact.of.your.projects.activities.on.your.success = case_when(
+      Impact.of.your.projects.activities.on.your.success == 1 ~ "Positive",
+      Impact.of.your.projects.activities.on.your.success == 2 ~ "Negative",
+      Impact.of.your.projects.activities.on.your.success == 3 ~ "Neutral"
+    ),
+    Attendance.to.classes = case_when(
+      Attendance.to.classes == 1 ~ "Always",
+      Attendance.to.classes == 2 ~ "Sometimes",
+      Attendance.to.classes == 3 ~ "Never"
+    ),
+    Preparation.to.midterm.exams.1 = case_when(
+      Preparation.to.midterm.exams.1 == 1 ~ "Alone",
+      Preparation.to.midterm.exams.1 == 2 ~ "With friends",
+      Preparation.to.midterm.exams.1 == 3 ~ "Not applicable",
+    ),
+    Preparation.to.midterm.exams.2 = case_when(
+      Preparation.to.midterm.exams.2 == 1 ~ "Closest date to the exam",
+      Preparation.to.midterm.exams.2 == 2 ~ "Regularly during the semester",
+      Preparation.to.midterm.exams.2 == 3 ~ "Never",
+    ),
+    Taking.notes.in.classes = case_when(
+      Taking.notes.in.classes == 1 ~ "Never",
+      Taking.notes.in.classes == 2 ~ "Sometimes",
+      Taking.notes.in.classes == 3 ~ "Always",
+    ),
+    Listening.in.classes = case_when(
+      Listening.in.classes == 1 ~ "Never",
+      Listening.in.classes == 2 ~ "Sometimes",
+      Listening.in.classes == 3 ~ "Always",
+    ),
+    Discussion.improves.my.interest.and.success.in.the.course = case_when(
+      Discussion.improves.my.interest.and.success.in.the.course == 1 ~ "Never",
+      Discussion.improves.my.interest.and.success.in.the.course == 2 ~ "Sometimes",
+      Discussion.improves.my.interest.and.success.in.the.course == 3 ~ "Always",
+    ),
+    Flip.classroom = case_when(
+      Flip.classroom == 1 ~ "Not useful",
+      Flip.classroom == 2 ~ "Useful",
+      Flip.classroom == 3 ~ "Not applicable",
+    ),
+    Cumulative.grade.point.average.in.the.last.semester...4.00. = case_when(
+      Cumulative.grade.point.average.in.the.last.semester...4.00. == 1 ~ "<2.00",
+      Cumulative.grade.point.average.in.the.last.semester...4.00. == 2 ~ "2.00-2.49", 
+      Cumulative.grade.point.average.in.the.last.semester...4.00. == 3 ~ "2.50-2.99", 
+      Cumulative.grade.point.average.in.the.last.semester...4.00. == 4 ~ "3.00-3.49", 
+      Cumulative.grade.point.average.in.the.last.semester...4.00. == 5 ~ "above 3.49"
+    ),
+    Expected.Cumulative.grade.point.average.in.the.graduation...4.00. = case_when(
+      Expected.Cumulative.grade.point.average.in.the.graduation...4.00. == 1 ~ "<2.00",
+      Expected.Cumulative.grade.point.average.in.the.graduation...4.00. == 2 ~ "2.00-2.49", 
+      Expected.Cumulative.grade.point.average.in.the.graduation...4.00. == 3 ~ "2.50-2.99", 
+      Expected.Cumulative.grade.point.average.in.the.graduation...4.00. == 4 ~ "3.00-3.49", 
+      Expected.Cumulative.grade.point.average.in.the.graduation...4.00. == 5 ~ "above 3.49"
+    ),
+    GRADE = case_when(
+      GRADE == 0 ~ "Fail",
+      GRADE == 1 ~ "DD",
+      GRADE == 2 ~ "DC",
+      GRADE == 3 ~ "CC",
+      GRADE == 4 ~ "CB",
+      GRADE == 5 ~ "BB",
+      GRADE == 6 ~ "BA",
+      GRADE == 7 ~ "AA",
+    )) %>%
+  rename(Reading.frequency.non.scientific = Reading.frequency,
+         Reading.frequency.scientific = Reading.frequency.1)
+```
+
+# Wykresy
+
+## Funkcje
+
+### Funkcja generująca wykresy
+
+```{r}
+generate_plot <- function(df, x_col, title, x_title, y_title, legend_title, option, type = "bar plot", legend_col = NULL) {
+  if(!type %in% c("bar plot", "heatmap")) {
+    print("Avaliable plot types are: \"bar plot\" or \"heatmap\"")
+    return(NULL)
+  }
+  
+  if (is.null(legend_col) & type == "bar plot") {
+    plot <- df %>%
+      ggplot(aes(x = !!sym(x_col), y = !!sym(option), fill = !!sym(x_col)))
+  } else if (!is.null(legend_col) & type == "bar plot") {
+    plot <- df %>%
+      ggplot(aes(x = !!sym(x_col), y = !!sym(option), fill = !!sym(legend_col)))
+  } else if (!is.null(legend_col) & type == "heatmap") {
+    plot <- df %>%
+      ggplot(aes(x = !!sym(x_col), y = !!sym(legend_col), fill = !!sym(option)))
+  } else if (is.null(legend_col) & type == "heatmap") {
+    plot <- df %>%
+      ggplot(aes(x = !!sym(x_col), y = !!sym(option), fill = !!sym(option)))
+  }
+  if (type == "bar plot") {
+    plot <- plot + 
+      geom_col(color = "black", position = "dodge") +
+      lims(y = c(0, max(df %>% pull(!!sym(option)))*1.2)) +
+      theme(
+        legend.position = "top",
+        legend.title = element_text(size = 12),
+        legend.text = element_text(size = 12),
+        axis.title = element_text(size = 12),
+        #axis.title.x = element_text(margin = margin(t = 25)),
+        #axis.title.y = element_text(margin = margin(r = 15)),
+        axis.ticks.length.x = unit(0, "mm"),
+        axis.text = element_text(
+          color = "black",
+          size = "10"
+        ),
+        text = element_text(family = "serif"),
+        panel.background = element_rect(fill = "white", color = NA),  # białe tło, brak obramowania
+        panel.grid.major = element_line(color = "gray90", size = 0.5),  # główne linie jak w minimal
+        panel.grid.minor = element_line(color = "gray95", size = 0.25),  # drobniejsze linie
+        axis.line = element_blank(),  # brak linii osi
+        axis.ticks = element_blank(),  # brak kresek na osiach
+        ) + 
+      labs(
+        x = x_title,
+        y = y_title,
+        fill = legend_title,
+        title = title) +
+      geom_text(aes(label = paste0("n = ", n, ";\n(", p, "%)")), 
+                position = position_dodge(width = 0.9), vjust = -0.3, size = 3)
+
+  } else if (type == "heatmap") {
+    plot <- plot +
+      geom_tile() +
+      geom_text(aes(label = !!sym(option)), color = "black", size = 5) +
+      scale_fill_gradient(
+        low = "#FFF",
+        high = "#00BFC4"
+      ) +
+      labs(
+        x = x_title,
+        y = y_title,
+        fill = legend_title,
+        title = title
+      ) +
+      theme_minimal() +
+      theme(
+        legend.position = "top",
+        legend.title = element_text(size = 12),
+        legend.text = element_text(size = 12),
+        axis.title = element_text(size = 12),
+        axis.ticks.length.x = unit(0, "mm"),
+        axis.text = element_text(
+          color = "black",
+          size = "10"
+        ),
+        text = element_text(family = "serif"),
+        panel.grid = element_blank()) 
+  } 
+
+  return(plot)
+}
+```
+
+### Funkcja przekształcająca data frame do odpowiedniej formy, by następnie utworzyć wykres
+
+```{r}
+plot_percentage_or_n <- function(df, id_col, x_col, title, x_title, legend_title, option = "n", type = "bar plot", legend_col = NULL, legend_levels = NULL, y_title = NULL) {
+  if (!is.null(legend_col)) {
+    if (is.null(legend_levels)) {
+      legend_levels <- df %>% distinct(!!sym(legend_col)) %>% arrange(!!sym(legend_col)) %>% pull()
+    }
+    df <- df %>%
+      distinct(!!sym(id_col), !!sym(x_col), !!sym(legend_col)) %>%
+      group_by(!!sym(x_col), !!sym(legend_col)) %>%
+      count() %>%
+      group_by(!!sym(x_col)) %>%
+      mutate(total = sum(n),
+             p = round(100 * n / total, 2)) %>%
+      ungroup() %>%
+      mutate(!!sym(legend_col) := factor(!!sym(legend_col), legend_levels))
+    if(type == "heatmap") {
+      df <- df %>%
+      complete(!!sym(x_col), !!sym(legend_col), fill = list(n = 0, p = 0))
+    }
+  } else {
+    if (is.null(legend_levels)) {
+      legend_levels <- df %>% distinct(!!sym(x_col)) %>% arrange(!!sym(x_col)) %>% pull()
+    }
+    df <- df %>%
+      distinct(!!sym(id_col), !!sym(x_col)) %>%
+      group_by(!!sym(x_col)) %>%
+      count() %>%
+      ungroup() %>%
+      mutate(total = sum(n),
+             p = round(100 * n / total, 2)) %>%
+      ungroup() %>%
+      mutate(!!sym(x_col) := factor(!!sym(x_col), legend_levels))
+  }
+  if(is.null(y_title)) {
+      if(option == "n") {
+        y_title <- "Number of occurrences"
+      } else if (option == "p") {
+        y_title <- "Percentage of occurences"
+      } else {
+        print("Implemented options are: \"n\" - number of occurences; \"p\" - percentage of occurences")
+        return(NULL)
+      }
+  }
+
+  plot <- generate_plot(df = df, 
+                        x_col = x_col, 
+                        title = title,
+                        x_title = x_title,
+                        y_title = y_title,
+                        legend_title = legend_title,
+                        option = option,
+                        type = type,
+                        legend_col = legend_col)
+  
+  if(option != "n" & type != "heatmap") {
+    if(max(df$p) < 90) {
+      plot <- plot + 
+        scale_y_continuous(limits = c(0, 100), breaks = seq(0, 100, 20))
+    } else {
+      plot <- plot + 
+        scale_y_continuous(limits = c(0, 110), breaks = seq(0, 100, 20))
+    }
+
+  }
+  return(plot)
+}
+```
+
+## Zadania
+
+### Zadanie 1 
+
+#### Łukasz
+
+```{r fig.width=10, fig.height=6}
+plot_transport_attendance_n <- plot_percentage_or_n(df, 
+                     id_col = "STUDENT.ID", 
+                     x_col = "Transportation.to.the.university", 
+                     title = "Transport type in accordance to attendance to classes - number of occurences", 
+                     x_title = "Transport type", 
+                     legend_title = "Attendance to classes ",
+                     option = "n",
+                     type = "bar plot",
+                     legend_levels = c("Always", "Sometimes"),
+                     legend_col = "Attendance.to.classes")
+
+plot_transport_attendance_p <- plot_percentage_or_n(df, 
+                     id_col = "STUDENT.ID", 
+                     x_col = "Transportation.to.the.university", 
+                     title = "Transport type in accordance to attendance to classes - percentage of occurences", 
+                     x_title = "Transport type", 
+                     legend_title = "Attendance to classes ",
+                     option = "p",
+                     type = "bar plot",
+                     legend_levels = c("Always", "Sometimes"),
+                     legend_col = "Attendance.to.classes")
+
+two_plots_long <- grid.arrange(plot_transport_attendance_n, plot_transport_attendance_p)
+two_plots_wide <- grid.arrange(plot_transport_attendance_n, plot_transport_attendance_p, ncol = 2)
+
+ggsave("II - wykresy/LH_W1.png", plot = plot_transport_attendance_n, width = 10, height = 6)
+ggsave("II - wykresy/LH_W2.png", plot = plot_transport_attendance_p, width = 10, height = 6)
+#ggsave("both_long.png", plot = two_plots_long, width = 10, height = 12)
+#ggsave("both_wide.png", plot = two_plots_wide, width = 20, height = 6)
+```
+
+#### Kamil
+
+```{r}
+heatmap_df <- df %>%
+  group_by(Transportation.to.the.university, Attendance.to.classes) %>%
+  summarise(Count = n(), .groups = 'drop') %>% complete(Transportation.to.the.university, Attendance.to.classes, fill= list(Count = 0)) %>% mutate(Percentage = Count / sum(Count) * 100)  %>% arrange(desc(Percentage))
+
+wykres_1 <- ggplot(heatmap_df, aes(x = Transportation.to.the.university, y = Attendance.to.classes, fill = Count)) + 
+  geom_tile() + 
+  geom_text(aes(label = Count), color = "black", size = 5) +   
+  scale_fill_gradient2() + 
+  labs(title = "Heatmap: Transportation vs. Attendance", x = "Transportation", y = "Attendance",   fill = "Number \nof observations") + 
+  theme_minimal() 
+
+wykres_2 <- ggplot(heatmap_df, aes(x = Transportation.to.the.university, y = Attendance.to.classes, fill = Percentage)) +
+  geom_tile() +
+  geom_text(aes(label = paste0(round(Percentage, 1), "%")), color = "black", size = 5) +
+  scale_fill_gradient2() +
+  labs(title = "Heatmap: Transportation vs. Attendance (%)", x = "Transportation", y = "Attendance", fill = "Percentage (%)") +
+  theme_minimal()
+
+ggsave("II - wykresy/KB_w1.jpg", plot = wykres_1, width = 10, height = 6)
+ggsave("II - wykresy/KB_w2.jpg", plot = wykres_2, width = 10, height = 6)
+```
+
+#### Paweł
+
+```{r}
+df_count_bicycle <- df %>% filter(df$Transportation.to.the.university == "Bicycle") %>% count(Attendance.to.classes, Transportation.to.the.university) %>%     rename(Frequency = n) %>% mutate(Percentage = Frequency / sum(Frequency) * 100)
+
+df_count_bus <- df %>% filter(df$Transportation.to.the.university == "Bus") %>% count(Attendance.to.classes, Transportation.to.the.university) %>%     rename(Frequency = n) %>% mutate(Percentage = Frequency / sum(Frequency) * 100)
+
+df_count_private <- df %>% filter(df$Transportation.to.the.university == "Private car/taxi") %>% count(Attendance.to.classes, Transportation.to.the.university) %>%     rename(Frequency = n) %>% mutate(Percentage = Frequency / sum(Frequency) * 100)
+
+df_count_other <- df %>% filter(df$Transportation.to.the.university == "Other") %>% count(Attendance.to.classes, Transportation.to.the.university) %>%     rename(Frequency = n) %>% mutate(Percentage = Frequency / sum(Frequency) * 100)
+
+p1 = ggplot(df_count_bus, aes(x = "", y = Frequency, fill = Attendance.to.classes)) +
+  geom_bar(stat = "identity", width = 1) +
+  coord_polar("y", start = 0) +
+  theme_classic() +
+  theme(axis.line = element_blank(),
+          axis.text = element_blank(),
+          axis.ticks = element_blank(),
+          plot.title = element_text(hjust = 0.5)) +
+  labs(x = NULL, title = "Transport by bus", fill = NULL, y = NULL) +
+  geom_text(aes(label=paste0(round(Frequency,0))) ,position = position_stack(vjust= 0.5 ))
+
+p2 = ggplot(df_count_bicycle, aes(x = "", y = Frequency, fill = Attendance.to.classes)) +
+  geom_bar(stat = "identity", width = 1) +
+  coord_polar("y", start = 0) +
+  theme_classic() +
+  theme(axis.line = element_blank(),
+          axis.text = element_blank(),
+          axis.ticks = element_blank(),
+          plot.title = element_text(hjust = 0.5)) +
+  labs(x = NULL, title = "Transport by bicycle" , fill = NULL, y = NULL) +
+  geom_text(aes(label=paste0(round(Frequency,0))) ,position = position_stack(vjust= 0.5 ))
+
+p3 = ggplot(df_count_other, aes(x = "", y = Frequency, fill = Attendance.to.classes)) +
+  geom_bar(stat = "identity", width = 1) +
+  coord_polar("y", start = 0) +
+  theme_classic() +
+  theme(axis.line = element_blank(),
+          axis.text = element_blank(),
+          axis.ticks = element_blank(),
+          plot.title = element_text(hjust = 0.5)) +
+  labs(x = NULL, title = "Transport by other", fill = NULL, y = NULL) +
+  geom_text(aes(label=paste0(round(Frequency,0))) ,position = position_stack(vjust= 0.5 ))
+
+p4 = ggplot(df_count_private, aes(x = "", y = Frequency, fill = Attendance.to.classes)) +
+  geom_bar(stat = "identity", width = 1) +
+  coord_polar("y", start = 0) +
+  theme_classic() +
+  theme(axis.line = element_blank(),
+          axis.text = element_blank(),
+          axis.ticks = element_blank(),
+          plot.title = element_text(hjust = 0.5)) +
+  labs(x = NULL, title = "Transport by private car/taxi", fill = NULL, y = NULL) +
+  geom_text(aes(label=paste0(round(Frequency,0))) ,position = position_stack(vjust= 0.5 ))
+
+p_grouped = grid.arrange(p1, p2, p4, p3, ncol = 2, top = "Attendance to classes", bottom = "n")
+ggsave("II - wykresy/PD_W.png", plot = p_grouped, width = 10, height = 6)
+```
+
+### Zadanie 2 - Dashboard
+
+```{r fig.width=16, fig.height=9}
+
+plot1 <- plot_percentage_or_n(df, 
+                     id_col = "STUDENT.ID", 
+                     x_col = "GRADE", 
+                     title = "Grade in accordance to additional work - number of occurences", 
+                     x_title = "Grade", 
+                     legend_title = "Number of occurences ",
+                     y_title = "Additional work",
+                     option = "n",
+                     legend_col = "Additional.work",
+                     type = "heatmap",
+                     legend_levels = c("No", "Yes"))
+plot2 <- plot_percentage_or_n(df, 
+                     id_col = "STUDENT.ID", 
+                     x_col = "GRADE", 
+                     title = "Grade in accordance to additional work - percent of occurences", 
+                     x_title = "Grade", 
+                     legend_title = "Additional work ",
+                     y_title = NULL,
+                     option = "p",
+                     legend_col = "Additional.work",
+                     type = "bar plot",
+                     legend_levels = c("Yes", "No")) + theme(legend.position = "none")
+plot3 <- plot_percentage_or_n(df, 
+                     id_col = "STUDENT.ID", 
+                     x_col = "Additional.work", 
+                     title = "", 
+                     x_title = "Additional work", 
+                     legend_title = "Additional work ", 
+                     option = "p",
+                     type = "bar plot",
+                     legend_levels = c("Yes", "No")) +theme(axis.text.x = element_blank(),
+                                                             axis.ticks.x = element_blank())
+
+
+layout <- matrix(c(1, 1, 3, 
+                   2, 2, 3),
+                 nrow = 2, byrow = TRUE)
+final_plot <- grid.arrange(plot1, plot2, plot3, layout_matrix = layout)
+ggsave("III - dashboard/final_plot.png", final_plot, width = 16, height = 9)
+```
+

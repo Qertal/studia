@@ -1,0 +1,63 @@
+## ---------------------------------------------------------------------------------------------
+library(shiny)
+library(tidyverse)
+library(shinyjs)
+options(scipen = 999)
+
+
+## ---------------------------------------------------------------------------------------------
+path <- "datasets/"
+for(file in list.files(path)) {
+  actual_dataset <- read.csv2(paste0(path, file), sep = ",", dec = ".", header = TRUE)
+  assign(gsub(".csv", "", file), actual_dataset)
+}
+
+
+## ---------------------------------------------------------------------------------------------
+base_df <- full_grouped %>%
+  mutate(Date = as.Date(Date)) %>%
+  left_join(worldometer_data %>%
+              select(Country.Region, Continent, Population) %>%
+              mutate(Population = as.numeric(gsub(",", ".", Population))),
+            by = "Country.Region"
+            ) %>%
+  pivot_longer(cols = c(Confirmed:Active), names_to = "Case", values_to = "Value") %>%
+  select(Country = Country.Region, 
+         Continent,
+         Population,
+         Date, 
+         Case,
+         Value) %>%
+  mutate(
+    Continent = case_when(
+      Country %in% c("Brunei", "Burma", "China", "South Korea", "Taiwan", "United Arab Emirates", "West Bank and Gaza", "Taiwan*") ~ "Asia",
+      Country %in% c("Central African Republic", "Congo (Brazzaville)", "Congo (Kinshasa)", "Cote d'Ivoire") ~ "Africa",
+      Country %in% c("Holy See", "Kosovo", "United Kingdom") ~ "Europe",
+      Country %in% c("Saint Vincent and the Grenadines", "US") ~ "North America",
+      .default = Continent),
+    Poulation = case_when(
+      is.na(Population) ~ 0,
+      .default = Population
+    )
+  )
+
+
+## ---------------------------------------------------------------------------------------------
+unique_countries <- full_grouped %>%
+  distinct(Country.Region) %>%
+  arrange(Country.Region) %>%
+  pull()
+
+min_date <- base_df %>% filter(Date == min(Date, na.rm = TRUE)) %>% distinct(Date) %>% pull()
+max_date <- base_df %>% filter(Date == max(Date, na.rm = TRUE)) %>% distinct(Date) %>% pull()
+
+
+## ---------------------------------------------------------------------------------------------
+unique_all <- base_df %>% distinct(Country) %>% pull()
+unique_asia <- base_df %>% filter(Continent == "Asia") %>% distinct(Country) %>% pull()
+unique_europe <- base_df %>% filter(Continent == "Europe") %>% distinct(Country) %>% pull()
+unique_africa <- base_df %>% filter(Continent == "Africa") %>% distinct(Country) %>% pull()
+unique_north_america <- base_df %>% filter(Continent == "North America") %>% distinct(Country) %>% pull()
+unique_south_america <- base_df %>% filter(Continent == "South America") %>% distinct(Country) %>% pull()
+unique_australia_oceania <- base_df %>% filter(Continent == "Australia/Oceania") %>% distinct(Country) %>% pull()
+

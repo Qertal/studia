@@ -1,0 +1,127 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+library(tidyverse)
+library(patchwork)
+```
+
+```{r}
+getwd()
+setwd("C:/Users/pawel.drzyzga/Documents/owad")
+#setwd("C:\\Users\\pawel.drzyzga\\Documents\\owad")
+getwd()
+```
+
+```{r}
+df <- readr::read_csv('Future500.csv')
+```
+```{r}
+head(df)
+```
+```{r}
+tail(df,15)
+```
+
+```{r}
+str(df)
+```
+```{r}
+summary(df)
+```
+```{r}
+#zmiana na factora
+df$ID <- factor(df$ID)
+```
+
+```{r}
+summary(df)
+```
+
+```{r}
+df$Inception <- factor(df$Inception)
+```
+# factor variable trap
+## for characters into numerics
+```{R}
+a <- c("12","13","14","12","13")
+typeof(a)
+```
+
+```{r}
+b <- as.numeric(a)
+typeof(b)
+```
+
+## factors into numeric
+
+```{r}
+z <- factor(c("12","13","14","12","13"))
+z
+typeof(z)
+```
+```{r}
+y <- as.numeric(z)
+y
+typeof(y)
+```
+## correct way
+
+```{r}
+x <- as.numeric(as.character(z))
+x
+typeof(x)
+```
+# fvt example
+
+```{r}
+head(df)
+str(df)
+```
+```{r}
+#df$Profit <- factor(df$Profit)
+#str(df)
+```
+```{r}
+#df$Profit <- as.numeric(df$Profit)
+#str(df)
+```
+
+# sub() i gsub()
+
+```{r}
+df$Expenses <- gsub(" Dollars", "",df$Expenses)
+head(df)
+```
+
+```{r}
+df$Expenses <- gsub(",", "",df$Expenses)
+head(df)
+```
+```{r}
+str(df)
+```
+```{r}
+df$Revenue <- gsub("\\$","",df$Revenue)
+df$Revenue <- gsub(",","",df$Revenue)
+head(df)
+```
+```{r}
+df$Growth <- gsub("%","",df$Growth)
+head(df)
+```
+```{r}
+df$Expenses <- as.numeric(df$Expenses)
+df$Revenue <- as.numeric(df$Revenue)
+df$Growth <- as.numeric(df$Growth)
+str(df)
+summary(df)
+```
+
+
+
+
+```{r}
+```

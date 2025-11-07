@@ -1,0 +1,15 @@
+
+### ASC - lab. 5, 29 X 2025
+### Metoda dekompozycji STL, exponential smoothing
+
+## Linkownia
+
+https://otexts.com/fpp2/stl.html
+
+https://www.geeksforgeeks.org/machine-learning/stl-decomposition-of-time-series-using-r/
+
+https://otexts.com/fpp2/ets.html
+
+https://robjhyndman.com/eindhoven/1-3-Seasonality.pdf
+
+https://openreview.net/pdf?id=rylYCmQ_1H

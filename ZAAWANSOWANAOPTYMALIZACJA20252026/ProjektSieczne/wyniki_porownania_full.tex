@@ -1,0 +1,35 @@
+\begin{longtable}{l r r r r r r r r}
+\caption{Porównanie wyników metody siecznych (dla $f'(x)=0$) i \texttt{fminbnd} (nowy zestaw 15 funkcji).}
+\label{tab:porownanie_sieczne_new}\\
+\toprule
+                  funkcja $f(x)$ &  $a$ & $b$ & $x_{\min}^{\mathrm{sec}}$ & $f(x_{\min}^{\mathrm{sec}})$ & $it_{\mathrm{sec}}$ & $x_{\min}^{\mathrm{fminbnd}}$ & $f(x_{\min}^{\mathrm{fminbnd}})$ & $it_{\mathrm{fminbnd}}$ \\
+\midrule
+\endfirsthead
+\caption[]{Porównanie wyników metody siecznych (dla $f'(x)=0$) i \texttt{fminbnd} (nowy zestaw 15 funkcji).} \\
+\toprule
+                  funkcja $f(x)$ &  $a$ & $b$ & $x_{\min}^{\mathrm{sec}}$ & $f(x_{\min}^{\mathrm{sec}})$ & $it_{\mathrm{sec}}$ & $x_{\min}^{\mathrm{fminbnd}}$ & $f(x_{\min}^{\mathrm{fminbnd}})$ & $it_{\mathrm{fminbnd}}$ \\
+\midrule
+\endhead
+\midrule
+\multicolumn{9}{r}{{Continued on next page}} \\
+\midrule
+\endfoot
+
+\bottomrule
+\endlastfoot
+      $(x-2)^{2} + 0.2*\sin(5x)$ &   -3 &   5 &                   2.14166 &                    -0.171736 &                  11 &                       2.14166 &                        -0.171736 &                      12 \\
+                  $\exp(x) - 3x$ &   -2 &   2 &                   1.09861 &                    -0.295837 &                   7 &                       1.09861 &                        -0.295837 &                      11 \\
+                 $(x-1)^{2} + 1$ &   -1 &   3 &                         1 &                            1 &                   3 &                             1 &                                1 &                       5 \\
+               $\cos(x) + x^{2}$ &   -3 &   3 &                         0 &                            1 &                   3 &                    1.1436e-08 &                                1 &                      26 \\
+              $(x+3)^{2} + 0.1x$ &   -4 &  -2 &                     -3.05 &                      -0.3025 &                   3 &                         -3.05 &                          -0.3025 &                       5 \\
+          $(x+1)^{2} + \exp(-x)$ &   -1 &   0 &                 -0.314923 &                      1.83948 &                   6 &                     -0.314923 &                          1.83948 &                       8 \\
+             $(x-0.5)^{2} + 0.2$ &   -1 &   2 &                       0.5 &                          0.2 &                   3 &                           0.5 &                              0.2 &                       5 \\
+          $x*\sin(x) + x^{2}/10$ & -0.5 & 0.5 &                         0 &                            0 &                   3 &                  -1.38778e-17 &                      2.11852e-34 &                       5 \\
+              $\tanh(x) + x^{2}$ &   -1 &   0 &                 -0.420916 &                    -0.220532 &                   6 &                     -0.420916 &                        -0.220532 &                       9 \\
+           $(x-5)^{2} + \sin(x)$ &  4.9 & 5.1 &                   4.90452 &                    -0.972483 &                   5 &                       4.90452 &                        -0.972483 &                       9 \\
+           $x^{2} + 0.1*\sin(x)$ &   -3 &   3 &                -0.0499377 &                  -0.00249792 &                   6 &                    -0.0499377 &                      -0.00249792 &                       9 \\
+$\log(1+\exp(x)) + (x-2)^{2}/10$ &   -1 &   0 &                 -0.222731 &                      1.08202 &                   5 &                     -0.222731 &                          1.08202 &                      12 \\
+              $x^{2} + \exp(-x)$ &   -2 &   2 &                  0.351734 &                     0.827184 &                   7 &                      0.351734 &                         0.827184 &                      10 \\
+                   $(x+0.2)^{2}$ &   -1 &   1 &                      -0.2 &                            0 &                   3 &                          -0.2 &                                0 &                       5 \\
+      $(x+0.5)^{4} + \cos(3x)/3$ &   -1 &   0 &                   -0.9352 &                    -0.278823 &                  18 &                       -0.9352 &                        -0.278823 &                      11 \\
+\end{longtable}

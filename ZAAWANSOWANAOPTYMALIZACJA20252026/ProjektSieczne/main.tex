@@ -1,0 +1,315 @@
+% filepath: c:\REPO\studia\ZAAWANSOWANAOPTYMALIZACJA20252026\ProjektSieczne\main.tex
+\documentclass[10pt,a4paper]{article}
+
+% ...existing code...
+% Kodowanie i język
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[polish]{babel}
+
+% Układ strony i mikrotypografia
+\usepackage[a4paper,margin=15mm]{geometry}
+\usepackage{lmodern}
+\usepackage{microtype}
+
+% Podstawowe pakiety
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb}
+\usepackage{siunitx}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{hyperref}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{float}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{minted}
+\usepackage{listings}
+\usepackage{xcolor}
+\lstset{
+  language=Matlab,
+  basicstyle=\ttfamily\small,
+  keywordstyle=\color{blue},
+  commentstyle=\color{gray},
+  frame=single,
+  breaklines=true,
+  numbers=left,
+  numberstyle=\tiny,
+  xleftmargin=1em
+}
+
+
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+
+% Bibliografia (użyj biber lub zmień na natbib jeśli wolisz)
+\usepackage[backend=biber,style=numeric,sorting=none]{biblatex}
+\addbibresource{references.bib} % utwórz plik references.bib w katalogu projektu
+
+% ...existing code...
+\title{Metoda Siecznych}
+\author{Paweł Drzyzga \\ Wydział Informatyki i Matematyki \\ Politechnika Krakowska}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+% \begin{abstract}
+% Krótki opis pracy: cel, metoda, najważniejsze wyniki. Tutaj umieść streszczenie po polsku.
+% \end{abstract}
+
+\tableofcontents
+\clearpage
+
+\section{Opis teoretyczny}
+\subsection{Opis teoretyczny metody -- Metoda siecznych}
+
+\subsubsection{Charakterystyka metody}
+
+Metoda siecznych, zwana czasem również „metodą cięciw”, to algorytm numeryczny służący do znajdowania miejsc zerowych funkcji jednej zmiennej, czyli rozwiązywania równania
+\[
+f(x) = 0.
+\]
+W literaturze polskojęzycznej metoda najczęściej opisana jest jako algorytm interpolacji liniowej, który nie wymaga znajomości pochodnej funkcji ani nawet założenia różniczkowalności. 
+
+\subsubsection{Idea działania}
+
+Zakładamy, że funkcja $f(x)$ jest ciągła (przynajmniej na małym odcinku), a na przedziale $[a,b]$ przyjmuje wartości o różnych znakach (równoważnie: $f(a)f(b)<0$). Wówczas istnieje przynajmniej jeden pierwiastek w tym przedziale. Metoda siecznych polega na zastąpieniu krzywej $y=f(x)$ na odcinku przybliżoną prostą (sieczną) przebiegającą przez punkty $(x_{n-1},f(x_{n-1}))$ i $(x_n,f(x_n))$. Przecięcie tej siecznej z osią $x$ daje nowe przybliżenie $x_{n+1}$.
+
+\subsubsection{Wzór rekurencyjny}
+
+W podstawowej postaci możemy zapisać system początkowy i wzór:
+\[
+\begin{cases}
+x_0 = a,\\[4pt]
+x_1 = b,\\[4pt]
+x_{n+1} = \dfrac{f(x_{n})\,x_{n-1} - f(x_{n-1})\,x_{n}}{f(x_{n}) - f(x_{n-1})}.
+\end{cases}
+\]
+
+Alternatywna, często stosowana postać (również poprawna) to:
+\[
+x_{n+1} = x_n - f(x_n)\,\frac{x_n - x_{n-1}}{f(x_n) - f(x_{n-1})}.
+\]
+
+\subsubsection{Wymagania i zbieżność}
+
+Aby metoda miała szansę działać prawidłowo, typowo wymagamy między innymi:
+\begin{itemize}
+  \item funkcja $f$ jest ciągła na przedziale $[a,b]$,
+  \item wartości na końcach mają różne znaki (np. $f(a)f(b)<0$), co zapewnia istnienie pierwiastka.
+\end{itemize}
+% Metoda nie zawsze jest zbieżna — zdarzają się sytuacje, gdy kolejne przybliżenia nie zbliżają się do pierwiastka lub „skaczą”.
+
+\section{Schemat blokowy}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.6\textwidth]{SchematBlokowy.png}
+  \caption{Schemat blokowy metody siecznych.}
+  \label{fig:schemat_blokowy_sieczne}
+\end{figure}
+
+
+
+\section{Pseudokod algorytmu}
+\begin{algorithm}[H]
+\caption{Metoda siecznych dla wyznaczania ekstremum funkcji jednej zmiennej}
+\label{alg:sieczne}
+\begin{algorithmic}[1]
+\Require Funkcja $f(x)$, przybliżenia początkowe $x_0, x_1$, tolerancja $\epsilon$, maksymalna liczba iteracji $maxit$, krok różniczkowania $h$
+\State Oblicz pochodną numeryczną: $g(x) = \dfrac{f(x+h) - f(x-h)}{2h}$ (jeśli pochodna analityczna nie jest dostępna)
+\State $g_0 \gets g(x_0)$, \quad $g_1 \gets g(x_1)$
+\State $iter \gets 0$
+\While{$iter < maxit$}
+    \If{$g_1 - g_0 = 0$}
+        \State \textbf{przerwij} \Comment{dzielnik równy zero}
+    \EndIf
+    \State $x_2 \gets x_1 - g_1 \cdot \dfrac{x_1 - x_0}{g_1 - g_0}$
+    \If{$|x_2 - x_1| < \epsilon$}
+        \State \Return $x_{min} = x_2$, $f_{min} = f(x_2)$, liczba iteracji = $iter$
+    \EndIf
+    \State $x_0 \gets x_1$
+    \State $g_0 \gets g_1$
+    \State $x_1 \gets x_2$
+    \State $g_1 \gets g(x_1)$
+    \State $iter \gets iter + 1$
+\EndWhile
+\State \Return komunikat: \textit{"Osiągnięto maksymalną liczbę iteracji"}
+\end{algorithmic}
+\end{algorithm}
+
+\section{Implementacja w Matlab}
+% \begin{lstlisting}[caption={Funkcja \texttt{secant\_extremum.m} -- metoda siecznych dla $f'(x)=0$},label={lst:secant}]
+
+\begin{minted}[frame=single,fontsize=\small,linenos]{matlab}
+function [xmin, fmin, iter, hist] = secant_extremum(f, x0, x1, tol, maxit, h)
+
+    if nargin < 4 || isempty(tol),   tol   = 1e-8; end
+    if nargin < 5 || isempty(maxit), maxit = 100;  end
+    if nargin < 6 || isempty(h),     h     = 1e-6; end
+
+    % Funkcja pomocnicza: numeryczna pochodna centralna
+    g = @(x) (f(x + h) - f(x - h)) / (2*h);
+
+    xkm1 = x0;
+    xk   = x1;
+    gkm1 = g(xkm1);
+    gk   = g(xk);
+
+    hist = [0, xkm1, gkm1; 1, xk, gk];
+
+    for k = 1:maxit
+        denom = (gk - gkm1);
+        if denom == 0
+            warning('SECANT_EXTREMUM:ZeroDenominator', 'Dzielnik równy zero — przerywam.');
+            break;
+        end
+        xkp1 = xk - gk * (xk - xkm1) / denom;
+
+        hist = [hist; k+1, xkp1, g(xkp1)]; %#ok<AGROW>
+
+        if abs(xkp1 - xk) < tol
+            xk = xkp1;
+            break;
+        end
+
+        xkm1 = xk;   gkm1 = gk;
+        xk   = xkp1; gk   = g(xk);
+    end
+
+    xmin = xk;
+    fmin = f(xmin);
+    iter = size(hist,1)-1;
+end
+\end{minted}
+
+\section{Prosty przykład liczbowy}
+\subsection*{Przykład: metoda siecznych dla $g(x)=x^2-2$ na przedziale $[1,2]$}
+
+Dane początkowe: $x_0 = 1$, $x_1 = 2$, $g(x) = x^2 - 2$.  
+Iteracyjny wzór metody siecznych:
+\[
+x_{k+1} = x_k - g(x_k)\,\frac{x_k - x_{k-1}}{g(x_k) - g(x_{k-1})}.
+\]
+
+\noindent\textbf{Iteracja 1.}
+\[
+g(x_0) = 1^2 - 2 = -1, \qquad g(x_1) = 2^2 - 2 = 2.
+\]
+\[
+x_2 = 2 - 2\cdot\frac{2 - 1}{\,2 - (-1)\,} 
+     = 2 - \frac{2}{3} 
+     = \frac{4}{3}, 
+\qquad 
+g\!\left(\tfrac{4}{3}\right) = \tfrac{16}{9} - 2 = -\tfrac{2}{9} \approx -0.222222.
+\]
+
+\noindent\textbf{Iteracja 2.}
+\[
+x_3 
+= \frac{4}{3} - \!\left(-\tfrac{2}{9}\right)
+  \frac{\,\tfrac{4}{3} - 2\,}{-\tfrac{2}{9} - 2}
+= \frac{4}{3} - \Big(-\tfrac{2}{9}\Big)\cdot\frac{-\tfrac{2}{3}}{-\tfrac{20}{9}}
+= \frac{4}{3} + \frac{1}{15}
+= \frac{7}{5},
+\]
+\[
+g\!\left(\tfrac{7}{5}\right) = \tfrac{49}{25} - 2 = -\tfrac{1}{25} = -0.04.
+\]
+
+\noindent\textbf{Iteracja 3.}
+\[
+x_4 
+= \frac{7}{5} - \!\left(-\tfrac{1}{25}\right)
+  \frac{\,\tfrac{7}{5} - \tfrac{4}{3}\,}{-\tfrac{1}{25} - \left(-\tfrac{2}{9}\right)}
+= \frac{7}{5} - \Big(-\tfrac{1}{25}\Big)\cdot
+  \frac{\tfrac{1}{15}}{\tfrac{41}{225}}
+= \frac{7}{5} + \frac{3}{205}
+= \frac{58}{41},
+\]
+\[
+g\!\left(\tfrac{58}{41}\right) 
+= \left(\tfrac{58}{41}\right)^{\!2} - 2 
+= \tfrac{3364}{1681} - 2 
+= \tfrac{2}{1681} \approx 0.00118977.
+\]
+
+\noindent\textbf{Iteracja 4.}
+\[
+x_5 
+= x_4 - g(x_4)\,\frac{x_4 - x_3}{g(x_4) - g(x_3)}
+= \tfrac{58}{41} - \tfrac{2}{1681}\cdot \frac{\,\tfrac{58}{41} - \tfrac{7}{5}\,}{\,\tfrac{2}{1681} - \left(-\tfrac{1}{25}\right)}
+= \tfrac{33\,456}{23\,657},
+\]
+\[
+g\!\left(\tfrac{33\,456}{23\,657}\right) 
+= \left(\tfrac{33\,456}{23\,657}\right)^{\!2} - 2 
+= \frac{-3362}{23\,657^{2}} 
+\approx -6.01\times 10^{-6}.
+\]
+
+\[
+\boxed{
+x_2 = \tfrac{4}{3},\quad 
+x_3 = \tfrac{7}{5},\quad 
+x_4 = \tfrac{58}{41},\quad
+x_5 = \tfrac{33\,456}{23\,657} \approx 1.4142 \approx \sqrt{2}.
+}
+\]
+
+\noindent
+Dla przejrzystości zestawmy wszystkie wartości $x_n$ i $g(x_n)$:
+
+\begin{center}
+\begin{tabular}{ccccc}
+\toprule
+$n$ & $x_n$ (dokładnie) & $x_n$ ($\approx$) & $g(x_n)$ (dokładnie) & $g(x_n)$ ($\approx$) \\
+\midrule
+0 & $1$ & $1.000000$ & $-1$ & $-1.000000$ \\
+1 & $2$ & $2.000000$ & $2$ & $2.000000$ \\
+2 & $\tfrac{4}{3}$ & $1.333333$ & $-\tfrac{2}{9}$ & $-0.222222$ \\
+3 & $\tfrac{7}{5}$ & $1.400000$ & $-\tfrac{1}{25}$ & $-0.040000$ \\
+4 & $\tfrac{58}{41}$ & $1.414634$ & $\tfrac{2}{1681}$ & $0.001190$ \\
+5 & $\tfrac{33\,456}{23\,657}$ & $1.414200$ & $-\tfrac{3362}{23\,657^{2}}$ & $-6.01\times 10^{-6}$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\noindent
+Widzimy, że kolejne przybliżenia $x_n$ szybko zbliżają się do $\sqrt{2}\approx1.41421356$, 
+a wartości $g(x_n)$ zmieniają znak naprzemiennie, co jest charakterystyczne 
+dla zbieżności metody siecznych w pobliżu pierwiastka.
+
+
+
+% \end{lstlisting}
+
+\section{Porównanie}
+\input{wyniki_porownania_full.tex}
+
+\section{Podsumowanie i wnioski}
+
+W pracy przeprowadzono eksperyment badawczy nad metodą siecznych w dwóch zastosowaniach:
+(i) wyznaczanie pierwiastka równania $g(x)=0$ (klasyczna postać), oraz
+(ii) wyznaczanie ekstremum funkcji jednej zmiennej przez rozwiązywanie równania $f'(x)=0$ z pochodną aproksymowaną różnicą centralną.
+Przygotowano opis teoretyczny, schemat blokowy, implementację oraz przykład liczbowy, a w sekcji \emph{Porównanie} zestawiono wyniki jakościowe i ilościowe.
+
+Najważniejsze obserwacje z eksperymentu są następujące:
+\begin{itemize}
+  \item \textbf{Zbieżność.} Zbiezność w tym algorytmie występuje bardzo szybko. W praktyce przekłada się to na szybki spadek błędu, co dobrze ilustruje przykład wyznaczania $\sqrt{2}$.
+  \item \textbf{Koszt obliczeniowy.} W wariancie korzeniowym jedna iteracja wymaga jednej oceny funkcji. W wariancie ekstremum (z $f'(x)\approx\tfrac{f(x+h)-f(x-h)}{2h}$) potrzeba dwóch ocen $f$ na krok.
+  \item \textbf{Wrażliwość na punkty startowe.} Skuteczność i szybkość zbieżności silnie zależą od doboru $x_0, x_1$. Gdy wartości pochodnej/\-funkcji w punktach startowych są bardzo zbliżone, pojawia się niestabilność (mianownik bliski zeru) i skoki przybliżeń — konieczne są zabezpieczenia w kodzie.
+  \item \textbf{Kryteria stopu.} Stosowanie łącznego kryterium $|x_{k+1}-x_k|<\varepsilon$ \emph{i} $|f(x_k)|<\varepsilon_f$ jest praktycznie skuteczniejsze niż samo kryterium w przestrzeni $x$.
+\end{itemize}
+
+\paragraph{Wnioski praktyczne.}
+\begin{itemize}
+  \item \emph{Rekomendacja użycia:} metoda siecznych jest dobrym wyborem, gdy pochodna nie jest dostępna, a zależy nam na szybkości. Sprawdza się też jako szybkie ,,dowykańczanie'' po wstępnym zawężeniu przedziału.
+  \item \emph{Inicjalizacja:} warto zaczynać z pary $(x_0,x_1)$ uzyskanej metodą przedziałową zapewniającą $f(x_0)f(x_1)<0$ (dla problemu korzeniowego). Zwiększa to szanse zbieżności i stabilność iteracji.
+\end{itemize}
+
+Podsumowując, metoda siecznych jest atrakcyjnym kompromisem między prostotą implementacji, kosztem obliczeń i szybkością zbieżności. Przy właściwej inicjalizacji i z rozsądnymi zabezpieczeniami stanowi praktyczne narzędzie zarówno do wyznaczania pierwiastków, jak i ekstremów funkcji jednej zmiennej.
+
+\end{document}

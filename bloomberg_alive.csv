@@ -1,0 +1,393 @@
+FIGI,Name,Ticker,Exchange Code,Security Type,Market Sector,FIGI Composite,Share Class,Security Description,Security Type 2,bloomberg_url,exists_on_bloomberg
+BBG000BBM6M0,RANK PROGRESS SA,RNK,PW,Common Stock,Equity,BBG000BBM686,BBG001T95MP5,RNK,Common Stock,https://www.bloomberg.com/quote/RNK:PZ,True
+BBG000BF9JB0,INC SA,INC,PW,Common Stock,Equity,BBG000BF9HY9,BBG001S8ZWW5,INC,Common Stock,https://www.bloomberg.com/quote/INC:PZ,True
+BBG000BFD0L5,HARPER HYGIENICS SA,HRP,PW,Common Stock,Equity,BBG000BFD053,BBG001T9BVP8,HRP,Common Stock,https://www.bloomberg.com/quote/HRP:PZ,True
+BBG000BGY0N8,FON SE,FON,PW,Common Stock,Equity,BBG000BGY067,BBG001S7YQ06,FON,Common Stock,https://www.bloomberg.com/quote/FON:PZ,True
+BBG000BMDJP5,INVESTMENT FRIENDS SA,IFR,PW,Common Stock,Equity,BBG000BMDH33,BBG001SDKMN2,IFR,Common Stock,https://www.bloomberg.com/quote/IFR:PZ,True
+BBG000BMGRF5,BANK OCHRONY SRODOWISKA SA,BOS,PW,Common Stock,Equity,BBG000BMGQV9,BBG001S9DKD4,BOS,Common Stock,https://www.bloomberg.com/quote/BOS:PZ,True
+BBG000BMWXJ0,PKO BANK POLSKI SA,PKO,PW,Common Stock,Equity,BBG000BMWX91,BBG001S9F9B9,PKO,Common Stock,https://www.bloomberg.com/quote/PKO:PZ,True
+BBG000BNDZR5,LPP SA,LPP,PW,Common Stock,Equity,BBG000BNDZK2,BBG001S9TZW3,LPP,Common Stock,https://www.bloomberg.com/quote/LPP:PZ,True
+BBG000BNY918,SKYLINE INVESTMENT SA,SKL,PW,Common Stock,Equity,BBG000BNY8S1,BBG001SFJ7T6,SKL,Common Stock,https://www.bloomberg.com/quote/SKL:PZ,True
+BBG000BP0PD1,PGE SA,PGE,PW,Common Stock,Equity,BBG000BP0NZ2,BBG001S96L04,PGE,Common Stock,https://www.bloomberg.com/quote/PGE:PZ,True
+BBG000BPTH48,WASKO SA,WAS,PW,Common Stock,Equity,BBG000BPTGM0,BBG001SB8M14,WAS,Common Stock,https://www.bloomberg.com/quote/WAS:PZ,True
+BBG000BR19C3,KPPD SA,KPD,PW,Common Stock,Equity,BBG000BR1880,BBG001SCF6P3,KPD,Common Stock,https://www.bloomberg.com/quote/KPD:PZ,True
+BBG000BVJ0B5,PBG SA,PBG,PW,Common Stock,Equity,BBG000BVJ034,BBG001SCDNN0,PBG,Common Stock,https://www.bloomberg.com/quote/PBG:PZ,True
+BBG000BXN1R7,AMREST HOLDINGS SE,EAT,PW,Common Stock,Equity,BBG000BXN1L3,BBG001SCYN75,EAT,Common Stock,https://www.bloomberg.com/quote/EAT:PZ,True
+BBG000C1P2R2,SFINKS POLSKA SA,SFS,PW,Common Stock,Equity,BBG000C1P2B9,BBG001SKRL79,SFS,Common Stock,https://www.bloomberg.com/quote/SFS:PZ,True
+BBG000C2J2P9,ALTA SA,AAT,PW,Common Stock,Equity,BBG000C2J233,BBG001SBTSR0,AAT,Common Stock,https://www.bloomberg.com/quote/AAT:PZ,True
+BBG000C2VF94,OPONEO.PL SA,OPN,PW,Common Stock,Equity,BBG000C2VCD6,BBG001SL1GJ3,OPN,Common Stock,https://www.bloomberg.com/quote/OPN:PZ,True
+BBG000C3DVM2,PRAGMA INKASO SA,PRI,PW,Common Stock,Equity,BBG000C3DVF0,BBG001SL6KT8,PRI,Common Stock,https://www.bloomberg.com/quote/PRI:PZ,True
+BBG000C3PQ95,KOGENERACJA,KGN,PW,Common Stock,Equity,BBG000C3PPL3,BBG001SFY078,KGN,Common Stock,https://www.bloomberg.com/quote/KGN:PZ,True
+BBG000C3TSN1,MAGNA POLONIA SA,06N,PW,Common Stock,Equity,BBG000C3TS51,BBG001SFYCC6,06N,Common Stock,https://www.bloomberg.com/quote/06N:PZ,True
+BBG000C462J6,FABRYKA SPRZETU I NARZEDZI,FSG,PW,Common Stock,Equity,BBG000C46260,BBG001SFZ7Y2,FSG,Common Stock,https://www.bloomberg.com/quote/FSG:PZ,True
+BBG000C4B4D2,MANYDEV STUDIO SE,MAN,PW,Common Stock,Equity,BBG000C4B3R9,BBG001SV9S70,MAN,Common Stock,https://www.bloomberg.com/quote/MAN:PZ,True
+BBG000C4CGV4,INTERSPORT POLSKA SA,IPO,PW,Common Stock,Equity,BBG000C4CGD4,BBG001SLCVD4,IPO,Common Stock,https://www.bloomberg.com/quote/IPO:PZ,True
+BBG000CHZ7N9,BANK HANDLOWY W WARSZAWIE SA,BHW,PW,Common Stock,Equity,BBG000CHZ731,BBG001SFXW51,BHW,Common Stock,https://www.bloomberg.com/quote/BHW:PZ,True
+BBG000CHZBK3,LUBAWA SA,LBW,PW,Common Stock,Equity,BBG000CHZ9M6,BBG001SFXW60,LBW,Common Stock,https://www.bloomberg.com/quote/LBW:PZ,True
+BBG000CHZDF5,PRZEDSIEBIORSTWO PRODUKCYJNO,KMP,PW,Common Stock,Equity,BBG000CHZD47,BBG001SFXW79,KMP,Common Stock,https://www.bloomberg.com/quote/KMP:PZ,True
+BBG000CHZJT7,SANOK RUBBER COMPANY SA,SNK,PW,Common Stock,Equity,BBG000CHZJ80,BBG001SFXWB4,SNK,Common Stock,https://www.bloomberg.com/quote/SNK:PZ,True
+BBG000CJ1Z78,COGNOR SA,COG,PW,Common Stock,Equity,BBG000CJ1Z23,BBG001SFXWM2,COG,Common Stock,https://www.bloomberg.com/quote/COG:PZ,True
+BBG000CJ2519,APATOR SA,APT,PW,Common Stock,Equity,BBG000CJ24J3,BBG001SFXWQ8,APT,Common Stock,https://www.bloomberg.com/quote/APT:PZ,True
+BBG000CJ29G5,ZAKLADY LENTEX SA,LTX,PW,Common Stock,Equity,BBG000CJ28X8,BBG001SFXWT5,LTX,Common Stock,https://www.bloomberg.com/quote/LTX:PZ,True
+BBG000CJ2C69,BEST SA,BST,PW,Common Stock,Equity,BBG000CJ2BX1,BBG001SFXWV2,BST,Common Stock,https://www.bloomberg.com/quote/BST:PZ,True
+BBG000CJ2FD4,ULMA CONSTRUCCION POLSKA SA,ULM,PW,Common Stock,Equity,BBG000CJ2DF7,BBG001SFXWW1,ULM,Common Stock,https://www.bloomberg.com/quote/ULM:PZ,True
+BBG000CJ3P78,SOHO DEVELOPMENT SA,SHD,PW,Common Stock,Equity,BBG000CJ3NT9,BBG001SFXX13,SHD,Common Stock,https://www.bloomberg.com/quote/SHD:PZ,True
+BBG000CJ4VL8,IMPERA CAPITAL SA,IMP,PW,Common Stock,Equity,BBG000CJ4V74,BBG001SFXX31,IMP,Common Stock,https://www.bloomberg.com/quote/IMP:PZ,True
+BBG000CJ4XH9,NFI OCTAVA SA,08N,PW,Common Stock,Equity,BBG000CJ4WS9,BBG001SFXX40,08N,Common Stock,https://www.bloomberg.com/quote/08N:PZ,True
+BBG000CJ52Z6,BBI DEVELOPMENT SA,BBD,PW,Common Stock,Equity,BBG000CJ52P7,BBG001SFXX77,BBD,Common Stock,https://www.bloomberg.com/quote/BBD:PZ,True
+BBG000CJ6GW7,PEPEES,PPS,PW,Common Stock,Equity,BBG000CJ6G11,BBG001SFXXF8,PPS,Common Stock,https://www.bloomberg.com/quote/PPS:PZ,True
+BBG000CJ6JT5,KGHM POLSKA MIEDZ SA,KGH,PW,Common Stock,Equity,BBG000CJ6JM2,BBG001SFCTN1,KGH,Common Stock,https://www.bloomberg.com/quote/KGH:PZ,True
+BBG000CJ7P92,STALPRODUKT SA,STP,PW,Common Stock,Equity,BBG000CJ7N60,BBG001SFXXG7,STP,Common Stock,https://www.bloomberg.com/quote/STP:PZ,True
+BBG000CJ7QY2,ENERGOAPARATURA SA,ENP,PW,Common Stock,Equity,BBG000CJ7QJ9,BBG001SFXXH6,ENP,Common Stock,https://www.bloomberg.com/quote/ENP:PZ,True
+BBG000CJ7SW0,AMICA SA,AMC,PW,Common Stock,Equity,BBG000CJ7SH7,BBG001SFXXJ4,AMC,Common Stock,https://www.bloomberg.com/quote/AMC:PZ,True
+BBG000CJBQF8,MONNARI TRADE SA,MON,PW,Common Stock,Equity,BBG000CJBPX0,BBG001SLZTH0,MON,Common Stock,https://www.bloomberg.com/quote/MON:PZ,True
+BBG000CNFRH1,DGA SA,DGA,PW,Common Stock,Equity,BBG000CNFR45,BBG001SFLV56,DGA,Common Stock,https://www.bloomberg.com/quote/DGA:PZ,True
+BBG000CP8SV6,TALEX,TLX,PW,Common Stock,Equity,BBG000CP7R03,BBG001SGF9V1,TLX,Common Stock,https://www.bloomberg.com/quote/TLX:PZ,True
+BBG000CW2H41,SNIEZKA,SKA,PW,Common Stock,Equity,BBG000CW2GK5,BBG001SFTG15,SKA,Common Stock,https://www.bloomberg.com/quote/SKA:PZ,True
+BBG000D0J735,INSTAL KRAKOW,INK,PW,Common Stock,Equity,BBG000D0J6F4,BBG001SFXZS9,INK,Common Stock,https://www.bloomberg.com/quote/INK:PZ,True
+BBG000D0JDP8,ORLEN SA,PKN,PW,Common Stock,Equity,BBG000D0JCZ9,BBG001SDW6Y2,PKN,Common Stock,https://www.bloomberg.com/quote/PKN:PZ,True
+BBG000D0KNX5,PJPMAKRUM SA,PJP,PW,Common Stock,Equity,BBG000D0KN56,BBG001SFY032,PJP,Common Stock,https://www.bloomberg.com/quote/PJP:PZ,True
+BBG000D2FBL6,ELKOP ESTONIA SE,EKP,PW,Common Stock,Equity,BBG000D2FB27,BBG001SH9C12,EKP,Common Stock,https://www.bloomberg.com/quote/EKP:PZ,True
+BBG000D2ZHY7,AB SA,ABE,PW,Common Stock,Equity,BBG000D2ZHK2,BBG001SMCJH5,ABE,Common Stock,https://www.bloomberg.com/quote/ABE:PZ,True
+BBG000D7VF56,ART NEW MEDIA SA,ANM,PW,Common Stock,Equity,BBG000D7VDS6,BBG001T0TBZ1,ANM,Common Stock,https://www.bloomberg.com/quote/ANM:PZ,True
+BBG000D86QG6,UNICREDIT SPA,UCG,PW,Common Stock,Equity,BBG000D86PS5,BBG001S6T1S9,UCG,Common Stock,https://www.bloomberg.com/quote/UCG:PZ,True
+BBG000D9DHR4,GETIN HOLDING SA,GTN,PW,Common Stock,Equity,BBG000D9DGZ7,BBG001SHWH79,GTN,Common Stock,https://www.bloomberg.com/quote/GTN:PZ,True
+BBG000DBY315,ZAKLADY CHEMICZNE POLICE SA,PCE,PW,Common Stock,Equity,BBG000DBY2B6,BBG001SMJ418,PCE,Common Stock,https://www.bloomberg.com/quote/PCE:PZ,True
+BBG000DCTR89,BANK MILLENNIUM SA,MIL,PW,Common Stock,Equity,BBG000DCTQT8,BBG001S873C2,MIL,Common Stock,https://www.bloomberg.com/quote/MIL:PZ,True
+BBG000DCV236,ING BANK SLASKI SA,ING,PW,Common Stock,Equity,BBG000DCV1B9,BBG001S873N0,ING,Common Stock,https://www.bloomberg.com/quote/ING:PZ,True
+BBG000DG9HG5,CARLSON INVESTMENTS SA,CAI,PW,Common Stock,Equity,BBG000DG9GX8,BBG001T12VZ4,CAI,Common Stock,https://www.bloomberg.com/quote/CAI:PZ,True
+BBG000DP4F92,SANTANDER BANK POLSKA SA,SPL,PW,Common Stock,Equity,BBG000DP4DY9,BBG001S8QSS9,SPL,Common Stock,https://www.bloomberg.com/quote/SPL:PZ,True
+BBG000F6QKF0,POLIMEX-MOSTOSTAL SA,PXM,PW,Common Stock,Equity,BBG000F6PHL1,BBG001SFXXP7,PXM,Common Stock,https://www.bloomberg.com/quote/PXM:PZ,True
+BBG000F6RWF3,WAWEL SA,WWL,PW,Common Stock,Equity,BBG000F6RVK9,BBG001SFXXV0,WWL,Common Stock,https://www.bloomberg.com/quote/WWL:PZ,True
+BBG000F6S5Q9,ZAKLADY MAGNEZYTOWE ROPCZYCE,RPC,PW,Common Stock,Equity,BBG000F6S5G0,BBG001SFXY20,RPC,Common Stock,https://www.bloomberg.com/quote/RPC:PZ,True
+BBG000F6VHT6,ASSECO POLAND SA,ACP,PW,Common Stock,Equity,BBG000F6VGY2,BBG001SFXY66,ACP,Common Stock,https://www.bloomberg.com/quote/ACP:PZ,True
+BBG000F6VM79,SANWIL HOLDING SA,SNW,PW,Common Stock,Equity,BBG000F6VLW3,BBG001SFXY84,SNW,Common Stock,https://www.bloomberg.com/quote/SNW:PZ,True
+BBG000F6VPG2,ODLEWNIE POLSKIE SA,ODL,PW,Common Stock,Equity,BBG000F6VP18,BBG001SFXYB0,ODL,Common Stock,https://www.bloomberg.com/quote/ODL:PZ,True
+BBG000F6VTQ3,PRZEDSIEBIORSTWO HYDRAULIKI,HDR,PW,Common Stock,Equity,BBG000F6VT65,BBG001SFXYD8,HDR,Common Stock,https://www.bloomberg.com/quote/HDR:PZ,True
+BBG000F6VY55,MENNICA POLSKA SA,MNC,PW,Common Stock,Equity,BBG000F6VXP5,BBG001SFXYG5,MNC,Common Stock,https://www.bloomberg.com/quote/MNC:PZ,True
+BBG000F6W0H5,MUZA SA,MZA,PW,Common Stock,Equity,BBG000F6VZS7,BBG001SFXYH4,MZA,Common Stock,https://www.bloomberg.com/quote/MZA:PZ,True
+BBG000F6YJD6,ORANGE POLSKA SA,OPL,PW,Common Stock,Equity,BBG000F6YHK2,BBG001SFXYR3,OPL,Common Stock,https://www.bloomberg.com/quote/OPL:PZ,True
+BBG000F714H9,BANK PEKAO SA,PEO,PW,Common Stock,Equity,BBG000F714C4,BBG001SFXZ36,PEO,Common Stock,https://www.bloomberg.com/quote/PEO:PZ,True
+BBG000F716Q4,LUBELSKIE ZAKLADY PRZEMYSLU,PRT,PW,Common Stock,Equity,BBG000F71657,BBG001SFXZ45,PRT,Common Stock,https://www.bloomberg.com/quote/PRT:PZ,True
+BBG000F745M7,AGORA SA,AGO,PW,Common Stock,Equity,BBG000F74547,BBG001SDP6W2,AGO,Common Stock,https://www.bloomberg.com/quote/AGO:PZ,True
+BBG000F7NW92,GLOBE TRADE CENTRE SA,GTC,PW,Common Stock,Equity,BBG000F7NVL0,BBG001SFZ754,GTC,Common Stock,https://www.bloomberg.com/quote/GTC:PZ,True
+BBG000F867H5,TRITON DEVELOPMENT SA,TRI,PW,Common Stock,Equity,BBG000F866W0,BBG001SG01T7,TRI,Common Stock,https://www.bloomberg.com/quote/TRI:PZ,True
+BBG000FK2416,MCI CAPITAL SA,MCI,PW,Common Stock,Equity,BBG000FK2345,BBG001SGVP74,MCI,Common Stock,https://www.bloomberg.com/quote/MCI:PZ,True
+BBG000FMPVT7,FAST FINANCE SA,FFI,PW,Common Stock,Equity,BBG000FMPV26,BBG001T2MM08,FFI,Common Stock,https://www.bloomberg.com/quote/FFI:PZ,True
+BBG000FVZW05,SECO/WARWICK SA,SWG,PW,Common Stock,Equity,BBG000FVZV07,BBG001SNRDR9,SWG,Common Stock,https://www.bloomberg.com/quote/SWG:PZ,True
+BBG000G465N0,LUBELSKI WEGIEL BOGDANKA SA,LWB,PW,Common Stock,Equity,BBG000G46550,BBG001T2T848,LWB,Common Stock,https://www.bloomberg.com/quote/LWB:PZ,True
+BBG000GH9D79,LENA LIGHTING SA,LEN,PW,Common Stock,Equity,BBG000GH89X0,BBG001SNXK78,LEN,Common Stock,https://www.bloomberg.com/quote/LEN:PZ,True
+BBG000GL8Q90,DECORA SA,DCR,PW,Common Stock,Equity,BBG000GL8PM7,BBG001SNY9L6,DCR,Common Stock,https://www.bloomberg.com/quote/DCR:PZ,True
+BBG000GLSQV3,REDAN SA,RDN,PW,Common Stock,Equity,BBG000GLSQG0,BBG001SH9679,RDN,Common Stock,https://www.bloomberg.com/quote/RDN:PZ,True
+BBG000HH93P0,POLENERGIA SA,PEP,PW,Common Stock,Equity,BBG000HH92Z1,BBG001SNCGQ9,PEP,Common Stock,https://www.bloomberg.com/quote/PEP:PZ,True
+BBG000HY94Y1,INDYGO,IDG,PW,Common Stock,Equity,BBG000HY94F2,BBG001S7ZFZ1,IDG,Common Stock,https://www.bloomberg.com/quote/IDG:PZ,True
+BBG000JHCYT2,ZAKLADY AZOTOWE PULAWY SA,ZAP,PW,Common Stock,Equity,BBG000JHCYF7,BBG001SJ4VG5,ZAP,Common Stock,https://www.bloomberg.com/quote/ZAP:PZ,True
+BBG000JJXC13,BETACOM SA,BCM,PW,Common Stock,Equity,BBG000JJX9V7,BBG001SJ5M83,BCM,Common Stock,https://www.bloomberg.com/quote/BCM:PZ,True
+BBG000JMQK34,GPM VINDEXUS SA,VIN,PW,Common Stock,Equity,BBG000JMQJV6,BBG001T3PM12,VIN,Common Stock,https://www.bloomberg.com/quote/VIN:PZ,True
+BBG000JQWNF9,TRANS POLONIA SA,TRN,PW,Common Stock,Equity,BBG000JQWMW2,BBG001T3QXB6,TRN,Common Stock,https://www.bloomberg.com/quote/TRN:PZ,True
+BBG000KCB7B0,AUTOMATYKA POMIARY STEROWANI,APS,PW,Common Stock,Equity,BBG000KCB6K2,BBG001T3YPJ6,APS,Common Stock,https://www.bloomberg.com/quote/APS:PZ,True
+BBG000KFQYW5,PZ CORMAY SA,CRM,PW,Common Stock,Equity,BBG000KFQYD6,BBG001T3Z9M7,CRM,Common Stock,https://www.bloomberg.com/quote/CRM:PZ,True
+BBG000KN2QY9,MILKPOL SA,MLP,PW,Common Stock,Equity,BBG000KN2QQ8,BBG001T416C9,MLP,Common Stock,https://www.bloomberg.com/quote/MLP:PZ,True
+BBG000KYH0P6,READ-GENE SA,RDG,PW,Common Stock,Equity,BBG000KYH049,BBG001T44HY8,RDG,Common Stock,https://www.bloomberg.com/quote/RDG:PZ,True
+BBG000LB1LL0,MEDICOFARMA BIOTECH SA,MDB,PW,Common Stock,Equity,BBG000LB1L94,BBG001T486G8,MDB,Common Stock,https://www.bloomberg.com/quote/MDB:PZ,True
+BBG000LT1FV3,LSI SOFTWARE SA,LSI,PW,Common Stock,Equity,BBG000LT1F98,BBG001SQ4P45,LSI,Common Stock,https://www.bloomberg.com/quote/LSI:PZ,True
+BBG000LZVD78,ELEKTROMONT SA,ELM,PW,Common Stock,Equity,BBG000LZVCJ7,BBG001T4HHP4,ELM,Common Stock,https://www.bloomberg.com/quote/ELM:PZ,True
+BBG000M27V95,REGNON SA,REG,PW,Common Stock,Equity,BBG000M27TX3,BBG001SQ70Q3,REG,Common Stock,https://www.bloomberg.com/quote/REG:PZ,True
+BBG000M2QCG8,IPOPEMA SECURITIES SA,IPE,PW,Common Stock,Equity,BBG000M2QBV3,BBG001SQ77K4,IPE,Common Stock,https://www.bloomberg.com/quote/IPE:PZ,True
+BBG000M7YQ40,ASTARTA HOLDING PLC,AST,PW,Common Stock,Equity,BBG000M7YPK4,BBG001SFHC71,AST,Common Stock,https://www.bloomberg.com/quote/AST:PZ,True
+BBG000MGZLF8,MOSTOSTAL WARSZAWA SA,MSW,PW,Common Stock,Equity,BBG000MGZL77,BBG001SFXTL0,MSW,Common Stock,https://www.bloomberg.com/quote/MSW:PZ,True
+BBG000MGZR47,FIRMA OPONIARSKA DEBICA SA,DBC,PW,Common Stock,Equity,BBG000MGZQM9,BBG001SFXTP6,DBC,Common Stock,https://www.bloomberg.com/quote/DBC:PZ,True
+BBG000MH0V44,REMAK SA,RMK,PW,Common Stock,Equity,BBG000MGZSG2,BBG001SFXTQ5,RMK,Common Stock,https://www.bloomberg.com/quote/RMK:PZ,True
+BBG000MH22G3,STALEXPORT AUTOSTRADY SA,STX,PW,Common Stock,Equity,BBG000MH21V8,BBG001SFXTW8,STX,Common Stock,https://www.bloomberg.com/quote/STX:PZ,True
+BBG000MH2941,NOVITA SA,NVT,PW,Common Stock,Equity,BBG000MH28F1,BBG001SFXV17,NVT,Common Stock,https://www.bloomberg.com/quote/NVT:PZ,True
+BBG000MH2G18,KORPORACJA GOSPODARCZA EFEKT,EFK,PW,Common Stock,Equity,BBG000MH2FK9,BBG001SFXV35,EFK,Common Stock,https://www.bloomberg.com/quote/EFK:PZ,True
+BBG000MH2PX3,MOSTOSTAL ZABRZE SA,MSZ,PW,Common Stock,Equity,BBG000MH2PH1,BBG001SFXV80,MSZ,Common Stock,https://www.bloomberg.com/quote/MSZ:PZ,True
+BBG000MH3TY3,PROCHEM,PRM,PW,Common Stock,Equity,BBG000MH3TB8,BBG001SFXV99,PRM,Common Stock,https://www.bloomberg.com/quote/PRM:PZ,True
+BBG000MH51N4,BUDIMEX,BDX,PW,Common Stock,Equity,BBG000MH51B7,BBG001SFXVG1,BDX,Common Stock,https://www.bloomberg.com/quote/BDX:PZ,True
+BBG000MH5635,SYGNITY SA,SGN,PW,Common Stock,Equity,BBG000MH55L7,BBG001SFXVL5,SGN,Common Stock,https://www.bloomberg.com/quote/SGN:PZ,True
+BBG000MH59G5,PMPG POLSKIE MEDIA SA,PGM,PW,Common Stock,Equity,BBG000MH5920,BBG001SFXVP1,PGM,Common Stock,https://www.bloomberg.com/quote/PGM:PZ,True
+BBG000MH5G33,RELPOL SA,RLP,PW,Common Stock,Equity,BBG000MH5FJ8,BBG001SFXVR9,RLP,Common Stock,https://www.bloomberg.com/quote/RLP:PZ,True
+BBG000MH5H77,GRUPA KETY SA,KTY,PW,Common Stock,Equity,BBG000MH5GP9,BBG001SFXVS8,KTY,Common Stock,https://www.bloomberg.com/quote/KTY:PZ,True
+BBG000MH7TM2,ECHO INVESTMENT S.A.,ECH,PW,Common Stock,Equity,BBG000MH7T24,BBG001S96BC3,ECH,Common Stock,https://www.bloomberg.com/quote/ECH:PZ,True
+BBG000MH7XV3,FABRYKI MEBLI FORTE SA,FTE,PW,Common Stock,Equity,BBG000MH7WY2,BBG001SFXVX2,FTE,Common Stock,https://www.bloomberg.com/quote/FTE:PZ,True
+BBG000MH8133,BORYSZEW SA,BRS,PW,Common Stock,Equity,BBG000MH80P1,BBG001SFXVZ0,BRS,Common Stock,https://www.bloomberg.com/quote/BRS:PZ,True
+BBG000NCJCY3,TESGAS SA,TSG,PW,Common Stock,Equity,BBG000NCJCB8,BBG001SK2964,TSG,Common Stock,https://www.bloomberg.com/quote/TSG:PZ,True
+BBG000NH8MQ1,EKO EXPORT SA,EEX,PW,Common Stock,Equity,BBG000NH8M36,BBG001T55X60,EEX,Common Stock,https://www.bloomberg.com/quote/EEX:PZ,True
+BBG000P3M4H4,ELEKTROTIM SA,ELT,PW,Common Stock,Equity,BBG000P3M3X8,BBG001SQWD87,ELT,Common Stock,https://www.bloomberg.com/quote/ELT:PZ,True
+BBG000PB9PB0,EUROCASH SA,EUR,PW,Common Stock,Equity,BBG000PB9P39,BBG001SL7V04,EUR,Common Stock,https://www.bloomberg.com/quote/EUR:PZ,True
+BBG000PMF0R7,INTER CARS SA,CAR,PW,Common Stock,Equity,BBG000PMDZX5,BBG001SKD267,CAR,Common Stock,https://www.bloomberg.com/quote/CAR:PZ,True
+BBG000PMFXQ6,ARCTIC PAPER SA,ATC,PW,Common Stock,Equity,BBG000PMFWX0,BBG001T5QQX2,ATC,Common Stock,https://www.bloomberg.com/quote/ATC:PZ,True
+BBG000PMFZM5,CFI HOLDING SA,CFI,PW,Common Stock,Equity,BBG000PMFZ18,BBG001T5QQY1,CFI,Common Stock,https://www.bloomberg.com/quote/CFI:PZ,True
+BBG000PMG1P6,PATENTUS SA,PAT,PW,Common Stock,Equity,BBG000PMG1L0,BBG001T5QQZ0,PAT,Common Stock,https://www.bloomberg.com/quote/PAT:PZ,True
+BBG000PNFW77,IBSM SA,IBS,PW,Common Stock,Equity,BBG000PNFVX0,BBG001T5S5W7,IBS,Common Stock,https://www.bloomberg.com/quote/IBS:PZ,True
+BBG000PQG9Q9,ATON-HT SA,ATO,PW,Common Stock,Equity,BBG000PQG9B5,BBG001SR91N0,ATO,Common Stock,https://www.bloomberg.com/quote/ATO:PZ,True
+BBG000PR98K3,GRUPA AZOTY SA,ATT,PW,Common Stock,Equity,BBG000PR9869,BBG001SRB0Y7,ATT,Common Stock,https://www.bloomberg.com/quote/ATT:PZ,True
+BBG000PX5T91,MOL HUNGARIAN OIL AND GAS PL,MOL,PW,Common Stock,Equity,BBG000PX5T55,BBG001S8PCW0,MOL,Common Stock,https://www.bloomberg.com/quote/MOL:PZ,True
+BBG000Q0B2F7,GRENEVIA SA,GEA,PW,Common Stock,Equity,BBG000Q0B141,BBG001SP2R36,GEA,Common Stock,https://www.bloomberg.com/quote/GEA:PZ,True
+BBG000Q0MC72,FOODHUB SA,FHB,PW,Common Stock,Equity,BBG000Q0M9X0,BBG001SRLKX3,FHB,Common Stock,https://www.bloomberg.com/quote/FHB:PZ,True
+BBG000Q1SNJ7,UNIBEP SA,UNI,PW,Common Stock,Equity,BBG000Q1SN89,BBG001SRN270,UNI,Common Stock,https://www.bloomberg.com/quote/UNI:PZ,True
+BBG000Q1V5L9,ACTION SA,ACT,PW,Common Stock,Equity,BBG000Q1V566,BBG001SRN403,ACT,Common Stock,https://www.bloomberg.com/quote/ACT:PZ,True
+BBG000Q4KL94,NEUCA SA,NEU,PW,Common Stock,Equity,BBG000Q4KKD1,BBG001SM6699,NEU,Common Stock,https://www.bloomberg.com/quote/NEU:PZ,True
+BBG000Q4W5W0,CAPITAL PARTNERS SA,CPA,PW,Common Stock,Equity,BBG000Q4W5H7,BBG001SM6SX4,CPA,Common Stock,https://www.bloomberg.com/quote/CPA:PZ,True
+BBG000Q5XS38,BIOTON SA,BIO,PW,Common Stock,Equity,BBG000Q5XQT4,BBG001SM8DD7,BIO,Common Stock,https://www.bloomberg.com/quote/BIO:PZ,True
+BBG000Q74VR3,COMP SA,CMP,PW,Common Stock,Equity,BBG000Q74VC9,BBG001SMBLZ1,CMP,Common Stock,https://www.bloomberg.com/quote/CMP:PZ,True
+BBG000Q85YX7,NOTORIA SPOLKA AKCYJNA,NTS,PW,Common Stock,Equity,BBG000Q85YN8,BBG001T6NX22,NTS,Common Stock,https://www.bloomberg.com/quote/NTS:PZ,True
+BBG000Q8L018,EURO-TAX.PL SA,ETX,PW,Common Stock,Equity,BBG000Q8KZX7,BBG001T6PX75,ETX,Common Stock,https://www.bloomberg.com/quote/ETX:PZ,True
+BBG000QBX2C2,MAKARONY POLSKIE SA,MAK,PW,Common Stock,Equity,BBG000QBX214,BBG001SS0S03,MAK,Common Stock,https://www.bloomberg.com/quote/MAK:PZ,True
+BBG000QFL2Q1,EUROTEL SA,ETL,PW,Common Stock,Equity,BBG000QFL2C6,BBG001SS3W47,ETL,Common Stock,https://www.bloomberg.com/quote/ETL:PZ,True
+BBG000QFMBS8,POLMAN SA,PLM,PW,Common Stock,Equity,BBG000QFMBM4,BBG001SS3XX3,PLM,Common Stock,https://www.bloomberg.com/quote/PLM:PZ,True
+BBG000QKZGQ4,MERA SA,MER,PW,Common Stock,Equity,BBG000QKZG66,BBG001SS9KZ3,MER,Common Stock,https://www.bloomberg.com/quote/MER:PZ,True
+BBG000QLNJS7,CCC SA,CCC,PW,Common Stock,Equity,BBG000QLNJN2,BBG001SN43D1,CCC,Common Stock,https://www.bloomberg.com/quote/CCC:PZ,True
+BBG000QN34J8,ASTRO SA,ASR,PW,Common Stock,Equity,BBG000QN3499,BBG001T81ZV5,ASR,Common Stock,https://www.bloomberg.com/quote/ASR:PZ,True
+BBG000QN4YT0,APIS SA,ASA,PW,Common Stock,Equity,BBG000QN4YF5,BBG001T822J1,ASA,Common Stock,https://www.bloomberg.com/quote/ASA:PZ,True
+BBG000QQXM71,FERRO SA,FRO,PW,Common Stock,Equity,BBG000QQXLV6,BBG001T8GSP2,FRO,Common Stock,https://www.bloomberg.com/quote/FRO:PZ,True
+BBG000QRSX44,ERG SA,ERG,PW,Common Stock,Equity,BBG000QRSWP3,BBG001SNJDC4,ERG,Common Stock,https://www.bloomberg.com/quote/ERG:PZ,True
+BBG000QRZB35,NEW TECH CAPITAL SA,NTC,PW,Common Stock,Equity,BBG000QRZ994,BBG001SSJ399,NTC,Common Stock,https://www.bloomberg.com/quote/NTC:PZ,True
+BBG000QWMMP0,IDM SA,IDM,PW,Common Stock,Equity,BBG000QWMLW4,BBG001SP0RP4,IDM,Common Stock,https://www.bloomberg.com/quote/IDM:PZ,True
+BBG000QX2CC6,WARIMPEX FINANZ- UND BETEILI,WXF,PW,Common Stock,Equity,BBG000QX2C72,BBG001SSHTH5,WXF,Common Stock,https://www.bloomberg.com/quote/WXF:PZ,True
+BBG000R0DNJ4,UNFOLD SA,UNF,PW,Common Stock,Equity,BBG000R0DN22,BBG001T8VDY8,UNF,Common Stock,https://www.bloomberg.com/quote/UNF:PZ,True
+BBG000R1Y1H9,KOMPUTRONIK SA,KOM,PW,Common Stock,Equity,BBG000R1Y134,BBG001SSZHZ1,KOM,Common Stock,https://www.bloomberg.com/quote/KOM:PZ,True
+BBG000R21HR7,MUNAR SA,MUN,PW,Common Stock,Equity,BBG000R21HJ6,BBG001T90GC7,MUN,Common Stock,https://www.bloomberg.com/quote/MUN:PZ,True
+BBG000R3VKW9,ATC-CARGO SA,ATA,PW,Common Stock,Equity,BBG000R3VKQ6,BBG001T93404,ATA,Common Stock,https://www.bloomberg.com/quote/ATA:PZ,True
+BBG000R4MC73,MW TRADE SA,MWT,PW,Common Stock,Equity,BBG000R4MBM8,BBG001ST3PJ4,MWT,Common Stock,https://www.bloomberg.com/quote/MWT:PZ,True
+BBG000R53F47,MIRACULUM SA,MIR,PW,Common Stock,Equity,BBG000R53DQ8,BBG001ST4FC2,MIR,Common Stock,https://www.bloomberg.com/quote/MIR:PZ,True
+BBG000RBGMG2,MARIE BRIZARD WINE & SPIRITS,MBW,PW,Common Stock,Equity,BBG000RBGM18,BBG001S60DZ6,MBW,Common Stock,https://www.bloomberg.com/quote/MBW:PZ,True
+BBG000RCGPP3,PA NOVA SA,NVA,PW,Common Stock,Equity,BBG000RCGNS5,BBG001STFR52,NVA,Common Stock,https://www.bloomberg.com/quote/NVA:PZ,True
+BBG000RJ1DT7,ENERGOINSTAL SA,ENI,PW,Common Stock,Equity,BBG000RJ1DF2,BBG001STPMH9,ENI,Common Stock,https://www.bloomberg.com/quote/ENI:PZ,True
+BBG000RJV4F9,FABRYKA OBRABIAREK RAFAMET,RAF,PW,Common Stock,Equity,BBG000RJV423,BBG001STR600,RAF,Common Stock,https://www.bloomberg.com/quote/RAF:PZ,True
+BBG000RLFKZ4,CIGAMES,CIG,PW,Common Stock,Equity,BBG000RLFKV8,BBG001STV3Q4,CIG,Common Stock,https://www.bloomberg.com/quote/CIG:PZ,True
+BBG000RLFMS8,WIELTON SA,WLT,PW,Common Stock,Equity,BBG000RLFMG1,BBG001STV3T1,WLT,Common Stock,https://www.bloomberg.com/quote/WLT:PZ,True
+BBG000RLR4X9,CPI FIM SA,OPG,PW,Common Stock,Equity,BBG000RLR4J5,BBG001S6S3V2,OPG,Common Stock,https://www.bloomberg.com/quote/OPG:PZ,True
+BBG000RRQN10,INTROL SA,INL,PW,Common Stock,Equity,BBG000RRQMJ3,BBG001SV5789,INL,Common Stock,https://www.bloomberg.com/quote/INL:PZ,True
+BBG000RRSB32,TAURON POLSKA ENERGIA SA,TPE,PW,Common Stock,Equity,BBG000RRS9H2,BBG001SV5823,TPE,Common Stock,https://www.bloomberg.com/quote/TPE:PZ,True
+BBG000RSFX27,MIRBUD SA,MRB,PW,Common Stock,Equity,BBG000RSFWD7,BBG001SV6LL2,MRB,Common Stock,https://www.bloomberg.com/quote/MRB:PZ,True
+BBG000RSVY18,TRAKCJA SA,TRK,PW,Common Stock,Equity,BBG000RSVXS1,BBG001SV7HX7,TRK,Common Stock,https://www.bloomberg.com/quote/TRK:PZ,True
+BBG000RV0C68,IZOLACJA JAROCIN SA,IZO,PW,Common Stock,Equity,BBG000RV0BM2,BBG001SV9JJ7,IZO,Common Stock,https://www.bloomberg.com/quote/IZO:PZ,True
+BBG000SWD3W2,VIRTUAL VISION SA,VIV,PW,Common Stock,Equity,BBG000SWD3S7,BBG001SYBV65,VIV,Common Stock,https://www.bloomberg.com/quote/VIV:PZ,True
+BBG000TDVTH3,DIGITAL NETWORK SA,DIG,PW,Common Stock,Equity,BBG000TDVT74,BBG001T00BX4,DIG,Common Stock,https://www.bloomberg.com/quote/DIG:PZ,True
+BBG000TFBDC0,INVESTMENT FRIENDS CAPITAL S,IFC,PW,Common Stock,Equity,BBG000TFBD21,BBG001T00XB0,IFC,Common Stock,https://www.bloomberg.com/quote/IFC:PZ,True
+BBG000TGBW45,TREX SA,TRX,PW,Common Stock,Equity,BBG000TGBVQ3,BBG001T03HB2,TRX,Common Stock,https://www.bloomberg.com/quote/TRX:PZ,True
+BBG000TH1LV8,SATIS GROUP SA,STS,PW,Common Stock,Equity,BBG000TH1LF6,BBG001T05B23,STS,Common Stock,https://www.bloomberg.com/quote/STS:PZ,True
+BBG000TJCCS6,BUMECH SA,BMC,PW,Common Stock,Equity,BBG000TJCC88,BBG001T07BH5,BMC,Common Stock,https://www.bloomberg.com/quote/BMC:PZ,True
+BBG000TJWNB8,ASBISC ENTERPRISES PLC,ASB,PW,Common Stock,Equity,BBG000TJWN55,BBG001SN6YC2,ASB,Common Stock,https://www.bloomberg.com/quote/ASB:PZ,True
+BBG000TSH8Z2,KERNEL HOLDING SA,KER,PW,Common Stock,Equity,BBG000TSH8T9,BBG001SQRHJ2,KER,Common Stock,https://www.bloomberg.com/quote/KER:PZ,True
+BBG000V01GJ7,SAULETECH SA,SLT,PW,Common Stock,Equity,BBG000V01G43,BBG001T0TSP5,SLT,Common Stock,https://www.bloomberg.com/quote/SLT:PZ,True
+BBG000V923R7,ORGANIC FARMA ZDROWIA SA,ORG,PW,Common Stock,Equity,BBG000V923D2,BBG001T1TGX0,ORG,Common Stock,https://www.bloomberg.com/quote/ORG:PZ,True
+BBG000VC7G41,MAXIPIZZA SA,MXP,PW,Common Stock,Equity,BBG000VC7FS7,BBG001T223D8,MXP,Common Stock,https://www.bloomberg.com/quote/MXP:PZ,True
+BBG000VDFQP5,SELENA FM SA,SEL,PW,Common Stock,Equity,BBG000VDFQF6,BBG001T25MM3,SEL,Common Stock,https://www.bloomberg.com/quote/SEL:PZ,True
+BBG000VDZH64,COMPREMUM SA,CPR,PW,Common Stock,Equity,BBG000VDZGW7,BBG001T277X2,CPR,Common Stock,https://www.bloomberg.com/quote/CPR:PZ,True
+BBG000VG0641,IDH SA,IDH,PW,Common Stock,Equity,BBG000VG05V3,BBG001T2BJ52,IDH,Common Stock,https://www.bloomberg.com/quote/IDH:PZ,True
+BBG000VH1RW1,TNTPROENR SA,TNT,PW,Common Stock,Equity,BBG000VH1RM2,BBG001T2FVD2,TNT,Common Stock,https://www.bloomberg.com/quote/TNT:PZ,True
+BBG000VJSPP0,ZREMB-CHOJNICE SA,ZRE,PW,Common Stock,Equity,BBG000VJSPC4,BBG001T2TF24,ZRE,Common Stock,https://www.bloomberg.com/quote/ZRE:PZ,True
+BBG000VLC5W8,STARHEDGE SA,SHG,PW,Common Stock,Equity,BBG000VLC5H5,BBG001T34GR0,SHG,Common Stock,https://www.bloomberg.com/quote/SHG:PZ,True
+BBG000VMJTB0,SONEL SA,SON,PW,Common Stock,Equity,BBG000VMJT11,BBG001T3D3F2,SON,Common Stock,https://www.bloomberg.com/quote/SON:PZ,True
+BBG000VR0941,ENEA SA,ENA,PW,Common Stock,Equity,BBG000VR08R8,BBG001T48R27,ENA,Common Stock,https://www.bloomberg.com/quote/ENA:PZ,True
+BBG0014KMQ42,MABION SA,MAB,PW,Common Stock,Equity,BBG000QY88S0,BBG001T8RDF4,MAB,Common Stock,https://www.bloomberg.com/quote/MAB:PZ,True
+BBG0014WBHF6,ESKIMOS SA,ESK,PW,Common Stock,Equity,BBG0014WBHD8,BBG001TBC8R1,ESK,Common Stock,https://www.bloomberg.com/quote/ESK:PZ,True
+BBG0015VWG75,WIERZYCIEL SA,WRL,PW,Common Stock,Equity,BBG0015VWG66,BBG001TC6H87,WRL,Common Stock,https://www.bloomberg.com/quote/WRL:PZ,True
+BBG0015XT6W9,AQUA SA,AQA,PW,Common Stock,Equity,BBG000RV09Q3,BBG001SV9JF1,AQA,Common Stock,https://www.bloomberg.com/quote/AQA:PZ,True
+BBG0016W6DR6,OTMUCHOW SA,OTM,PW,Common Stock,Equity,BBG0016W6DQ7,BBG001TCMJC0,OTM,Common Stock,https://www.bloomberg.com/quote/OTM:PZ,True
+BBG00171R0K5,ED INVEST SA,EDI,PW,Common Stock,Equity,BBG00171R0J7,BBG001TCNXM7,EDI,Common Stock,https://www.bloomberg.com/quote/EDI:PZ,True
+BBG00178NTZ5,OPTEAM SA,OPM,PW,Common Stock,Equity,BBG00178NTY6,BBG001TCQXK6,OPM,Common Stock,https://www.bloomberg.com/quote/OPM:PZ,True
+BBG00178WB11,ABAK SA,ABK,PW,Common Stock,Equity,BBG00178WB02,BBG001T7WB00,ABK,Common Stock,https://www.bloomberg.com/quote/ABK:PZ,True
+BBG0017C29D7,MLP GROUP SA,MLG,PW,Common Stock,Equity,BBG0017C29C8,BBG001TCRHB0,MLG,Common Stock,https://www.bloomberg.com/quote/MLG:PZ,True
+BBG00193R1P2,APOLLO CAPITAL SA,APC,PW,Common Stock,Equity,BBG00193R1L6,BBG001TG1B13,APC,Common Stock,https://www.bloomberg.com/quote/APC:PZ,True
+BBG0019LNRV2,INTERBUD LUBLIN SA,ITB,PW,Common Stock,Equity,BBG000BL3BY5,BBG001SNQFH6,ITB,Common Stock,https://www.bloomberg.com/quote/ITB:PZ,True
+BBG0019R2GM6,SADOVAYA GROUP SA,SGR,PW,Common Stock,Equity,BBG0019R2GL7,BBG001TG4TZ4,SGR,Common Stock,https://www.bloomberg.com/quote/SGR:PZ,True
+BBG001CDD9P4,AQUA SA,AQU,PW,Common Stock,Equity,BBG001CDD9M7,BBG001TWRW41,AQU,Common Stock,https://www.bloomberg.com/quote/AQU:PZ,True
+BBG001CDSYD6,MILITARY GROUP S.A,MIG,PW,Common Stock,Equity,BBG001CDSYC7,BBG001TWWPX8,MIG,Common Stock,https://www.bloomberg.com/quote/MIG:PZ,True
+BBG001CGJ6V0,CPD SA,CPD,PW,Common Stock,Equity,BBG001CGJ6T3,BBG001TX0FW4,CPD,Common Stock,https://www.bloomberg.com/quote/CPD:PZ,True
+BBG001CN49W4,EUCO SA,EUC,PW,Common Stock,Equity,BBG001CN49V5,BBG001TYLXG8,EUC,Common Stock,https://www.bloomberg.com/quote/EUC:PZ,True
+BBG001D85G59,TELEMEDYCYNA POLSKA SA,TMP,PW,Common Stock,Equity,BBG0014V2FP1,BBG001TBBZV7,TMP,Common Stock,https://www.bloomberg.com/quote/TMP:PZ,True
+BBG001D85RH2,ERATO ENERGY SA,ERA,PW,Common Stock,Equity,BBG000QZSCM2,BBG001T8TNL3,ERA,Common Stock,https://www.bloomberg.com/quote/ERA:PZ,True
+BBG001DLKXY4,HORTICO SA,HOR,PW,Common Stock,Equity,BBG001DLKXX5,BBG001V06YG4,HOR,Common Stock,https://www.bloomberg.com/quote/HOR:PZ,True
+BBG001DNYV97,FOREVER ENTERTAINMENT SA,FOR,PW,Common Stock,Equity,BBG001DNYV88,BBG001V078P0,FOR,Common Stock,https://www.bloomberg.com/quote/FOR:PZ,True
+BBG001F8LR46,BALTICON SA,BLT,PW,Common Stock,Equity,BBG001F8LR37,BBG001V08SL9,BLT,Common Stock,https://www.bloomberg.com/quote/BLT:PZ,True
+BBG001HJGM29,ABS INVESTMENT SA,AIN,PW,Common Stock,Equity,BBG001HJGM10,BBG001V09PJ7,AIN,Common Stock,https://www.bloomberg.com/quote/AIN:PZ,True
+BBG001HTWY78,HYENERGY SA,HEN,PW,Common Stock,Equity,BBG001HTWY69,BBG001SCGPS7,HEN,Common Stock,https://www.bloomberg.com/quote/HEN:PZ,True
+BBG001J07543,AGROLIGA GROUP PLC,AGL,PW,Common Stock,Equity,BBG001J07534,BBG001V0FH62,AGL,Common Stock,https://www.bloomberg.com/quote/AGL:PZ,True
+BBG001J2PF47,KORBANK SA,KOR,PW,Common Stock,Equity,BBG001J2PF38,BBG001V0GFY4,KOR,Common Stock,https://www.bloomberg.com/quote/KOR:PZ,True
+BBG001J6DYD0,INPRO SA,INP,PW,Common Stock,Equity,BBG001BSYC54,BBG001TTMBJ3,INP,Common Stock,https://www.bloomberg.com/quote/INP:PZ,True
+BBG001K1F6H4,MEGARON SA,MEG,PW,Common Stock,Equity,BBG001K1F6G5,BBG001V0K465,MEG,Common Stock,https://www.bloomberg.com/quote/MEG:PZ,True
+BBG001K1GL35,MPL VERBUM SA,VER,PW,Common Stock,Equity,BBG001K1GL26,BBG001V0K4J1,VER,Common Stock,https://www.bloomberg.com/quote/VER:PZ,True
+BBG001KLYZQ5,AKCEPT FINANCE SA,AFC,PW,Common Stock,Equity,BBG001KLYZP6,BBG001V0QC98,AFC,Common Stock,https://www.bloomberg.com/quote/AFC:PZ,True
+BBG001LH6HB0,ENEFI ENERGYEFFICIENCY PLC,EST,PW,Common Stock,Equity,BBG001LH6H93,BBG001SR2KS0,EST,Common Stock,https://www.bloomberg.com/quote/EST:PZ,True
+BBG001MB5X82,ECL SA,ECL,PW,Common Stock,Equity,BBG001MB5X73,BBG001V11197,ECL,Common Stock,https://www.bloomberg.com/quote/ECL:PZ,True
+BBG001N9SPX0,PLGROUP SA,PLG,PW,Common Stock,Equity,BBG001N9SPW1,BBG001V139Z9,PLG,Common Stock,https://www.bloomberg.com/quote/PLG:PZ,True
+BBG001NGC3L3,TAMEX OBIEKTY SPORTOWE SA,TOS,PW,Common Stock,Equity,BBG001NGBRG7,BBG001V14336,TOS,Common Stock,https://www.bloomberg.com/quote/TOS:PZ,True
+BBG001NN76D6,COLUMBUS CAPITAL SA,CLC,PW,Common Stock,Equity,BBG001NN76C7,BBG001V15FW6,CLC,Common Stock,https://www.bloomberg.com/quote/CLC:PZ,True
+BBG001P21SH4,GENOMED SA,GEN,PW,Common Stock,Equity,BBG001P21SG5,BBG001V18421,GEN,Common Stock,https://www.bloomberg.com/quote/GEN:PZ,True
+BBG001PFXQF6,CENTRUM MEDYCZNE ENEL-MED SA,ENE,PW,Common Stock,Equity,BBG001C7SWN2,BBG001TWLR93,ENE,Common Stock,https://www.bloomberg.com/quote/ENE:PZ,True
+BBG001PKQX40,HORNIGOLD REIT SA,HRL,PW,Common Stock,Equity,BBG001PKQX31,BBG001V1C863,HRL,Common Stock,https://www.bloomberg.com/quote/HRL:PZ,True
+BBG001PM1GY7,ROBINSON EUROPE SA,RBS,PW,Common Stock,Equity,BBG001PM1GW9,BBG001V1CPS1,RBS,Common Stock,https://www.bloomberg.com/quote/RBS:PZ,True
+BBG001PP52F8,GOLAB SA,GOL,PW,Common Stock,Equity,BBG001PP52D0,BBG001V1D194,GOL,Common Stock,https://www.bloomberg.com/quote/GOL:PZ,True
+BBG001QZY799,ESOTIQ & HENDERSON SA,EAH,PW,Common Stock,Equity,BBG001QZY780,BBG001V1SV74,EAH,Common Stock,https://www.bloomberg.com/quote/EAH:PZ,True
+BBG001R5FHR3,NIEWIADOW SA,GNS,PW,Common Stock,Equity,BBG001R5FHQ4,BBG001V28SJ8,GNS,Common Stock,https://www.bloomberg.com/quote/GNS:PZ,True
+BBG001RWVSP4,BLOOBER TEAM SA,BLO,PW,Common Stock,Equity,BBG001RWVSL8,BBG001V2MMW0,BLO,Common Stock,https://www.bloomberg.com/quote/BLO:PZ,True
+BBG001S36XY4,CZERWONA TOREBKA SA,CZT,PW,Common Stock,Equity,BBG001S36XX5,BBG001V3N1W3,CZT,Common Stock,https://www.bloomberg.com/quote/CZT:PZ,True
+BBG001VD6VY2,KLON SA,KLN,PW,Common Stock,Equity,BBG001VD6VX3,BBG001VD6W16,KLN,Common Stock,https://www.bloomberg.com/quote/KLN:PZ,True
+BBG001VKNXH2,MVA GREEN ENERGY SA,GRE,PW,Common Stock,Equity,BBG001VKNXG3,BBG001VKNXL7,GRE,Common Stock,https://www.bloomberg.com/quote/GRE:PZ,True
+BBG001VN1MV8,TELESTO SA,TLO,PW,Common Stock,Equity,BBG001VN1MS2,BBG001VN1N19,TLO,Common Stock,https://www.bloomberg.com/quote/TLO:PZ,True
+BBG001W7KHB4,FEMION TECHNOLOGY SA,FEM,PW,Common Stock,Equity,BBG001W7KH97,BBG001W7KHF0,FEM,Common Stock,https://www.bloomberg.com/quote/FEM:PZ,True
+BBG001WH8VH9,GKS GIEKSA KATOWICE SA,GKS,PW,Common Stock,Equity,BBG001WH8VG0,BBG001WH8VL4,GKS,Common Stock,https://www.bloomberg.com/quote/GKS:PZ,True
+BBG001Y31V85,AFORTI HOLDING SA,AFH,PW,Common Stock,Equity,BBG001Y31V76,BBG001Y31VC0,AFH,Common Stock,https://www.bloomberg.com/quote/AFH:PZ,True
+BBG001Y6H0V3,CASPAR ASSET MANAGEMENT SA,CSR,PW,Common Stock,Equity,BBG001Y6H0T6,BBG001Y6H0Y0,CSR,Common Stock,https://www.bloomberg.com/quote/CSR:PZ,True
+BBG001Y6NBF0,AC SA,ACG,PW,Common Stock,Equity,BBG001BSYF11,BBG001TTMDC6,ACG,Common Stock,https://www.bloomberg.com/quote/ACG:PZ,True
+BBG001YB1D96,SYNTHAVERSE SA,SVE,PW,Common Stock,Equity,BBG001BLF582,BBG001TQD1T0,SVE,Common Stock,https://www.bloomberg.com/quote/SVE:PZ,True
+BBG001YB2G16,SUNEX SA,SNX,PW,Common Stock,Equity,BBG001BMVMB1,BBG001TQG830,SNX,Common Stock,https://www.bloomberg.com/quote/SNX:PZ,True
+BBG001Z51PK8,YOSHI SA,YOS,PW,Common Stock,Equity,BBG001Z51PJ0,BBG001Z51PN5,YOS,Common Stock,https://www.bloomberg.com/quote/YOS:PZ,True
+BBG0020B44H9,WITTCHEN SA,WTN,PW,Common Stock,Equity,BBG001BLDLT6,BBG001TQCHG0,WTN,Common Stock,https://www.bloomberg.com/quote/WTN:PZ,True
+BBG00212ZHD9,STEM CELLS SPIN SA,SCS,PW,Common Stock,Equity,BBG00212ZHC0,BBG00212ZHH5,SCS,Common Stock,https://www.bloomberg.com/quote/SCS:PZ,True
+BBG0021SVBX7,MEX POLSKA SA,MEX,PW,Common Stock,Equity,BBG001MC8KP6,BBG001V11BT3,MEX,Common Stock,https://www.bloomberg.com/quote/MEX:PZ,True
+BBG0021VQFB1,MARKA SA,MRK,PW,Common Stock,Equity,BBG0021VQF94,BBG0021VQFF7,MRK,Common Stock,https://www.bloomberg.com/quote/MRK:PZ,True
+BBG0022F6NW7,GARIN AI SA,GAR,PW,Common Stock,Equity,BBG0022F6NV8,BBG0022F6NZ4,GAR,Common Stock,https://www.bloomberg.com/quote/GAR:PZ,True
+BBG0024CN9T8,MM CONFERENCES SA,MMC,PW,Common Stock,Equity,BBG0024CN9S9,BBG0024CN9X3,MMC,Common Stock,https://www.bloomberg.com/quote/MMC:PZ,True
+BBG00256LV13,AILLERON SA,ALL,PW,Common Stock,Equity,BBG00256LTC6,BBG00256LTD5,ALL,Common Stock,https://www.bloomberg.com/quote/ALL:PZ,True
+BBG002976FB8,SOPHARMA AD SOFIA,SPH,PW,Common Stock,Equity,BBG002976F91,BBG001S9RDN4,SPH,Common Stock,https://www.bloomberg.com/quote/SPH:PZ,True
+BBG002B22VN2,GRUPA HRC SA,HRC,PW,Common Stock,Equity,BBG002B22VM3,BBG002B22VR8,HRC,Common Stock,https://www.bloomberg.com/quote/HRC:PZ,True
+BBG002B24SW7,ADVERTIGO SA,AVE,PW,Common Stock,Equity,BBG002B24SV8,BBG002B24SZ4,AVE,Common Stock,https://www.bloomberg.com/quote/AVE:PZ,True
+BBG002CPKK18,SFD SA,SFD,PW,Common Stock,Equity,BBG002CPKK09,BBG002CPKK45,SFD,Common Stock,https://www.bloomberg.com/quote/SFD:PZ,True
+BBG002CYXTC4,QUART DEVELOPMENT SA,QRT,PW,Common Stock,Equity,BBG002CYWC05,BBG002CYWC14,QRT,Common Stock,https://www.bloomberg.com/quote/QRT:PZ,True
+BBG002D94015,MBFGROUP,MBF,PW,Common Stock,Equity,BBG002D94006,BBG002D94042,MBF,Common Stock,https://www.bloomberg.com/quote/MBF:PZ,True
+BBG002QD4067,SYGNIS SA,SYG,PW,Common Stock,Equity,BBG002QD4058,BBG002QD4094,SYG,Common Stock,https://www.bloomberg.com/quote/SYG:PZ,True
+BBG002VBX3P6,EDITEL POLSKA SA,EDL,PW,Common Stock,Equity,BBG002VBX3N8,BBG002VBX3S3,EDL,Common Stock,https://www.bloomberg.com/quote/EDL:PZ,True
+BBG002W24778,KRKA,KRK,PW,Common Stock,Equity,BBG002W24769,BBG001S6P6H4,KRK,Common Stock,https://www.bloomberg.com/quote/KRK:PZ,True
+BBG002ZCCZ72,TRUE GAMES SYNDICATE SA,TGS,PW,Common Stock,Equity,BBG002ZCCZ63,BBG002ZCCZB7,TGS,Common Stock,https://www.bloomberg.com/quote/TGS:PZ,True
+BBG002ZQ8YR7,FORPOSTA SA,FPO,PW,Common Stock,Equity,BBG002ZQ8YQ8,BBG002ZQ8YV2,FPO,Common Stock,https://www.bloomberg.com/quote/FPO:PZ,True
+BBG0032H9JT1,ATENDE SA,ATD,PW,Common Stock,Equity,BBG002XQ2017,BBG002XQ2026,ATD,Common Stock,https://www.bloomberg.com/quote/ATD:PZ,True
+BBG0033ND1T1,KANCELARIA MEDIUS SA,KME,PW,Common Stock,Equity,BBG0033ND1S2,BBG0033ND1X6,KME,Common Stock,https://www.bloomberg.com/quote/KME:PZ,True
+BBG0033XY7D0,PRIME SA,PRA,PW,Common Stock,Equity,BBG0033XY7C1,BBG0033XY7H6,PRA,Common Stock,https://www.bloomberg.com/quote/PRA:PZ,True
+BBG00351CLG8,MERLIN GROUP SA,MRG,PW,Common Stock,Equity,BBG003433W17,BBG003433W26,MRG,Common Stock,https://www.bloomberg.com/quote/MRG:PZ,True
+BBG00358FD78,NOVINA POZYCZKIHIPOTECZNE.EU,NOV,PW,Common Stock,Equity,BBG00358FD69,BBG00358FDB3,NOV,Common Stock,https://www.bloomberg.com/quote/NOV:PZ,True
+BBG0035WMKH0,BROWAR CZARNKOW SA,BRO,PW,Common Stock,Equity,BBG0035WMKG1,BBG0035WMKL5,BRO,Common Stock,https://www.bloomberg.com/quote/BRO:PZ,True
+BBG00363T0R9,DATAWALK SA,DAT,PW,Common Stock,Equity,BBG00363T0Q0,BBG00363T0V4,DAT,Common Stock,https://www.bloomberg.com/quote/DAT:PZ,True
+BBG00366FWL3,PCC EXOL SA,PCX,PW,Common Stock,Equity,BBG002N3NKZ5,BBG002N3NL01,PCX,Common Stock,https://www.bloomberg.com/quote/PCX:PZ,True
+BBG0038K0ZJ2,ONE MORE LEVEL SA,LSR,PW,Common Stock,Equity,BBG0038JN5V2,BBG0038JN5W1,LSR,Common Stock,https://www.bloomberg.com/quote/LSR:PZ,True
+BBG0038K3925,TERMOEXPERT SA,TME,PW,Common Stock,Equity,BBG0038JMT41,BBG0038JMT50,TME,Common Stock,https://www.bloomberg.com/quote/TME:PZ,True
+BBG0038K3BM8,PIXEL CROW GAMES SA,PIX,PW,Common Stock,Equity,BBG0038JMQ92,BBG0038JMQB9,PIX,Common Stock,https://www.bloomberg.com/quote/PIX:PZ,True
+BBG003BQQ898,PRYMUS SA,PRS,PW,Common Stock,Equity,BBG003BQQ889,BBG003BQQ8D3,PRS,Common Stock,https://www.bloomberg.com/quote/PRS:PZ,True
+BBG003G0PZF4,LUDUS SA,LUD,PW,Common Stock,Equity,BBG003G0PZD6,BBG003G0PZJ0,LUD,Common Stock,https://www.bloomberg.com/quote/LUD:PZ,True
+BBG003GX67G4,TATRY MOUNTAIN RESORTS AS 6,TMR,PW,Common Stock,Equity,BBG003GX67F5,BBG001SR2LC5,TMR,Common Stock,https://www.bloomberg.com/quote/TMR:PZ,True
+BBG003MS77Y7,CYFROWE CENTRUM SERWISOWE SA,CCS,PW,Common Stock,Equity,BBG001CS8Z79,BBG001V02QN7,CCS,Common Stock,https://www.bloomberg.com/quote/CCS:PZ,True
+BBG003P7MQ17,AGENCJA ROZWOJU INNOWACJI SA,ARI,PW,Common Stock,Equity,BBG003P7MQ08,BBG003P7MQ44,ARI,Common Stock,https://www.bloomberg.com/quote/ARI:PZ,True
+BBG003QKSRT9,BRASTER SA,BRA,PW,Common Stock,Equity,BBG003QKSRS0,BBG003QKSRX4,BRA,Common Stock,https://www.bloomberg.com/quote/BRA:PZ,True
+BBG0042Y52H6,PKP CARGO SA,PKP,PW,Common Stock,Equity,BBG001C7SGY5,BBG001TWLBL4,PKP,Common Stock,https://www.bloomberg.com/quote/PKP:PZ,True
+BBG0043QZTM4,PROMISE SA,PRO,PW,Common Stock,Equity,BBG0043QZTL5,BBG0043QZTQ0,PRO,Common Stock,https://www.bloomberg.com/quote/PRO:PZ,True
+BBG004752PK2,ASM GROUP SA,ASM,PW,Common Stock,Equity,BBG004752JN3,BBG004752JP1,ASM,Common Stock,https://www.bloomberg.com/quote/ASM:PZ,True
+BBG004752PY7,INVENTIONMED S.A.,INM,PW,Common Stock,Equity,BBG004752K78,BBG004752K87,INM,Common Stock,https://www.bloomberg.com/quote/INM:PZ,True
+BBG004D928S7,CANNABIS POLAND SA,CBD,PW,Common Stock,Equity,BBG004D92406,BBG004D92415,CBD,Common Stock,https://www.bloomberg.com/quote/CBD:PZ,True
+BBG004HL0746,PHOTON ENERGY NV,PEN,PW,Common Stock,Equity,BBG004HKJY94,BBG004HKJYC0,PEN,Common Stock,https://www.bloomberg.com/quote/PEN:PZ,True
+BBG004J8VLK0,CPI EUROPE AG,CPI,PW,Common Stock,Equity,BBG004J8VLJ2,BBG001SFRMQ7,CPI,Common Stock,https://www.bloomberg.com/quote/CPI:PZ,True
+BBG004TRSWT8,DM GROUP SA,DMG,PW,Common Stock,Equity,BBG004TRSWS9,BBG004TRSWX3,DMG,Common Stock,https://www.bloomberg.com/quote/DMG:PZ,True
+BBG004V15Z92,OT LOGISTICS SA,OTS,PW,Common Stock,Equity,BBG000C4CYZ1,BBG001SLD0W0,OTS,Common Stock,https://www.bloomberg.com/quote/OTS:PZ,True
+BBG004YW3YZ7,APS ENERGIA SA,APE,PW,Common Stock,Equity,BBG004YW3YX9,BBG004YW3YY8,APE,Common Stock,https://www.bloomberg.com/quote/APE:PZ,True
+BBG005L9DRX5,NEWAG SA,NWG,PW,Common Stock,Equity,BBG001CS92K6,BBG001V02T33,NWG,Common Stock,https://www.bloomberg.com/quote/NWG:PZ,True
+BBG005MNQNZ6,MERCATOR MEDICAL SA,MRC,PW,Common Stock,Equity,BBG005MNPH08,BBG005MNPHC5,MRC,Common Stock,https://www.bloomberg.com/quote/MRC:PZ,True
+BBG005P3LZ85,CEREAL PLANET PLC,CRP,PW,Common Stock,Equity,BBG005NSGZW1,BBG005NSGZX0,CRP,Common Stock,https://www.bloomberg.com/quote/CRP:PZ,True
+BBG005TVCX20,AGROMEP SA,AGP,PW,Common Stock,Equity,BBG005Q6VMP6,BBG005Q6VMN8,AGP,Common Stock,https://www.bloomberg.com/quote/AGP:PZ,True
+BBG0064732N3,APANET SA,APA,PW,Common Stock,Equity,BBG00646Z2K3,BBG00646Z2J5,APA,Common Stock,https://www.bloomberg.com/quote/APA:PZ,True
+BBG006B5TH67,TEXT SA,TXT,PW,Common Stock,Equity,BBG006B5TH49,BBG006B5TH58,TXT,Common Stock,https://www.bloomberg.com/quote/TXT:PZ,True
+BBG006S735L2,TORPOL SA,TOR,PW,Common Stock,Equity,BBG006S6PNQ6,BBG006S6PNR5,TOR,Common Stock,https://www.bloomberg.com/quote/TOR:PZ,True
+BBG006T0B8R5,ALTUS SA,ALI,PW,Common Stock,Equity,BBG006T0B8Q6,BBG006MGB0S3,ALI,Common Stock,https://www.bloomberg.com/quote/ALI:PZ,True
+BBG006Z54Z59,EXCELLENCE SA,EXC,PW,Common Stock,Equity,BBG006YWNYN3,BBG00747ZSH6,EXC,Common Stock,https://www.bloomberg.com/quote/EXC:PZ,True
+BBG007FDSS61,CDRL SA,CDL,PW,Common Stock,Equity,BBG001BLDND9,BBG001TQCK19,CDL,Common Stock,https://www.bloomberg.com/quote/CDL:PZ,True
+BBG007GFKWC7,FARMY FOTOWOLTAIKI POLSKA SA,FFP,PW,Common Stock,Equity,BBG007GFKW91,BBG007GFKWB8,FFP,Common Stock,https://www.bloomberg.com/quote/FFP:PZ,True
+BBG007N49HB1,BANCO SANTANDER SA,SAN,PW,Common Stock,Equity,BBG007N49H94,BBG001S6GQ80,SAN,Common Stock,https://www.bloomberg.com/quote/SAN:PZ,True
+BBG008H85LL1,ZORTRAX SA,ZRX,PW,Common Stock,Equity,BBG008H85LJ4,BBG008H85LK2,ZRX,Common Stock,https://www.bloomberg.com/quote/ZRX:PZ,True
+BBG009DSCH03,INFRA SA,IFA,PW,Common Stock,Equity,BBG002MZFTD9,BBG002MZFTF7,IFA,Common Stock,https://www.bloomberg.com/quote/IFA:PZ,True
+BBG009DVDX73,ENTER AIR SA,ENT,PW,Common Stock,Equity,BBG005CY4782,BBG005CY4791,ENT,Common Stock,https://www.bloomberg.com/quote/ENT:PZ,True
+BBG009LG3PJ2,JUJUBEE SA,JJB,PW,Common Stock,Equity,BBG009LG3PG5,BBG009LG3PH4,JJB,Common Stock,https://www.bloomberg.com/quote/JJB:PZ,True
+BBG00B3TJ828,LEXBONO SA,LXB,PW,Common Stock,Equity,BBG00B3TJ800,BBG00B3TJ819,LXB,Common Stock,https://www.bloomberg.com/quote/LXB:PZ,True
+BBG00BFMZ9D8,CITY SERVICE SE,CTS,PW,Common Stock,Equity,BBG00BFMZ9C9,BBG001SQL7Z2,CTS,Common Stock,https://www.bloomberg.com/quote/CTS:PZ,True
+BBG00BWMQ084,AUXILIA SA,AUX,PW,Common Stock,Equity,BBG00BWMQ066,BBG00BWMQ075,AUX,Common Stock,https://www.bloomberg.com/quote/AUX:PZ,True
+BBG00C6H03C9,INDOS SA,INS,PW,Common Stock,Equity,BBG004LNKZL4,BBG004LNKZM3,INS,Common Stock,https://www.bloomberg.com/quote/INS:PZ,True
+BBG00CVQSKH8,AUTO PARTNER SA,APR,PW,Common Stock,Equity,BBG001BLCVX0,BBG001TQBS86,APR,Common Stock,https://www.bloomberg.com/quote/APR:PZ,True
+BBG00CW39GJ6,4MOBILITY SA,4MB,PW,Common Stock,Equity,BBG00CW39GG9,BBG00CW39GH8,4MB,Common Stock,https://www.bloomberg.com/quote/4MB:PZ,True
+BBG00DB105X8,TOWER INVESTMENTS SA,TOW,PW,Common Stock,Equity,BBG00DB105T3,BBG00DB105V0,TOW,Common Stock,https://www.bloomberg.com/quote/TOW:PZ,True
+BBG00DSJ1T59,CELON PHARMA SA,CLN,PW,Common Stock,Equity,BBG00DSJ1T40,BBG00DSJ1T68,CLN,Common Stock,https://www.bloomberg.com/quote/CLN:PZ,True
+BBG00DSX43F1,PLAYWAY SA,PLW,PW,Common Stock,Equity,BBG00DSX43C4,BBG00DSX43D3,PLW,Common Stock,https://www.bloomberg.com/quote/PLW:PZ,True
+BBG00DZTV7B7,ARTIFEX MUNDI SA,ART,PW,Common Stock,Equity,BBG007NP23R5,BBG007NP23S4,ART,Common Stock,https://www.bloomberg.com/quote/ART:PZ,True
+BBG00F6NPG60,PREFA GROUP SA,PFG,PW,Common Stock,Equity,BBG00F48DN27,BBG00F48DN36,PFG,Common Stock,https://www.bloomberg.com/quote/PFG:PZ,True
+BBG00FGM9W82,OUTDOORZY SA,OUT,PW,Common Stock,Equity,BBG00FGM9W73,BBG00FGM9WC7,OUT,Common Stock,https://www.bloomberg.com/quote/OUT:PZ,True
+BBG00GD1GML8,MAXCOM SA,MXC,PW,Common Stock,Equity,BBG007JQ2Z24,BBG007JQ2Z33,MXC,Common Stock,https://www.bloomberg.com/quote/MXC:PZ,True
+BBG00GFMVB46,CAPITEA SA,CAP,PW,Common Stock,Equity,BBG004V154Y3,BBG004V154Z2,CAP,Common Stock,https://www.bloomberg.com/quote/CAP:PZ,True
+BBG00GW301F3,NESTMEDIC SA,NST,PW,Common Stock,Equity,BBG00GW301D5,BBG00GW301J9,NST,Common Stock,https://www.bloomberg.com/quote/NST:PZ,True
+BBG00HFXVKQ6,SCOPE FLUIDICS SA,SCP,PW,Common Stock,Equity,BBG00HFXVKP7,BBG00HFXVKT3,SCP,Common Stock,https://www.bloomberg.com/quote/SCP:PZ,True
+BBG00HMXWRF4,BERG HOLDING SA,BRH,PW,Common Stock,Equity,BBG00HMXWRD6,BBG00HMXWRJ0,BRH,Common Stock,https://www.bloomberg.com/quote/BRH:PZ,True
+BBG00HPS3M10,XTPL SA,XTP,PW,Common Stock,Equity,BBG00HPS3M01,BBG00HPS3M47,XTP,Common Stock,https://www.bloomberg.com/quote/XTP:PZ,True
+BBG00J5LXBC2,GREMI MEDIA SA,GME,PW,Common Stock,Equity,BBG00J242DC3,BBG00J242DD2,GME,Common Stock,https://www.bloomberg.com/quote/GME:PZ,True
+BBG00JDY67C4,CYBERFLKS SA,CBF,PW,Common Stock,Equity,BBG00JDY67B5,BBG00JDY67G0,CBF,Common Stock,https://www.bloomberg.com/quote/CBF:PZ,True
+BBG00JKSCW91,MARVIPOL DEVELOPMENT SA,MVP,PW,Common Stock,Equity,BBG00JGP5BW0,BBG00JGP5BY8,MVP,Common Stock,https://www.bloomberg.com/quote/MVP:PZ,True
+BBG00KP793W1,TEN SQUARE GAMES SA,TEN,PW,Common Stock,Equity,BBG00KP793Q8,BBG00KP793S6,TEN,Common Stock,https://www.bloomberg.com/quote/TEN:PZ,True
+BBG00KY4F8R6,ML SYSTEM SA,MLS,PW,Common Stock,Equity,BBG00J2413D5,BBG00J2413F3,MLS,Common Stock,https://www.bloomberg.com/quote/MLS:PZ,True
+BBG00L156254,CREATIVEFORGE GAMES SA,CFG,PW,Common Stock,Equity,BBG00L156245,BBG00L156281,CFG,Common Stock,https://www.bloomberg.com/quote/CFG:PZ,True
+BBG00L54RTY9,ULTIMATE GAMES SA,ULG,PW,Common Stock,Equity,BBG00L54JMT9,BBG00L54JMY3,ULG,Common Stock,https://www.bloomberg.com/quote/ULG:PZ,True
+BBG00LG527Y9,PASSUS SA,PAS,PW,Common Stock,Equity,BBG001BLDFP3,BBG001TQCBB8,PAS,Common Stock,https://www.bloomberg.com/quote/PAS:PZ,True
+BBG00LPTFNX9,COSMA SA,VAB,PW,Common Stock,Equity,BBG00LPTFNW0,BBG00LPTFP00,VAB,Common Stock,https://www.bloomberg.com/quote/VAB:PZ,True
+BBG00MS3WV19,PURE BIOLOGICS SA,PUR,PW,Common Stock,Equity,BBG00MS3WV00,BBG00MS3WV46,PUR,Common Stock,https://www.bloomberg.com/quote/PUR:PZ,True
+BBG00NZP31Q1,CM INTERNATIONAL,CMI,PW,Common Stock,Equity,BBG00NZP31P2,BBG00NZP31T8,CMI,Common Stock,https://www.bloomberg.com/quote/CMI:PZ,True
+BBG00P35Q6S7,CWMEDIA SA,CDA,PW,Common Stock,Equity,BBG00P35Q6R8,BBG00P35Q6X1,CDA,Common Stock,https://www.bloomberg.com/quote/CDA:PZ,True
+BBG00P8T8913,ART GAMES STUDIO SA,ARG,PW,Common Stock,Equity,BBG00P8T8904,BBG00P8T8940,ARG,Common Stock,https://www.bloomberg.com/quote/ARG:PZ,True
+BBG00Q8GLT10,E-XIM IT SA,EXM,PW,Common Stock,Equity,BBG00Q79SMF0,BBG00Q79SMG9,EXM,Common Stock,https://www.bloomberg.com/quote/EXM:PZ,True
+BBG00QKLL7G7,KLABATER SA,KBT,PW,Common Stock,Equity,BBG00QKLL7F8,BBG00QKLL7K2,KBT,Common Stock,https://www.bloomberg.com/quote/KBT:PZ,True
+BBG00QKSQVG4,SELVITA CRO SA,SLV,PW,Common Stock,Equity,BBG00Q5FVKN9,BBG00Q5FVKP7,SLV,Common Stock,https://www.bloomberg.com/quote/SLV:PZ,True
+BBG00RF9MRH2,DRAGEUS GAMES SA,DRG,PW,Common Stock,Equity,BBG00RF9MRG3,BBG00RF9MRL7,DRG,Common Stock,https://www.bloomberg.com/quote/DRG:PZ,True
+BBG00S1N9ND2,SPYROSOFT SA,SPR,PW,Common Stock,Equity,BBG00S1N9NC3,BBG00S1N9NH8,SPR,Common Stock,https://www.bloomberg.com/quote/SPR:PZ,True
+BBG00WMMNF16,PYRAMID GAMES SA,PDG,PW,Common Stock,Equity,BBG00WMMNF07,BBG00WMMNF43,PDG,Common Stock,https://www.bloomberg.com/quote/PDG:PZ,True
+BBG00WS6ZYJ2,STARWARD INDUSTRIES SA,STA,PW,Common Stock,Equity,BBG00WS6ZYH4,BBG00WS6ZYM8,STA,Common Stock,https://www.bloomberg.com/quote/STA:PZ,True
+BBG00WXXJ7H6,GENXONE SA,GXI,PW,Common Stock,Equity,BBG00WXXJ7G7,BBG00WXXJ7Y7,GXI,Common Stock,https://www.bloomberg.com/quote/GXI:PZ,True
+BBG00X2V9H27,WG PARTNER SA,WGP,PW,Common Stock,Equity,BBG00X2V9H18,BBG00X2V9H54,WGP,Common Stock,https://www.bloomberg.com/quote/WGP:PZ,True
+BBG00YC6JRZ0,PCF GROUP SA,PCF,PW,Common Stock,Equity,BBG00YC6JPX6,BBG00YC6JPY5,PCF,Common Stock,https://www.bloomberg.com/quote/PCF:PZ,True
+BBG00YT5MV90,ANSWEAR.COM SA - A,ANR,PW,Common Stock,Equity,BBG00YDDQVV1,BBG00YDDQVW0,ANR,Common Stock,https://www.bloomberg.com/quote/ANR:PZ,True
+BBG00YVJWL25,INCUVO SA,IVO,PW,Common Stock,Equity,BBG00YVJWL16,BBG00YVJWL52,IVO,Common Stock,https://www.bloomberg.com/quote/IVO:PZ,True
+BBG00YYWMGX1,HUUUGE INC,HUG,PW,Common Stock,Equity,BBG00YYWMGW2,BBG00YYWMH14,HUG,Common Stock,https://www.bloomberg.com/quote/HUG:PZ,True
+BBG00Z9DYCT9,SIMTERACT SA,SMT,PW,Common Stock,Equity,BBG00Z81Z4P7,BBG00Z81Z4Q6,SMT,Common Stock,https://www.bloomberg.com/quote/SMT:PZ,True
+BBG01018MFH3,LEGIMI SA,LEG,PW,Common Stock,Equity,BBG01018MFG4,BBG01018MFL8,LEG,Common Stock,https://www.bloomberg.com/quote/LEG:PZ,True
+BBG0105WSTX2,TENDERHUT SA,THG,PW,Common Stock,Equity,BBG0105WSTW3,BBG0105WSV12,THG,Common Stock,https://www.bloomberg.com/quote/THG:PZ,True
+BBG010H54M50,DRAGO ENTERTAINMENT SA,DGE,PW,Common Stock,Equity,BBG010H54M41,BBG010H54M87,DGE,Common Stock,https://www.bloomberg.com/quote/DGE:PZ,True
+BBG011MS0Y69,SHOPER SA,SHO,PW,Common Stock,Equity,BBG011JGMRY9,BBG011JGMS13,SHO,Common Stock,https://www.bloomberg.com/quote/SHO:PZ,True
+BBG012FDPK07,CONSOLE LABS SA,CLA,PW,Common Stock,Equity,BBG012FDPF53,BBG012FDPF62,CLA,Common Stock,https://www.bloomberg.com/quote/CLA:PZ,True
+BBG012GNQFM0,IMMERSION GAMES SA,IMG,PW,Common Stock,Equity,BBG012GNQ8Y3,BBG012GNQ8Z2,IMG,Common Stock,https://www.bloomberg.com/quote/IMG:PZ,True
+BBG012J32RW0,WOODPECKER CO SP ZOO,WPR,PW,Common Stock,Equity,BBG012J32LX2,BBG012J32LY1,WPR,Common Stock,https://www.bloomberg.com/quote/WPR:PZ,True
+BBG012T7Y562,POLTREG SA,PTG,PW,Common Stock,Equity,BBG012T7Y553,BBG012T7Y599,PTG,Common Stock,https://www.bloomberg.com/quote/PTG:PZ,True
+BBG0131NNH70,CREOTECH INSTRUMENTS SA,CRI,PW,Common Stock,Equity,BBG01315GX27,BBG0131NMYX5,CRI,Common Stock,https://www.bloomberg.com/quote/CRI:PZ,True
+BBG013B7P195,CONSTANCE CARE SA,CCR,PW,Common Stock,Equity,BBG013B7P186,BBG013B7P1D0,CCR,Common Stock,https://www.bloomberg.com/quote/CCR:PZ,True
+BBG013QPJVN4,ZENERIS PROJEKTY SA,ZEN,PW,Common Stock,Equity,BBG013QPJVM5,BBG013QPJVR0,ZEN,Common Stock,https://www.bloomberg.com/quote/ZEN:PZ,True
+BBG014HTXYX1,ROAD STUDIO SA,RST,PW,Common Stock,Equity,BBG014HTXYW2,BBG014HTXZ04,RST,Common Stock,https://www.bloomberg.com/quote/RST:PZ,True
+BBG014KD4RD1,ECO5TECH SA,ECT,PW,Common Stock,Equity,BBG014KD4RC2,BBG014KD4RN0,ECT,Common Stock,https://www.bloomberg.com/quote/ECT:PZ,True
+BBG014QYNHL1,ENEIDA SA,END,PW,Common Stock,Equity,BBG014QYNHJ4,BBG014QYNHR5,END,Common Stock,https://www.bloomberg.com/quote/END:PZ,True
+BBG014SQQPH0,ONE SOLUTIONS SA,ONE,PW,Common Stock,Equity,BBG014SQQPG1,BBG014SQQPM4,ONE,Common Stock,https://www.bloomberg.com/quote/ONE:PZ,True
+BBG016PSRVD4,BEEIN SA,BEE,PW,Common Stock,Equity,BBG016PSRVC5,BBG016PSRVH0,BEE,Common Stock,https://www.bloomberg.com/quote/BEE:PZ,True
+BBG018QSQ5F5,WILDLANDS INTERACTIVE SA,WLI,PW,Common Stock,Equity,BBG018QSPBH1,BBG018QSPBJ9,WLI,Common Stock,https://www.bloomberg.com/quote/WLI:PZ,True
+BBG01B2QWZ29,EMPLOCITY SA,EMP,PW,Common Stock,Equity,BBG01B2QWZ10,BBG01B2QWZ65,EMP,Common Stock,https://www.bloomberg.com/quote/EMP:PZ,True
+BBG01BCDFP00,ALLIANZ SE-REG,ALV,PW,Common Stock,Equity,BBG01BCDFNZ7,BBG001S5XGR4,ALV,Common Stock,https://www.bloomberg.com/quote/ALV:PZ,True
+BBG01BCDG996,BAYERISCHE MOTOREN WERKE AG,BMW,PW,Common Stock,Equity,BBG01BCDG978,BBG001S676R3,BMW,Common Stock,https://www.bloomberg.com/quote/BMW:PZ,True
+BBG01BDB8X13,SIEMENS AG-REG,SIE,PW,Common Stock,Equity,BBG01BDB8X04,BBG001S69GV4,SIE,Common Stock,https://www.bloomberg.com/quote/SIE:PZ,True
+BBG01BW2J1Z3,UF GAMES SA,UFG,PW,Common Stock,Equity,BBG01BW2J1Y4,BBG01BW2J281,UFG,Common Stock,https://www.bloomberg.com/quote/UFG:PZ,True
+BBG01G96HVW8,JERONIMO MARTINS,JMT,PW,Common Stock,Equity,BBG01G96HVV9,BBG001S773N2,JMT,Common Stock,https://www.bloomberg.com/quote/JMT:PZ,True
+BBG01G9FTF05,INDUSTRIA DE DISENO TEXTIL,ITX,PW,Common Stock,Equity,BBG01G9FTDZ2,BBG001S99R26,ITX,Common Stock,https://www.bloomberg.com/quote/ITX:PZ,True
+BBG01H0DSR66,SAP SE,SAP,PW,Common Stock,Equity,BBG01H0DSR57,BBG001S6RK27,SAP,Common Stock,https://www.bloomberg.com/quote/SAP:PZ,True
+BBG01H6YCKZ4,BAYER AG-REG,BAY,PW,Common Stock,Equity,BBG01H6YCKY5,BBG001S67NP8,BAY,Common Stock,https://www.bloomberg.com/quote/BAY:PZ,True
+BBG01JNTVDD1,PLOT TWIST SA,PLT,PW,Common Stock,Equity,BBG01JNTVDC2,BBG01JNTVDH7,PLT,Common Stock,https://www.bloomberg.com/quote/PLT:PZ,True
+BBG01JPJBLL6,PROSUS NV,PRX,PW,Common Stock,Equity,BBG01JPJBLK7,BBG00NQKSQ35,PRX,Common Stock,https://www.bloomberg.com/quote/PRX:PZ,True
+BBG01JPPLM02,ASML HOLDING NV,ASML,PW,Common Stock,Equity,BBG01JPPLLZ6,BBG001S7Q066,ASML,Common Stock,https://www.bloomberg.com/quote/ASML:PZ,True
+BBG01JS313Z4,DEMOLISH GAMES SA,DGS,PW,Common Stock,Equity,BBG01JS313Y5,BBG01JS31428,DGS,Common Stock,https://www.bloomberg.com/quote/DGS:PZ,True
+BBG01K8H8QJ2,RED SQUARE GAMES SA,RSG,PW,Common Stock,Equity,BBG01K8H8QH4,BBG01K8H8QM8,RSG,Common Stock,https://www.bloomberg.com/quote/RSG:PZ,True
+BBG01K8H95T6,SPACE FOX GAMES SA,FOX,PW,Common Stock,Equity,BBG01K8H95S7,BBG01K8H9641,FOX,Common Stock,https://www.bloomberg.com/quote/FOX:PZ,True
+BBG01MLQW1V7,B-ACT SA,BAC,PW,Common Stock,Equity,BBG01MLQW1T0,BBG01MLQW1Y4,BAC,Common Stock,https://www.bloomberg.com/quote/BAC:PZ,True
+BBG01NX3NNZ1,LICHTHUND SA,LHD,PW,Common Stock,Equity,BBG01NX3NNY2,BBG01NX3NP59,LHD,Common Stock,https://www.bloomberg.com/quote/LHD:PZ,True
+BBG01NX6J0S7,ALPHABET INC-CL A,GOGL,PW,Common Stock,Equity,BBG01NX6J0R8,BBG009S39JY5,GOGL,Common Stock,https://www.bloomberg.com/quote/GOGL:PZ,True
+BBG01NX6JN43,JPMORGAN CHASE & CO,JPM,PW,Common Stock,Equity,BBG01NX6JN34,BBG001S8CRC3,JPM,Common Stock,https://www.bloomberg.com/quote/JPM:PZ,True
+BBG01PJGBVH8,FREEMIND SA,FRM,PW,Common Stock,Equity,BBG01PJGBVG9,BBG01PJGBVS6,FRM,Common Stock,https://www.bloomberg.com/quote/FRM:PZ,True
+BBG01PPGQCT4,GAMEHUNTERS SA,GHT,PW,Common Stock,Equity,BBG01PPGQCS5,BBG01PPGQCZ7,GHT,Common Stock,https://www.bloomberg.com/quote/GHT:PZ,True
+BBG01QMSDG05,G-DEVS SA,GDS,PW,Common Stock,Equity,BBG01QMSDFZ9,BBG01QMSDG69,GDS,Common Stock,https://www.bloomberg.com/quote/GDS:PZ,True
+BBG01QS06370,ADVANCED MEDICAL EQUIPMENT S,AME,PW,Common Stock,Equity,BBG01QS06361,BBG01QS063G0,AME,Common Stock,https://www.bloomberg.com/quote/AME:PZ,True
+BBG01R39RCR1,ADVANCED MICRO DEVICES,AMD,PW,Common Stock,Equity,BBG01R39RCQ2,BBG001S5NN36,AMD,Common Stock,https://www.bloomberg.com/quote/AMD:PZ,True
+BBG01R39S130,INTEL CORP,INTL,PW,Common Stock,Equity,BBG01R39S121,BBG001S5SF65,INTL,Common Stock,https://www.bloomberg.com/quote/INTL:PZ,True
+BBG01RQRT474,DIAGNOSTYKA SA-SERIES D/E/F,DIA,PW,Common Stock,Equity,BBG0024MHTR1,BBG0024MHTS0,DIA,Common Stock,https://www.bloomberg.com/quote/DIA:PZ,True
+BBG01RRV2071,INSIDE PARK SA,ISD,PW,Common Stock,Equity,BBG01RRV2062,BBG01RRV20B6,ISD,Common Stock,https://www.bloomberg.com/quote/ISD:PZ,True
+BBG01TB5PY54,KOLEJKOWO SA,KLK,PW,Common Stock,Equity,BBG01TB5PY45,BBG01TB5PYD5,KLK,Common Stock,https://www.bloomberg.com/quote/KLK:PZ,True
+BBG01VCLXPH0,CARLSBERG AS-B,CARL,PW,Common Stock,Equity,BBG01VCLXPG1,BBG001S97P77,CARL,Common Stock,https://www.bloomberg.com/quote/CARL:PZ,True
+BBG01VD0NZ11,ARLEN SA,ARL,PW,Common Stock,Equity,BBG001VD2D94,BBG001VD2DB1,ARL,Common Stock,https://www.bloomberg.com/quote/ARL:PZ,True
+BBG01VT8M1B2,GREEN LANES SA,GRL,PW,Common Stock,Equity,BBG01VT8M195,BBG01VT8M1F8,GRL,Common Stock,https://www.bloomberg.com/quote/GRL:PZ,True
+BBG01WXRVH91,RHEINMETALL AG,RHM,PW,Common Stock,Equity,BBG01WXRVH73,BBG001S699S4,RHM,Common Stock,https://www.bloomberg.com/quote/RHM:PZ,True

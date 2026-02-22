@@ -2,6 +2,11 @@ venv/
 PRZETWARZANIEZBIOROW20252026/sparkvenv/
 sparkvenv/
 gpw/
+bloomberg_alive.csv
+pakiety.txt
+requirements.txt
+spolki_gpw.csv
+
 PRZETWARZAZBIOROW20252026/P1 automl/AutogluonModels
 PRZETWARZAZBIOROW20252026/P2 Pysparkling/models/
 PRZETWARZAZBIOROW20252026/P3 pyspark mllb/models/
@@ -22,3 +27,32 @@ ZAAWANSOWANAOPTYMALIZACJA20252026/ProjektSieczne/main.fls
 ZAAWANSOWANAOPTYMALIZACJA20252026/ProjektSieczne/main.run.xml
 ZAAWANSOWANAOPTYMALIZACJA20252026/ProjektSieczne/main.synctex.gz
 ASZ/
+
+ZAAWANSOWANAOPTYMALIZACJA20252026/Projekt2/main.aux
+ZAAWANSOWANAOPTYMALIZACJA20252026/Projekt2/main.log
+ZAAWANSOWANAOPTYMALIZACJA20252026/Projekt2/main.out
+ZAAWANSOWANAOPTYMALIZACJA20252026/Projekt2/main.toc
+ZAAWANSOWANAOPTYMALIZACJA20252026/Projekt2/main.bbl
+ZAAWANSOWANAOPTYMALIZACJA20252026/Projekt2/main.bbl-SAVE-ERROR
+ZAAWANSOWANAOPTYMALIZACJA20252026/Projekt2/main.bcf
+ZAAWANSOWANAOPTYMALIZACJA20252026/Projekt2/main.blg
+ZAAWANSOWANAOPTYMALIZACJA20252026/Projekt2/main.fdb_latexmk
+ZAAWANSOWANAOPTYMALIZACJA20252026/Projekt2/main.fls
+ZAAWANSOWANAOPTYMALIZACJA20252026/Projekt2/main.run.xml
+ZAAWANSOWANAOPTYMALIZACJA20252026/Projekt2/main.synctex.gz
+
+AFA/Referat/main.aux
+AFA/Referat/main.log
+AFA/Referat/main.out
+AFA/Referat/main.toc
+AFA/Referat/main.bbl
+AFA/Referat/main.bbl-SAVE-ERROR
+AFA/Referat/main.bcf
+AFA/Referat/main.blg
+AFA/Referat/main.fdb_latexmk
+AFA/Referat/main.fls
+AFA/Referat/main.run.xml
+AFA/Referat/main.synctex.gz
+
+MODELOWANIE20252026/Projekt/doks/
+MODELOWANIE20252026/Projekt — kopia/doks/

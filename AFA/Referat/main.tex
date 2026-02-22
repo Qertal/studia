@@ -1,0 +1,286 @@
+% filepath: c:\REPO\studia\ZAAWANSOWANAOPTYMALIZACJA20252026\ProjektSieczne\main.tex
+\documentclass[10pt,a4paper]{article}
+
+% ...existing code...
+% Kodowanie i język
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[polish]{babel}
+
+% Układ strony i mikrotypografia
+\usepackage[a4paper,margin=15mm]{geometry}
+\usepackage{lmodern}
+\usepackage{microtype}
+
+% Podstawowe pakiety
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb}
+\usepackage{siunitx}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{hyperref}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+% \usepackage{algpseudocode}
+\usepackage{float}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{minted}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{amsthm}
+\newtheorem*{example}{Przykład}
+\lstset{
+  language=Matlab,
+  basicstyle=\ttfamily\small,
+  keywordstyle=\color{blue},
+  commentstyle=\color{gray},
+  frame=single,
+  breaklines=true,
+  numbers=left,
+  numberstyle=\tiny,
+  xleftmargin=1em
+}
+
+
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+
+% Bibliografia (użyj biber lub zmień na natbib jeśli wolisz)
+\usepackage[backend=biber,style=numeric,sorting=none]{biblatex}
+\addbibresource{references.bib} % utwórz plik references.bib w katalogu projektu
+
+% ...existing code...
+\title{Norma spektralna macierzy}
+\author{Paweł Drzyzga i Maciej Pasternak\\ Wydział Informatyki i Matematyki \\ Politechnika Krakowska}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section{Norma spektralna macierzy}
+
+Niech $\mathbb{K}\in\{\mathbb{R},\mathbb{C}\}$ oraz
+\[
+A\in \mathbb{K}^{m\times n},
+\]
+rozumiana jako operator liniowy
+\[
+A:(\mathbb{K}^n,\|\cdot\|_2)\longrightarrow(\mathbb{K}^m,\|\cdot\|_2),
+\]
+gdzie $\|\cdot\|_2$ oznacza normę euklidesową indukowaną przez standardowy iloczyn skalarny.
+
+\subsection{Definicja}
+
+\emph{Normą spektralną} macierzy $A$ nazywamy normę operatorową indukowaną przez normę euklidesową:
+\[
+\|A\|_2
+=
+\sup_{\|x\|_2=1}\|Ax\|_2.
+\]
+Jest to najmniejsza stała $C\ge 0$ taka, że
+\[
+\|Ax\|_2\le C\|x\|_2
+\quad
+\text{dla wszystkich }x\in\mathbb{K}^n.
+\]
+
+\subsection{Związek z wartościami singularnymi}
+
+Norma spektralna jest równa największej wartości singularnej macierzy $A$:
+\[
+\|A\|_2=\sigma_{\max}(A).
+\]
+Ponieważ wartości singularne są pierwiastkami z wartości własnych macierzy $A^*A$, otrzymujemy
+\[
+\|A\|_2=\sqrt{\lambda_{\max}(A^*A)}.
+\]
+
+\subsection{Własności}
+
+\subsubsection{Związek z wartościami własnymi}
+
+Jeżeli $A$ jest operatorem normalnym (tzn.\ $AA^*=A^*A$), w szczególności gdy jest symetryczna (w $\mathbb{R}$) lub hermitowska (w $\mathbb{C}$), to
+\[
+\|A\|_2=\max_i|\lambda_i(A)|.
+\]
+W ogólności zachodzi nierówność
+\[
+\rho(A)=\max_i|\lambda_i(A)|\le\|A\|_2,
+\]
+gdzie $\rho(A)$ oznacza promień spektralny.
+
+\subsubsection{Niezmienniczość unitarna}
+
+Dla dowolnych macierzy unitarnych
+\[
+U\in\mathbb{K}^{m\times m},
+\qquad
+V\in\mathbb{K}^{n\times n}
+\]
+zachodzi
+\[
+\|UAV\|_2=\|A\|_2.
+\]
+Oznacza to, że norma spektralna zależy wyłącznie od geometrycznego działania operatora, a nie od wyboru baz w dziedzinie i przeciwdziedzinie.
+
+\subsubsection{Podmultiplikatywność}
+
+Dla dowolnych macierzy $A\in\mathbb{K}^{m\times n}$ i $B\in\mathbb{K}^{n\times k}$ zachodzi
+\[
+\|AB\|_2\le\|A\|_2\,\|B\|_2.
+\]
+W szczególności dla iteracji $x_{k+1}=Ax_k$ mamy
+\[
+\|x_k\|_2\le\|A\|_2^k\|x_0\|_2.
+\]
+
+\subsubsection{Liczba uwarunkowania}
+
+Jeżeli $A$ jest odwracalna, to jej liczba uwarunkowania w normie spektralnej dana jest wzorem
+\[
+\kappa_2(A)=\|A\|_2\|A^{-1}\|_2
+=\frac{\sigma_{\max}(A)}{\sigma_{\min}(A)}.
+\]
+Wielkość ta mierzy wrażliwość rozwiązania układu liniowego $Ax=b$ na zaburzenia danych.
+
+\subsubsection{Relacja z normą Frobeniusa}
+
+Dla każdej macierzy zachodzi nierówność
+\[
+\|A\|_2\le\|A\|_F,
+\qquad
+\|A\|_F=\sqrt{\sum_{i,j}|a_{ij}|^2}.
+\]
+Norma Frobeniusa mierzy całkowitą „energię” macierzy, natomiast norma spektralna mierzy maksymalne wzmocnienie w jednym kierunku.
+
+\subsection{Przykłady rachunkowe}
+
+\begin{example}[Obliczanie normy spektralnej]
+Rozważmy macierz
+\[
+A=\begin{pmatrix}
+3 & 1\\
+0 & 2
+\end{pmatrix}\in\mathbb{R}^{2\times 2}.
+\]
+Obliczymy jej normę spektralną $\|A\|_2$.
+
+\medskip
+\noindent
+\textbf{Krok 1.} Obliczamy macierz $A^\top A$:
+\[
+A^\top=\begin{pmatrix}
+3 & 0\\
+1 & 2
+\end{pmatrix},
+\qquad
+A^\top A=
+\begin{pmatrix}
+3 & 0\\
+1 & 2
+\end{pmatrix}
+\begin{pmatrix}
+3 & 1\\
+0 & 2
+\end{pmatrix}
+=
+\begin{pmatrix}
+9 & 3\\
+3 & 5
+\end{pmatrix}.
+\]
+
+\medskip
+\noindent
+\textbf{Krok 2.} Wyznaczamy wartości własne macierzy $A^\top A$. Liczymy wielomian charakterystyczny:
+\[
+\det(A^\top A-\lambda I)=
+\det\begin{pmatrix}
+9-\lambda & 3\\
+3 & 5-\lambda
+\end{pmatrix}
+=(9-\lambda)(5-\lambda)-9
+=\lambda^2-14\lambda+36.
+\]
+Rozwiązując równanie
+\[
+\lambda^2-14\lambda+36=0,
+\]
+otrzymujemy
+\[
+\lambda=\frac{14\pm\sqrt{196-144}}{2}
+=\frac{14\pm 2\sqrt{13}}{2}
+=7\pm\sqrt{13}.
+\]
+Zatem
+\[
+\lambda_{\max}(A^\top A)=7+\sqrt{13}.
+\]
+
+\medskip
+\noindent
+\textbf{Krok 3.} Korzystając z faktu, że
+\[
+\|A\|_2=\sqrt{\lambda_{\max}(A^\top A)},
+\]
+dostajemy
+\[
+\|A\|_2=\sqrt{7+\sqrt{13}}.
+\]
+
+\medskip
+\noindent
+Jest to dokładna wartość normy spektralnej macierzy $A$.
+\end{example}
+
+\begin{example}[Macierz symetryczna: norma spektralna a wartości własne]
+Rozważmy macierz symetryczną
+\[
+C=\begin{pmatrix}
+-2 & 1\\
+1 & -2
+\end{pmatrix}\in\mathbb{R}^{2\times 2}.
+\]
+Ponieważ $C$ jest symetryczna (a więc normalna), zachodzi
+\[
+\|C\|_2=\max_i |\lambda_i(C)|.
+\]
+
+\medskip
+\noindent
+\textbf{Krok 1.} Wyznaczamy wartości własne macierzy $C$:
+\[
+\det(C-\lambda I)
+=
+\det\begin{pmatrix}
+-2-\lambda & 1\\
+1 & -2-\lambda
+\end{pmatrix}
+=
+(-2-\lambda)^2-1
+=
+\lambda^2+4\lambda+3.
+\]
+Rozwiązując równanie
+\[
+\lambda^2+4\lambda+3=0,
+\]
+otrzymujemy
+\[
+\lambda=\frac{-4\pm\sqrt{16-12}}{2}
+=\frac{-4\pm 2}{2}
+\in\{-1,-3\}.
+\]
+
+\medskip
+\noindent
+\textbf{Krok 2.} Zatem norma spektralna wynosi
+\[
+\|C\|_2=\max\{|-1|,|-3|\}=3.
+\]
+
+\medskip
+\end{example}
+
+
+\end{document}
